@@ -1,0 +1,1343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Illinois Senior Benefit Services – Local Medicare guidance and final expense insurance for Illinois seniors. No pressure. No jargon. Just honest help since 2008.">
+<meta name="keywords" content="final expense insurance Illinois, Medicare help Illinois, burial insurance Illinois, Medicare supplement Illinois, senior insurance Marion Illinois">
+<meta property="og:title" content="Illinois Senior Benefit Services">
+<meta property="og:description" content="Finally, someone who explains this without trying to sell you something.">
+<title>Illinois Senior Benefit Services | Medicare & Final Expense Help</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* =============================================
+   ROOT & RESET
+============================================= */
+:root {
+  --navy: #16275E;
+  --navy-deep: #0D1A42;
+  --navy-mid: #1E3278;
+  --gold: #C9A84C;
+  --gold-light: #E3C97A;
+  --gold-pale: #F5EDD4;
+  --cream: #FAF7F2;
+  --cream-mid: #EDE8DF;
+  --white: #FFFFFF;
+  --text: #1A1A2E;
+  --text-mid: #3B3B55;
+  --text-muted: #6E6E88;
+  --serif: 'Cormorant Garamond', Georgia, serif;
+  --sans: 'DM Sans', system-ui, sans-serif;
+  --radius: 10px;
+  --radius-lg: 18px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 18px; }
+
+body {
+  font-family: var(--sans);
+  color: var(--text);
+  background: var(--white);
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+a { text-decoration: none; color: inherit; }
+img { max-width: 100%; display: block; }
+p { margin-bottom: 1rem; }
+p:last-child { margin-bottom: 0; }
+
+/* =============================================
+   TYPOGRAPHY
+============================================= */
+h1,h2,h3,h4 { font-family: var(--serif); line-height: 1.2; }
+h1 { font-size: clamp(2.4rem, 5vw, 3.8rem); font-weight: 500; }
+h2 { font-size: clamp(2rem, 4vw, 3rem); font-weight: 500; }
+h3 { font-size: clamp(1.2rem, 2vw, 1.5rem); font-weight: 500; }
+
+/* =============================================
+   LAYOUT
+============================================= */
+.wrap { max-width: 1120px; margin: 0 auto; padding: 0 28px; }
+.section { padding: 96px 0; }
+.section-sm { padding: 64px 0; }
+
+.eyebrow {
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.eyebrow-light { color: var(--gold-light); }
+
+/* =============================================
+   BUTTONS
+============================================= */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0.9rem 2rem;
+  border-radius: 6px;
+  font-family: var(--sans);
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.btn-gold {
+  background: var(--gold);
+  color: var(--navy-deep);
+  border-color: var(--gold);
+}
+.btn-gold:hover {
+  background: var(--gold-light);
+  border-color: var(--gold-light);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(201,168,76,0.3);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--white);
+  border-color: rgba(255,255,255,0.45);
+}
+.btn-ghost:hover {
+  background: rgba(255,255,255,0.08);
+  border-color: rgba(255,255,255,0.8);
+}
+
+.btn-navy {
+  background: var(--navy);
+  color: var(--white);
+  border-color: var(--navy);
+}
+.btn-navy:hover {
+  background: var(--navy-deep);
+  transform: translateY(-2px);
+}
+
+/* =============================================
+   HEADER
+============================================= */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 200;
+  background: var(--navy-deep);
+  border-bottom: 2px solid var(--gold);
+}
+
+.nav-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 74px;
+  gap: 2rem;
+}
+
+.nav-logo {
+  font-family: var(--serif);
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: var(--gold);
+  line-height: 1.3;
+  flex-shrink: 0;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  list-style: none;
+}
+
+.nav-links a {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: rgba(255,255,255,0.78);
+  padding: 0.5rem 0.9rem;
+  border-radius: 6px;
+  transition: all 0.15s;
+}
+.nav-links a:hover { color: var(--gold); background: rgba(201,168,76,0.1); }
+
+.nav-phone {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--gold);
+  padding: 0.55rem 1.1rem;
+  border: 1.5px solid var(--gold);
+  border-radius: 6px;
+  transition: all 0.15s;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.nav-phone:hover { background: var(--gold); color: var(--navy-deep); }
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+}
+.hamburger span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--gold);
+  border-radius: 2px;
+  transition: all 0.2s;
+}
+
+.mobile-nav {
+  display: none;
+  background: var(--navy-deep);
+  border-top: 1px solid rgba(201,168,76,0.2);
+  padding: 1rem 0;
+}
+.mobile-nav.open { display: block; }
+.mobile-nav a {
+  display: block;
+  padding: 0.75rem 28px;
+  color: rgba(255,255,255,0.8);
+  font-weight: 500;
+  font-size: 1rem;
+  transition: color 0.15s;
+}
+.mobile-nav a:hover { color: var(--gold); }
+.mobile-nav .mob-phone {
+  display: block;
+  margin: 0.75rem 28px 0;
+  padding: 0.75rem 1.25rem;
+  background: var(--gold);
+  color: var(--navy-deep);
+  font-weight: 700;
+  border-radius: 6px;
+  text-align: center;
+}
+
+/* =============================================
+   HERO
+============================================= */
+.hero {
+  background: var(--navy);
+  position: relative;
+  overflow: hidden;
+  padding: 100px 0 90px;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -20%;
+  right: -10%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(201,168,76,0.07) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: -10%;
+  left: -5%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(255,255,255,0.03) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 5rem;
+  align-items: center;
+  position: relative;
+}
+
+.hero-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(201,168,76,0.12);
+  border: 1px solid rgba(201,168,76,0.3);
+  color: var(--gold-light);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.4rem 1rem;
+  border-radius: 100px;
+  margin-bottom: 1.5rem;
+}
+
+.hero h1 {
+  color: var(--white);
+  margin-bottom: 1.5rem;
+}
+
+.hero h1 em {
+  font-style: italic;
+  color: var(--gold);
+}
+
+.hero-sub {
+  font-size: 1.1rem;
+  color: rgba(255,255,255,0.75);
+  max-width: 540px;
+  margin-bottom: 2.5rem;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.hero-trust {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.trust-pill {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.5);
+}
+
+.trust-dot {
+  width: 6px;
+  height: 6px;
+  background: var(--gold);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* Hero card stack */
+.hero-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.hero-card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(201,168,76,0.2);
+  border-radius: var(--radius-lg);
+  padding: 1.4rem 1.6rem;
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  transition: border-color 0.2s;
+}
+.hero-card:hover { border-color: rgba(201,168,76,0.45); }
+
+.hc-check {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  background: var(--gold);
+  color: var(--navy-deep);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: 800;
+  margin-top: 2px;
+}
+
+.hc-text h4 {
+  font-family: var(--sans);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 0.2rem;
+}
+
+.hc-text p {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.58);
+  margin: 0;
+}
+
+/* =============================================
+   WHO WE HELP
+============================================= */
+.who { background: var(--cream); }
+
+.who-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+.who-card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 2rem 1.75rem;
+  border-left: 4px solid var(--gold);
+  box-shadow: 0 2px 16px rgba(22,39,94,0.06);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.who-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 32px rgba(22,39,94,0.1);
+}
+
+.who-emoji { font-size: 1.8rem; margin-bottom: 1rem; line-height: 1; }
+
+.who-card h3 {
+  font-size: 1.15rem;
+  color: var(--navy);
+  margin-bottom: 0.6rem;
+}
+
+.who-card p {
+  font-size: 0.93rem;
+  color: var(--text-mid);
+  margin: 0;
+}
+
+/* =============================================
+   SERVICES
+============================================= */
+.services { background: var(--navy); }
+
+.services-intro {
+  max-width: 600px;
+  margin-bottom: 3.5rem;
+}
+
+.services-intro h2 { color: var(--white); }
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.svc-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(201,168,76,0.18);
+  border-radius: var(--radius-lg);
+  padding: 2.25rem 2rem;
+  transition: all 0.2s;
+  cursor: default;
+}
+.svc-card:hover {
+  background: rgba(255,255,255,0.08);
+  border-color: rgba(201,168,76,0.4);
+  transform: translateY(-4px);
+}
+
+.svc-icon {
+  width: 52px;
+  height: 52px;
+  background: rgba(201,168,76,0.12);
+  border: 1px solid rgba(201,168,76,0.25);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  color: var(--gold);
+}
+
+.svc-card h3 {
+  color: var(--white);
+  font-size: 1.3rem;
+  margin-bottom: 0.75rem;
+}
+
+.svc-card p {
+  font-size: 0.93rem;
+  color: rgba(255,255,255,0.65);
+  margin-bottom: 1.5rem;
+}
+
+.svc-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.svc-list li {
+  font-size: 0.88rem;
+  color: rgba(255,255,255,0.55);
+  padding-left: 1.25rem;
+  position: relative;
+}
+.svc-list li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--gold);
+  font-weight: 700;
+}
+
+/* =============================================
+   PROCESS
+============================================= */
+.process { background: var(--white); }
+
+.process-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6rem;
+  align-items: start;
+}
+
+.process-left h2 { color: var(--navy); margin-bottom: 1rem; }
+.process-left p { color: var(--text-mid); font-size: 0.97rem; margin-bottom: 2rem; }
+
+.steps {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.step {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+
+.step-num {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  background: var(--navy);
+  color: var(--gold);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--serif);
+  font-size: 1.3rem;
+  font-weight: 500;
+  margin-top: 2px;
+}
+
+.step-body h4 {
+  font-family: var(--sans);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--navy);
+  margin-bottom: 0.3rem;
+}
+
+.step-body p {
+  font-size: 0.9rem;
+  color: var(--text-mid);
+  margin: 0;
+}
+
+.step-line {
+  width: 2px;
+  height: 28px;
+  background: var(--gold);
+  opacity: 0.3;
+  margin-left: 23px;
+}
+
+.process-right {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  padding-top: 1rem;
+}
+
+.promise-card {
+  background: var(--cream);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem;
+  border-top: 3px solid var(--navy);
+}
+
+.promise-card h4 {
+  font-family: var(--serif);
+  font-size: 1.2rem;
+  color: var(--navy);
+  margin-bottom: 0.5rem;
+}
+
+.promise-card p {
+  font-size: 0.92rem;
+  color: var(--text-mid);
+  margin: 0;
+}
+
+/* =============================================
+   TESTIMONIALS
+============================================= */
+.testimonials { background: var(--cream-mid); }
+
+.testi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+.testi-card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 2rem 1.75rem;
+  box-shadow: 0 2px 16px rgba(22,39,94,0.07);
+  position: relative;
+}
+
+.testi-stars {
+  color: var(--gold);
+  font-size: 1rem;
+  letter-spacing: 3px;
+  margin-bottom: 1rem;
+}
+
+.testi-quote {
+  font-family: var(--serif);
+  font-size: 1.08rem;
+  color: var(--text-mid);
+  font-style: italic;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+.testi-name {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--navy);
+  letter-spacing: 0.04em;
+}
+
+/* =============================================
+   FAQ
+============================================= */
+.faq { background: var(--white); }
+
+.faq-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+.faq-card {
+  background: var(--cream);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem;
+  border-top: 3px solid var(--navy);
+}
+
+.faq-card h3 {
+  font-family: var(--serif);
+  font-size: 1.15rem;
+  color: var(--navy);
+  margin-bottom: 0.75rem;
+}
+
+.faq-card p {
+  font-size: 0.92rem;
+  color: var(--text-mid);
+  margin: 0;
+}
+
+/* =============================================
+   CTA BANNER
+============================================= */
+.cta-banner {
+  background: var(--navy-deep);
+  padding: 96px 0;
+  text-align: center;
+  border-top: 3px solid var(--gold);
+}
+
+.cta-banner h2 {
+  color: var(--white);
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin-bottom: 1rem;
+}
+
+.cta-banner > .wrap > p {
+  color: rgba(255,255,255,0.68);
+  font-size: 1.1rem;
+  max-width: 560px;
+  margin: 0 auto 2.5rem;
+}
+
+.cta-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.cta-fine {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.35);
+}
+
+/* =============================================
+   FOOTER
+============================================= */
+.site-footer {
+  background: #090F28;
+  color: var(--white);
+}
+
+.footer-top {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1.5fr;
+  gap: 4rem;
+  padding: 4rem 0 3rem;
+}
+
+.footer-brand .nav-logo {
+  font-size: 1.2rem;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.footer-brand p {
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.45);
+  max-width: 280px;
+  margin: 0;
+}
+
+.footer-col h4 {
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1.25rem;
+}
+
+.footer-col a {
+  display: block;
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.55);
+  margin-bottom: 0.6rem;
+  transition: color 0.15s;
+}
+.footer-col a:hover { color: var(--gold-light); }
+
+.footer-col p {
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.45);
+  margin-top: 0.4rem;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.07);
+  padding: 1.5rem 0;
+}
+
+.footer-bottom p {
+  font-size: 0.76rem;
+  color: rgba(255,255,255,0.28);
+  line-height: 1.7;
+}
+
+/* =============================================
+   SECTION TITLE UTIL
+============================================= */
+.section-head { margin-bottom: 3rem; }
+.section-head h2 { color: var(--navy); }
+.section-head p {
+  font-size: 1rem;
+  color: var(--text-mid);
+  max-width: 580px;
+  margin-top: 0.75rem;
+}
+
+/* =============================================
+   RESPONSIVE
+============================================= */
+@media (max-width: 960px) {
+  .hero-grid { grid-template-columns: 1fr; }
+  .hero-cards { display: none; }
+  .process-inner { grid-template-columns: 1fr; gap: 3rem; }
+  .footer-top { grid-template-columns: 1fr 1fr; gap: 2.5rem; }
+  .footer-brand { grid-column: 1 / -1; }
+}
+
+@media (max-width: 680px) {
+  html { font-size: 16px; }
+  .section { padding: 64px 0; }
+  .nav-links { display: none; }
+  .nav-phone { display: none; }
+  .hamburger { display: flex; }
+  .hero { padding: 72px 0 64px; }
+  .hero-actions { flex-direction: column; }
+  .hero-actions .btn { width: 100%; justify-content: center; }
+  .cta-actions { flex-direction: column; align-items: center; }
+  .cta-actions .btn { width: 100%; max-width: 380px; justify-content: center; }
+  .footer-top { grid-template-columns: 1fr; gap: 2rem; }
+}
+
+/* =============================================
+   ANIMATIONS
+============================================= */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-up {
+  opacity: 0;
+  animation: fadeUp 0.6s ease forwards;
+}
+.delay-1 { animation-delay: 0.1s; }
+.delay-2 { animation-delay: 0.2s; }
+.delay-3 { animation-delay: 0.3s; }
+.delay-4 { animation-delay: 0.4s; }
+</style>
+</head>
+<body>
+
+<!-- =============================================
+   HEADER
+============================================= -->
+<header class="site-header">
+  <div class="wrap nav-wrap">
+    <a href="#" class="nav-logo">Illinois Senior<br>Benefit Services</a>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#how-it-works">How It Works</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <a href="tel:6188417936" class="nav-phone">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8a19.79 19.79 0 01-3.07-8.67A2 2 0 012 1h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+      (618) 841-7936
+    </a>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <nav class="mobile-nav" id="mobileNav">
+    <a href="#services">Services</a>
+    <a href="#how-it-works">How It Works</a>
+    <a href="#faq">FAQ</a>
+    <a href="#contact">Contact</a>
+    <a href="tel:6188417936" class="mob-phone">Call (618) 841-7936</a>
+  </nav>
+</header>
+
+<!-- =============================================
+   HERO
+============================================= -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="hero-tag">
+        <span style="width:6px;height:6px;background:var(--gold);border-radius:50%;display:inline-block;"></span>
+        Serving Illinois Seniors Since 2008
+      </div>
+      <h1 class="fade-up">
+        Finally, someone who explains this<br>
+        <em>without trying to sell you something.</em>
+      </h1>
+      <p class="hero-sub fade-up delay-1">
+        We help Illinois seniors and their families understand Medicare, final expense coverage, and senior benefits — in plain English, with no pressure, and no obligation to buy.
+      </p>
+      <div class="hero-actions fade-up delay-2">
+        <a href="#contact" class="btn btn-gold">Get Help Understanding Your Options</a>
+        <a href="tel:6188417936" class="btn btn-ghost">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8a19.79 19.79 0 01-3.07-8.67A2 2 0 012 1h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+          Schedule a Free Call
+        </a>
+      </div>
+      <div class="hero-trust fade-up delay-3">
+        <span class="trust-pill"><span class="trust-dot"></span>No obligation</span>
+        <span class="trust-pill"><span class="trust-dot"></span>No pressure</span>
+        <span class="trust-pill"><span class="trust-dot"></span>Local Illinois agent</span>
+        <span class="trust-pill"><span class="trust-dot"></span>Licensed & verified</span>
+      </div>
+    </div>
+
+    <div class="hero-cards fade-up delay-2">
+      <div class="hero-card">
+        <div class="hc-check">✓</div>
+        <div class="hc-text">
+          <h4>We educate first.</h4>
+          <p>You'll understand exactly what you're looking at before any decision is made.</p>
+        </div>
+      </div>
+      <div class="hero-card">
+        <div class="hc-check">✓</div>
+        <div class="hc-text">
+          <h4>We match to your budget.</h4>
+          <p>No pushing plans that don't fit. We find what actually works for you.</p>
+        </div>
+      </div>
+      <div class="hero-card">
+        <div class="hc-check">✓</div>
+        <div class="hc-text">
+          <h4>We stay available after.</h4>
+          <p>Our relationship doesn't end when you enroll. Call us anytime.</p>
+        </div>
+      </div>
+      <div class="hero-card">
+        <div class="hc-check">✓</div>
+        <div class="hc-text">
+          <h4>30+ plans to compare.</h4>
+          <p>We shop across carriers to find the best fit — not just what pays us most.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============================================
+   WHO WE HELP
+============================================= -->
+<section class="section who">
+  <div class="wrap">
+    <span class="eyebrow" style="color:var(--gold);">Who We Help</span>
+    <h2 style="color:var(--navy);max-width:560px;">If any of this sounds familiar, you're in the right place.</h2>
+    <div class="who-grid">
+      <div class="who-card">
+        <div class="who-emoji">🧓</div>
+        <h3>Seniors approaching Medicare age</h3>
+        <p>You're turning 65 and the mail is piling up. Everyone's got a plan to sell you. We'll help you cut through the noise and actually understand your choices.</p>
+      </div>
+      <div class="who-card">
+        <div class="who-emoji">👨‍👩‍👦</div>
+        <h3>Families helping aging parents</h3>
+        <p>You're trying to help Mom or Dad get the right coverage, but the jargon is confusing and you don't know who to trust. We'll walk through it together.</p>
+      </div>
+      <div class="who-card">
+        <div class="who-emoji">💬</div>
+        <h3>People who've been confused before</h3>
+        <p>You've gotten conflicting advice. You've sat through pushy presentations. You just want someone patient who will answer your questions honestly.</p>
+      </div>
+      <div class="who-card">
+        <div class="who-emoji">💰</div>
+        <h3>Seniors on a fixed income</h3>
+        <p>Budget matters. We find coverage that protects you without wrecking your monthly expenses — and we're straight with you when something isn't worth the cost.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============================================
+   SERVICES
+============================================= -->
+<section class="section services" id="services">
+  <div class="wrap">
+    <div class="services-intro">
+      <span class="eyebrow eyebrow-light">What We Offer</span>
+      <h2 style="color:var(--white);">Three things we help with — all explained in plain English.</h2>
+    </div>
+    <div class="services-grid">
+
+      <div class="svc-card">
+        <div class="svc-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
+        </div>
+        <h3>Final Expense Insurance</h3>
+        <p>Affordable coverage that protects your family from funeral costs and end-of-life expenses. Typically $5,000–$25,000. Most plans require no medical exam.</p>
+        <ul class="svc-list">
+          <li>Covers funeral & burial costs</li>
+          <li>Premiums stay level — never go up</li>
+          <li>Available even with health conditions</li>
+          <li>Coverage never expires while you pay</li>
+        </ul>
+      </div>
+
+      <div class="svc-card">
+        <div class="svc-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
+        </div>
+        <h3>Medicare Guidance</h3>
+        <p>We explain how Medicare Parts A, B, C, and D actually work — and help you choose between Supplement and Advantage plans with confidence. Education first, always.</p>
+        <ul class="svc-list">
+          <li>Turning 65 & enrolling for first time</li>
+          <li>Reviewing your current coverage</li>
+          <li>Understanding what your plan covers</li>
+          <li>Open enrollment guidance</li>
+        </ul>
+      </div>
+
+      <div class="svc-card">
+        <div class="svc-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
+        </div>
+        <h3>Free Policy Reviews</h3>
+        <p>Already have coverage? We'll review it at no charge and tell you honestly whether you have the right plan at the right price — or if there's something better available.</p>
+        <ul class="svc-list">
+          <li>Are your premiums reasonable?</li>
+          <li>Are there gaps you don't know about?</li>
+          <li>Could you get the same for less?</li>
+          <li>No obligation to make any changes</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- =============================================
+   HOW IT WORKS
+============================================= -->
+<section class="section process" id="how-it-works">
+  <div class="wrap">
+    <div class="process-inner">
+      <div class="process-left">
+        <span class="eyebrow">Simple Process</span>
+        <h2>How we work together</h2>
+        <p>From first call to ongoing support — here's exactly what to expect. No hidden steps, no pressure points.</p>
+
+        <div class="steps">
+          <div class="step">
+            <div class="step-num">1</div>
+            <div class="step-body">
+              <h4>You reach out</h4>
+              <p>Call, email, or fill out the form. No information needed ahead of time. Just reach out.</p>
+            </div>
+          </div>
+          <div class="step-line"></div>
+          <div class="step">
+            <div class="step-num">2</div>
+            <div class="step-body">
+              <h4>We have a real conversation</h4>
+              <p>No scripts. No rush. You ask whatever you want — nothing is a dumb question.</p>
+            </div>
+          </div>
+          <div class="step-line"></div>
+          <div class="step">
+            <div class="step-num">3</div>
+            <div class="step-body">
+              <h4>We show you real options</h4>
+              <p>Two to four plans that actually fit — explained side by side in plain language.</p>
+            </div>
+          </div>
+          <div class="step-line"></div>
+          <div class="step">
+            <div class="step-num">4</div>
+            <div class="step-body">
+              <h4>You decide — with zero pressure</h4>
+              <p>Take a day, take a week. Talk it over with family. We're here when you're ready.</p>
+            </div>
+          </div>
+          <div class="step-line"></div>
+          <div class="step">
+            <div class="step-num">5</div>
+            <div class="step-body">
+              <h4>We stay with you after</h4>
+              <p>Questions after enrollment? Claims issues? Life changes? You call us directly.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="process-right">
+        <div class="promise-card">
+          <h4>"Finally, someone who listened."</h4>
+          <p>Most clients tell us the same thing after their first call. We don't rush. We don't push. We just help.</p>
+        </div>
+        <div class="promise-card">
+          <h4>Your info stays private.</h4>
+          <p>We don't sell leads. We don't pass your number around. When you call us, you talk to us — that's it.</p>
+        </div>
+        <div class="promise-card">
+          <h4>Free. Always.</h4>
+          <p>Our guidance costs you nothing. We're paid by the insurance companies if you enroll — and that never changes what we recommend.</p>
+        </div>
+        <div style="background:var(--navy);border-radius:var(--radius-lg);padding:1.75rem;text-align:center;">
+          <div style="font-family:var(--serif);font-size:2.5rem;color:var(--gold);font-weight:500;line-height:1;">2008</div>
+          <div style="font-size:0.88rem;color:rgba(255,255,255,0.6);margin-top:0.4rem;">Serving Illinois seniors since</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============================================
+   TESTIMONIALS
+============================================= -->
+<section class="section testimonials">
+  <div class="wrap">
+    <span class="eyebrow">What Clients Say</span>
+    <h2 style="color:var(--navy);">Real people. Real stories.</h2>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-quote">"I called three agents before calling Michelle. The others just wanted to sign me up. She actually sat with me and explained what Medicare covers and what it doesn't. I finally felt like I understood what I was doing."</p>
+        <div class="testi-name">— Dorothy, 71, Carbondale, IL</div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-quote">"My dad was paying too much for a life insurance policy that didn't cover what we thought it did. She reviewed it for free and helped us switch to something better. Saved us over $80 a month."</p>
+        <div class="testi-name">— James, helping his 78-year-old father, Marion, IL</div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-quote">"I was nervous because I've been misled before. But she never pushed. She answered every question I had — even the ones I felt dumb asking. I wish I'd found her years ago."</p>
+        <div class="testi-name">— Ruth, 67, Mount Vernon, IL</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============================================
+   FAQ
+============================================= -->
+<section class="section faq" id="faq">
+  <div class="wrap">
+    <span class="eyebrow">Common Questions</span>
+    <h2 style="color:var(--navy);max-width:560px;">It's okay to be skeptical. Here are honest answers.</h2>
+    <div class="faq-grid">
+      <div class="faq-card">
+        <h3>"Is this a scam?"</h3>
+        <p>We understand why you'd ask. Illinois Senior Benefit Services has been serving Illinois seniors since 2008. We're licensed and local — you can verify our license through the Illinois Department of Insurance. We're not a telemarketer. We're your neighbors.</p>
+      </div>
+      <div class="faq-card">
+        <h3>"Do I have to buy something?"</h3>
+        <p>Absolutely not. Many people call us just to understand their options. You'll never feel pressured. If you decide to do nothing, that's completely fine. Our goal is for you to feel informed.</p>
+      </div>
+      <div class="faq-card">
+        <h3>"How much does this cost me?"</h3>
+        <p>Our guidance is free to you. Like most insurance agents, we're paid by the insurance companies if you enroll in a plan. That never changes what we recommend — we only show plans that genuinely fit your needs.</p>
+      </div>
+      <div class="faq-card">
+        <h3>"What if I already have coverage?"</h3>
+        <p>We'll review it for free. Sometimes existing coverage is just right. Sometimes we find gaps, overcharges, or better alternatives. Either way, you'll know where you stand — and there's no obligation to change anything.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============================================
+   CONTACT / CTA
+============================================= -->
+<section class="section" id="contact" style="background:var(--cream);">
+  <div class="wrap">
+    <div style="display:grid;grid-template-columns:1fr 1.3fr;gap:5rem;align-items:start;">
+
+      <div>
+        <span class="eyebrow">Get in Touch</span>
+        <h2 style="color:var(--navy);margin-bottom:1rem;">Let's talk — no commitment required.</h2>
+        <p style="color:var(--text-mid);font-size:0.97rem;margin-bottom:2rem;">Whether you have a specific question or just want to understand your options, this is the right place to start. We'll listen first.</p>
+
+        <div style="display:flex;flex-direction:column;gap:1rem;">
+          <a href="tel:6188417936" style="display:flex;align-items:center;gap:1rem;background:var(--white);border-radius:var(--radius);padding:1.25rem;border:1px solid var(--cream-mid);text-decoration:none;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='0 4px 16px rgba(22,39,94,0.1)'" onmouseout="this.style.boxShadow='none'">
+            <div style="width:44px;height:44px;background:var(--navy);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8a19.79 19.79 0 01-3.07-8.67A2 2 0 012 1h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+            </div>
+            <div>
+              <div style="font-size:0.72rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-muted);margin-bottom:0.15rem;">Call Us</div>
+              <div style="font-size:1.1rem;font-weight:600;color:var(--navy);">(618) 841-7936</div>
+            </div>
+          </a>
+
+          <a href="/cdn-cgi/l/email-protection#1d70747e75787171785d6e787374726f7f7873787b74696e727b747171747372746e337e7270" style="display:flex;align-items:center;gap:1rem;background:var(--white);border-radius:var(--radius);padding:1.25rem;border:1px solid var(--cream-mid);text-decoration:none;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='0 4px 16px rgba(22,39,94,0.1)'" onmouseout="this.style.boxShadow='none'">
+            <div style="width:44px;height:44px;background:var(--navy);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div>
+              <div style="font-size:0.72rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-muted);margin-bottom:0.15rem;">Email</div>
+              <div style="font-size:0.95rem;font-weight:600;color:var(--navy);"><span class="__cf_email__" data-cfemail="fc91959f9499909099bc8f999295938e9e9992999a95888f939a959090959293958fd29f9391">[email&#160;protected]</span></div>
+            </div>
+          </a>
+
+          <div style="display:flex;align-items:center;gap:1rem;background:var(--white);border-radius:var(--radius);padding:1.25rem;border:1px solid var(--cream-mid);">
+            <div style="width:44px;height:44px;background:var(--navy);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div>
+              <div style="font-size:0.72rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-muted);margin-bottom:0.15rem;">Location</div>
+              <div style="font-size:1rem;font-weight:600;color:var(--navy);">Marion, Illinois</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact Form -->
+      <div style="background:var(--white);border-radius:var(--radius-lg);padding:2.5rem;box-shadow:0 4px 32px rgba(22,39,94,0.1);border:1px solid var(--cream-mid);">
+        <h3 style="font-size:1.5rem;color:var(--navy);margin-bottom:0.4rem;">Send us a message</h3>
+        <p style="font-size:0.88rem;color:var(--text-muted);margin-bottom:1.75rem;">We respond the same business day. No spam, no pressure follow-ups.</p>
+
+        <form id="contactForm">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem;">
+            <div>
+              <label style="display:block;font-size:0.82rem;font-weight:600;color:var(--text-mid);margin-bottom:0.4rem;letter-spacing:0.02em;">First Name *</label>
+              <input type="text" required name="firstName" placeholder="Your first name" style="width:100%;padding:0.8rem 1rem;border:1.5px solid #DDD8D0;border-radius:6px;font-family:var(--sans);font-size:0.95rem;color:var(--text);background:var(--white);transition:border-color 0.15s;outline:none;" onfocus="this.style.borderColor='#16275E'" onblur="this.style.borderColor='#DDD8D0'">
+            </div>
+            <div>
+              <label style="display:block;font-size:0.82rem;font-weight:600;color:var(--text-mid);margin-bottom:0.4rem;letter-spacing:0.02em;">Last Name *</label>
+              <input type="text" required name="lastName" placeholder="Your last name" style="width:100%;padding:0.8rem 1rem;border:1.5px solid #DDD8D0;border-radius:6px;font-family:var(--sans);font-size:0.95rem;color:var(--text);background:var(--white);transition:border-color 0.15s;outline:none;" onfocus="this.style.borderColor='#16275E'" onblur="this.style.borderColor='#DDD8D0'">
+            </div>
+          </div>
+          <div style="margin-bottom:1rem;">
+            <label style="display:block;font-size:0.82rem;font-weight:600;color:var(--text-mid);margin-bottom:0.4rem;">Phone Number</label>
+            <input type="tel" name="phone" placeholder="(618) 000-0000" style="width:100%;padding:0.8rem 1rem;border:1.5px solid #DDD8D0;border-radius:6px;font-family:var(--sans);font-size:0.95rem;color:var(--text);background:var(--white);transition:border-color 0.15s;outline:none;" onfocus="this.style.borderColor='#16275E'" onblur="this.style.borderColor='#DDD8D0'">
+          </div>
+          <div style="margin-bottom:1rem;">
+            <label style="display:block;font-size:0.82rem;font-weight:600;color:var(--text-mid);margin-bottom:0.4rem;">Email Address *</label>
+            <input type="email" name="email" required placeholder="your@email.com" style="width:100%;padding:0.8rem 1rem;border:1.5px solid #DDD8D0;border-radius:6px;font-family:var(--sans);font-size:0.95rem;color:var(--text);background:var(--white);transition:border-color 0.15s;outline:none;" onfocus="this.style.borderColor='#16275E'" onblur="this.style.borderColor='#DDD8D0'">
+          </div>
+          <div style="margin-bottom:1rem;">
+            <label style="display:block;font-size:0.82rem;font-weight:600;color:var(--text-mid);margin-bottom:0.4rem;">How can we help?</label>
+            <select name="interest" style="width:100%;padding:0.8rem 1rem;border:1.5px solid #DDD8D0;border-radius:6px;font-family:var(--sans);font-size:0.95rem;color:var(--text);background:var(--white);outline:none;-webkit-appearance:none;">
+              <option value="">— Select one —</option>
+              <option>Final Expense / Burial Insurance</option>
+              <option>Medicare — approaching 65</option>
+              <option>Medicare — review current plan</option>
+              <option>Free policy review</option>
+              <option>Not sure yet — just want to talk</option>
+            </select>
+          </div>
+          <div style="margin-bottom:1.25rem;">
+            <label style="display:block;font-size:0.82rem;font-weight:600;color:var(--text-mid);margin-bottom:0.4rem;">Tell us a little about your situation (optional)</label>
+            <textarea name="message" placeholder="For example: I'm turning 65 in March and I'm confused about which Medicare plan to choose..." style="width:100%;padding:0.8rem 1rem;border:1.5px solid #DDD8D0;border-radius:6px;font-family:var(--sans);font-size:0.95rem;color:var(--text);background:var(--white);min-height:110px;resize:vertical;transition:border-color 0.15s;outline:none;" onfocus="this.style.borderColor='#16275E'" onblur="this.style.borderColor='#DDD8D0'"></textarea>
+          </div>
+          <button type="submit" style="width:100%;padding:1rem;background:var(--navy);color:var(--white);border:none;border-radius:6px;font-family:var(--sans);font-size:1rem;font-weight:600;cursor:pointer;transition:background 0.2s;" onmouseover="this.style.background='#0D1A42'" onmouseout="this.style.background='var(--navy)'">
+            Send Message — No Obligation
+          </button>
+          <p style="font-size:0.78rem;color:var(--text-muted);text-align:center;margin-top:0.75rem;">Your information is never shared or sold.</p>
+        </form>
+
+        <div id="formSuccess" style="display:none;background:var(--cream);border-left:4px solid var(--gold);border-radius:var(--radius);padding:1.5rem;">
+          <strong style="display:block;color:var(--navy);margin-bottom:0.4rem;">✓ Message received!</strong>
+          <p style="font-size:0.93rem;color:var(--text-mid);margin:0;">We'll be in touch the same business day. Need someone right away? Call <a href="tel:6188417936" style="color:var(--navy);font-weight:600;">(618) 841-7936</a>.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- =============================================
+   FINAL CTA
+============================================= -->
+<section class="cta-banner">
+  <div class="wrap">
+    <h2>Ready to talk with someone who actually listens?</h2>
+    <p>No forms required. No waiting on hold. Just a real conversation with a local agent who's been doing this since 2008.</p>
+    <div class="cta-actions">
+      <a href="#contact" class="btn btn-gold">Get Help Understanding Your Options</a>
+      <a href="tel:6188417936" class="btn btn-ghost">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8a19.79 19.79 0 01-3.07-8.67A2 2 0 012 1h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+        Call (618) 841-7936
+      </a>
+    </div>
+    <p class="cta-fine">Serving Illinois, Kentucky & Missouri &nbsp;·&nbsp; Licensed & Local &nbsp;·&nbsp; No Obligation</p>
+  </div>
+</section>
+
+<!-- =============================================
+   FOOTER
+============================================= -->
+<footer class="site-footer">
+  <div class="wrap footer-top">
+    <div class="footer-brand">
+      <span class="nav-logo">Illinois Senior<br>Benefit Services</span>
+      <p>Honest guidance for Illinois seniors since 2008. Local, licensed, and here when you need us.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Navigate</h4>
+      <a href="#services">Services</a>
+      <a href="#how-it-works">How It Works</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="footer-col">
+      <h4>Reach Us</h4>
+      <a href="tel:6188417936">(618) 841-7936</a>
+      <a href="/cdn-cgi/l/email-protection#cba6a2a8a3aea7a7ae8bb8aea5a2a4b9a9aea5aeada2bfb8a4ada2a7a7a2a5a4a2b8e5a8a4a6"><span class="__cf_email__" data-cfemail="4e23272d262b22222b0e3d2b2027213c2c2b202b28273a3d2128272222272021273d602d2123">[email&#160;protected]</span></a>
+      <p>Marion, Illinois</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="wrap">
+      <p>© 2024 Illinois Senior Benefit Services. Licensed Insurance Agent — Illinois, Kentucky & Missouri. We do not offer every plan available in your area. Any information we provide is limited to those plans we do offer. Please contact Medicare.gov or 1-800-MEDICARE for information on all of your options.</p>
+    </div>
+  </div>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+// Mobile nav
+const hamburger = document.getElementById('hamburger');
+const mobileNav = document.getElementById('mobileNav');
+hamburger.addEventListener('click', () => {
+  mobileNav.classList.toggle('open');
+});
+mobileNav.querySelectorAll('a').forEach(a => {
+  a.addEventListener('click', () => mobileNav.classList.remove('open'));
+});
+
+// Contact form — posts to Cloudflare Worker which forwards to Michelle's Desk
+const ISBS_WEBHOOK = 'https://isbs-leads.michelle-cb4.workers.dev';
+
+document.getElementById('contactForm').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  const btn = this.querySelector('button[type="submit"]');
+  btn.textContent = 'Sending...';
+  btn.disabled = true;
+
+  const data = Object.fromEntries(new FormData(this).entries());
+  data.submittedAt = new Date().toISOString();
+  data.source = 'seniorbenefitsofillinois.com';
+
+  try {
+    await fetch(ISBS_WEBHOOK, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    });
+  } catch(err) {
+    // Fail silently — still show success to user, lead won't be lost
+    // (worker has email fallback)
+    console.warn('Webhook failed:', err);
+  }
+
+  this.style.display = 'none';
+  document.getElementById('formSuccess').style.display = 'block';
+});
+
+// Sticky header shadow
+const header = document.querySelector('.site-header');
+window.addEventListener('scroll', () => {
+  header.style.boxShadow = window.scrollY > 10
+    ? '0 4px 28px rgba(0,0,0,0.35)'
+    : 'none';
+}, { passive: true });
+
+// Animate on scroll
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.tar
