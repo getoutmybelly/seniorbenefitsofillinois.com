@@ -2,1342 +2,2489 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Illinois Senior Benefit Services – Local Medicare guidance and final expense insurance for Illinois seniors. No pressure. No jargon. Just honest help since 2008.">
-<meta name="keywords" content="final expense insurance Illinois, Medicare help Illinois, burial insurance Illinois, Medicare supplement Illinois, senior insurance Marion Illinois">
-<meta property="og:title" content="Illinois Senior Benefit Services">
-<meta property="og:description" content="Finally, someone who explains this without trying to sell you something.">
-<title>Illinois Senior Benefit Services | Medicare & Final Expense Help</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>Michelle's Desk</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<!-- Google auth handled via redirect -->
 <style>
-/* =============================================
-   ROOT & RESET
-============================================= */
-:root {
-  --navy: #16275E;
-  --navy-deep: #0D1A42;
-  --navy-mid: #1E3278;
-  --gold: #C9A84C;
-  --gold-light: #E3C97A;
-  --gold-pale: #F5EDD4;
-  --cream: #FAF7F2;
-  --cream-mid: #EDE8DF;
-  --white: #FFFFFF;
-  --text: #1A1A2E;
-  --text-mid: #3B3B55;
-  --text-muted: #6E6E88;
-  --serif: 'Cormorant Garamond', Georgia, serif;
-  --sans: 'DM Sans', system-ui, sans-serif;
-  --radius: 10px;
-  --radius-lg: 18px;
-}
-
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; font-size: 18px; }
-
-body {
-  font-family: var(--sans);
-  color: var(--text);
-  background: var(--white);
-  line-height: 1.7;
-  overflow-x: hidden;
-}
-
-a { text-decoration: none; color: inherit; }
-img { max-width: 100%; display: block; }
-p { margin-bottom: 1rem; }
-p:last-child { margin-bottom: 0; }
-
-/* =============================================
-   TYPOGRAPHY
-============================================= */
-h1,h2,h3,h4 { font-family: var(--serif); line-height: 1.2; }
-h1 { font-size: clamp(2.4rem, 5vw, 3.8rem); font-weight: 500; }
-h2 { font-size: clamp(2rem, 4vw, 3rem); font-weight: 500; }
-h3 { font-size: clamp(1.2rem, 2vw, 1.5rem); font-weight: 500; }
-
-/* =============================================
-   LAYOUT
-============================================= */
-.wrap { max-width: 1120px; margin: 0 auto; padding: 0 28px; }
-.section { padding: 96px 0; }
-.section-sm { padding: 64px 0; }
-
-.eyebrow {
-  font-family: var(--sans);
-  font-size: 0.72rem;
-  font-weight: 600;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--gold);
-  margin-bottom: 1rem;
-  display: block;
-}
-
-.eyebrow-light { color: var(--gold-light); }
-
-/* =============================================
-   BUTTONS
-============================================= */
-.btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 0.9rem 2rem;
-  border-radius: 6px;
-  font-family: var(--sans);
-  font-size: 0.95rem;
-  font-weight: 600;
-  cursor: pointer;
-  border: 2px solid transparent;
-  transition: all 0.2s ease;
-  white-space: nowrap;
-}
-
-.btn-gold {
-  background: var(--gold);
-  color: var(--navy-deep);
-  border-color: var(--gold);
-}
-.btn-gold:hover {
-  background: var(--gold-light);
-  border-color: var(--gold-light);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(201,168,76,0.3);
-}
-
-.btn-ghost {
-  background: transparent;
-  color: var(--white);
-  border-color: rgba(255,255,255,0.45);
-}
-.btn-ghost:hover {
-  background: rgba(255,255,255,0.08);
-  border-color: rgba(255,255,255,0.8);
-}
-
-.btn-navy {
-  background: var(--navy);
-  color: var(--white);
-  border-color: var(--navy);
-}
-.btn-navy:hover {
-  background: var(--navy-deep);
-  transform: translateY(-2px);
-}
-
-/* =============================================
-   HEADER
-============================================= */
-.site-header {
-  position: sticky;
-  top: 0;
-  z-index: 200;
-  background: var(--navy-deep);
-  border-bottom: 2px solid var(--gold);
-}
-
-.nav-wrap {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 74px;
-  gap: 2rem;
-}
-
-.nav-logo {
-  font-family: var(--serif);
-  font-size: 1.05rem;
-  font-weight: 500;
-  color: var(--gold);
-  line-height: 1.3;
-  flex-shrink: 0;
-}
-
-.nav-links {
-  display: flex;
-  align-items: center;
-  gap: 0.25rem;
-  list-style: none;
-}
-
-.nav-links a {
-  font-size: 0.9rem;
-  font-weight: 500;
-  color: rgba(255,255,255,0.78);
-  padding: 0.5rem 0.9rem;
-  border-radius: 6px;
-  transition: all 0.15s;
-}
-.nav-links a:hover { color: var(--gold); background: rgba(201,168,76,0.1); }
-
-.nav-phone {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 0.88rem;
-  font-weight: 600;
-  color: var(--gold);
-  padding: 0.55rem 1.1rem;
-  border: 1.5px solid var(--gold);
-  border-radius: 6px;
-  transition: all 0.15s;
-  white-space: nowrap;
-  flex-shrink: 0;
-}
-.nav-phone:hover { background: var(--gold); color: var(--navy-deep); }
-
-.hamburger {
-  display: none;
-  flex-direction: column;
-  gap: 5px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 6px;
-}
-.hamburger span {
-  display: block;
-  width: 22px;
-  height: 2px;
-  background: var(--gold);
-  border-radius: 2px;
-  transition: all 0.2s;
-}
-
-.mobile-nav {
-  display: none;
-  background: var(--navy-deep);
-  border-top: 1px solid rgba(201,168,76,0.2);
-  padding: 1rem 0;
-}
-.mobile-nav.open { display: block; }
-.mobile-nav a {
-  display: block;
-  padding: 0.75rem 28px;
-  color: rgba(255,255,255,0.8);
-  font-weight: 500;
-  font-size: 1rem;
-  transition: color 0.15s;
-}
-.mobile-nav a:hover { color: var(--gold); }
-.mobile-nav .mob-phone {
-  display: block;
-  margin: 0.75rem 28px 0;
-  padding: 0.75rem 1.25rem;
-  background: var(--gold);
-  color: var(--navy-deep);
-  font-weight: 700;
-  border-radius: 6px;
-  text-align: center;
-}
-
-/* =============================================
-   HERO
-============================================= */
-.hero {
-  background: var(--navy);
-  position: relative;
-  overflow: hidden;
-  padding: 100px 0 90px;
-}
-
-.hero::before {
-  content: '';
-  position: absolute;
-  top: -20%;
-  right: -10%;
-  width: 600px;
-  height: 600px;
-  background: radial-gradient(circle, rgba(201,168,76,0.07) 0%, transparent 65%);
-  pointer-events: none;
-}
-
-.hero::after {
-  content: '';
-  position: absolute;
-  bottom: -10%;
-  left: -5%;
-  width: 400px;
-  height: 400px;
-  background: radial-gradient(circle, rgba(255,255,255,0.03) 0%, transparent 65%);
-  pointer-events: none;
-}
-
-.hero-grid {
-  display: grid;
-  grid-template-columns: 1fr 380px;
-  gap: 5rem;
-  align-items: center;
-  position: relative;
-}
-
-.hero-tag {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: rgba(201,168,76,0.12);
-  border: 1px solid rgba(201,168,76,0.3);
-  color: var(--gold-light);
-  font-size: 0.78rem;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  padding: 0.4rem 1rem;
-  border-radius: 100px;
-  margin-bottom: 1.5rem;
-}
-
-.hero h1 {
-  color: var(--white);
-  margin-bottom: 1.5rem;
-}
-
-.hero h1 em {
-  font-style: italic;
-  color: var(--gold);
-}
-
-.hero-sub {
-  font-size: 1.1rem;
-  color: rgba(255,255,255,0.75);
-  max-width: 540px;
-  margin-bottom: 2.5rem;
-}
-
-.hero-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  margin-bottom: 2rem;
-}
-
-.hero-trust {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.5rem;
-}
-
-.trust-pill {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 0.82rem;
-  color: rgba(255,255,255,0.5);
-}
-
-.trust-dot {
-  width: 6px;
-  height: 6px;
-  background: var(--gold);
-  border-radius: 50%;
-  flex-shrink: 0;
-}
-
-/* Hero card stack */
-.hero-cards {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.hero-card {
-  background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(201,168,76,0.2);
-  border-radius: var(--radius-lg);
-  padding: 1.4rem 1.6rem;
-  display: flex;
-  gap: 1rem;
-  align-items: flex-start;
-  transition: border-color 0.2s;
-}
-.hero-card:hover { border-color: rgba(201,168,76,0.45); }
-
-.hc-check {
-  flex-shrink: 0;
-  width: 28px;
-  height: 28px;
-  background: var(--gold);
-  color: var(--navy-deep);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.8rem;
-  font-weight: 800;
-  margin-top: 2px;
-}
-
-.hc-text h4 {
-  font-family: var(--sans);
-  font-size: 0.95rem;
-  font-weight: 600;
-  color: var(--white);
-  margin-bottom: 0.2rem;
-}
-
-.hc-text p {
-  font-size: 0.85rem;
-  color: rgba(255,255,255,0.58);
-  margin: 0;
-}
-
-/* =============================================
-   WHO WE HELP
-============================================= */
-.who { background: var(--cream); }
-
-.who-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 1.5rem;
-  margin-top: 3rem;
-}
-
-.who-card {
-  background: var(--white);
-  border-radius: var(--radius-lg);
-  padding: 2rem 1.75rem;
-  border-left: 4px solid var(--gold);
-  box-shadow: 0 2px 16px rgba(22,39,94,0.06);
-  transition: transform 0.2s, box-shadow 0.2s;
-}
-.who-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 32px rgba(22,39,94,0.1);
-}
-
-.who-emoji { font-size: 1.8rem; margin-bottom: 1rem; line-height: 1; }
-
-.who-card h3 {
-  font-size: 1.15rem;
-  color: var(--navy);
-  margin-bottom: 0.6rem;
-}
-
-.who-card p {
-  font-size: 0.93rem;
-  color: var(--text-mid);
-  margin: 0;
-}
-
-/* =============================================
-   SERVICES
-============================================= */
-.services { background: var(--navy); }
-
-.services-intro {
-  max-width: 600px;
-  margin-bottom: 3.5rem;
-}
-
-.services-intro h2 { color: var(--white); }
-
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1.5rem;
-}
-
-.svc-card {
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(201,168,76,0.18);
-  border-radius: var(--radius-lg);
-  padding: 2.25rem 2rem;
-  transition: all 0.2s;
-  cursor: default;
-}
-.svc-card:hover {
-  background: rgba(255,255,255,0.08);
-  border-color: rgba(201,168,76,0.4);
-  transform: translateY(-4px);
-}
-
-.svc-icon {
-  width: 52px;
-  height: 52px;
-  background: rgba(201,168,76,0.12);
-  border: 1px solid rgba(201,168,76,0.25);
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 1.5rem;
-  color: var(--gold);
-}
-
-.svc-card h3 {
-  color: var(--white);
-  font-size: 1.3rem;
-  margin-bottom: 0.75rem;
-}
-
-.svc-card p {
-  font-size: 0.93rem;
-  color: rgba(255,255,255,0.65);
-  margin-bottom: 1.5rem;
-}
-
-.svc-list {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-}
-.svc-list li {
-  font-size: 0.88rem;
-  color: rgba(255,255,255,0.55);
-  padding-left: 1.25rem;
-  position: relative;
-}
-.svc-list li::before {
-  content: '✓';
-  position: absolute;
-  left: 0;
-  color: var(--gold);
-  font-weight: 700;
-}
-
-/* =============================================
-   PROCESS
-============================================= */
-.process { background: var(--white); }
-
-.process-inner {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 6rem;
-  align-items: start;
-}
-
-.process-left h2 { color: var(--navy); margin-bottom: 1rem; }
-.process-left p { color: var(--text-mid); font-size: 0.97rem; margin-bottom: 2rem; }
-
-.steps {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-}
-
-.step {
-  display: flex;
-  gap: 1.5rem;
-  align-items: flex-start;
-}
-
-.step-num {
-  flex-shrink: 0;
-  width: 48px;
-  height: 48px;
-  background: var(--navy);
-  color: var(--gold);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--serif);
-  font-size: 1.3rem;
-  font-weight: 500;
-  margin-top: 2px;
-}
-
-.step-body h4 {
-  font-family: var(--sans);
-  font-size: 1rem;
-  font-weight: 600;
-  color: var(--navy);
-  margin-bottom: 0.3rem;
-}
-
-.step-body p {
-  font-size: 0.9rem;
-  color: var(--text-mid);
-  margin: 0;
-}
-
-.step-line {
-  width: 2px;
-  height: 28px;
-  background: var(--gold);
-  opacity: 0.3;
-  margin-left: 23px;
-}
-
-.process-right {
-  display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
-  padding-top: 1rem;
-}
-
-.promise-card {
-  background: var(--cream);
-  border-radius: var(--radius-lg);
-  padding: 1.75rem;
-  border-top: 3px solid var(--navy);
-}
-
-.promise-card h4 {
-  font-family: var(--serif);
-  font-size: 1.2rem;
-  color: var(--navy);
-  margin-bottom: 0.5rem;
-}
-
-.promise-card p {
-  font-size: 0.92rem;
-  color: var(--text-mid);
-  margin: 0;
-}
-
-/* =============================================
-   TESTIMONIALS
-============================================= */
-.testimonials { background: var(--cream-mid); }
-
-.testi-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
-  margin-top: 3rem;
-}
-
-.testi-card {
-  background: var(--white);
-  border-radius: var(--radius-lg);
-  padding: 2rem 1.75rem;
-  box-shadow: 0 2px 16px rgba(22,39,94,0.07);
-  position: relative;
-}
-
-.testi-stars {
-  color: var(--gold);
-  font-size: 1rem;
-  letter-spacing: 3px;
-  margin-bottom: 1rem;
-}
-
-.testi-quote {
-  font-family: var(--serif);
-  font-size: 1.08rem;
-  color: var(--text-mid);
-  font-style: italic;
-  line-height: 1.7;
-  margin-bottom: 1.5rem;
-}
-
-.testi-name {
-  font-size: 0.82rem;
-  font-weight: 600;
-  color: var(--navy);
-  letter-spacing: 0.04em;
-}
-
-/* =============================================
-   FAQ
-============================================= */
-.faq { background: var(--white); }
-
-.faq-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1.5rem;
-  margin-top: 3rem;
-}
-
-.faq-card {
-  background: var(--cream);
-  border-radius: var(--radius-lg);
-  padding: 1.75rem;
-  border-top: 3px solid var(--navy);
-}
-
-.faq-card h3 {
-  font-family: var(--serif);
-  font-size: 1.15rem;
-  color: var(--navy);
-  margin-bottom: 0.75rem;
-}
-
-.faq-card p {
-  font-size: 0.92rem;
-  color: var(--text-mid);
-  margin: 0;
-}
-
-/* =============================================
-   CTA BANNER
-============================================= */
-.cta-banner {
-  background: var(--navy-deep);
-  padding: 96px 0;
-  text-align: center;
-  border-top: 3px solid var(--gold);
-}
-
-.cta-banner h2 {
-  color: var(--white);
-  font-size: clamp(2rem, 4vw, 3rem);
-  margin-bottom: 1rem;
-}
-
-.cta-banner > .wrap > p {
-  color: rgba(255,255,255,0.68);
-  font-size: 1.1rem;
-  max-width: 560px;
-  margin: 0 auto 2.5rem;
-}
-
-.cta-actions {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1rem;
-  margin-bottom: 1.5rem;
-}
-
-.cta-fine {
-  font-size: 0.82rem;
-  color: rgba(255,255,255,0.35);
-}
-
-/* =============================================
-   FOOTER
-============================================= */
-.site-footer {
-  background: #090F28;
-  color: var(--white);
-}
-
-.footer-top {
-  display: grid;
-  grid-template-columns: 2fr 1fr 1.5fr;
-  gap: 4rem;
-  padding: 4rem 0 3rem;
-}
-
-.footer-brand .nav-logo {
-  font-size: 1.2rem;
-  display: block;
-  margin-bottom: 1rem;
-}
-
-.footer-brand p {
-  font-size: 0.9rem;
-  color: rgba(255,255,255,0.45);
-  max-width: 280px;
-  margin: 0;
-}
-
-.footer-col h4 {
-  font-family: var(--sans);
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--gold);
-  margin-bottom: 1.25rem;
-}
-
-.footer-col a {
-  display: block;
-  font-size: 0.9rem;
-  color: rgba(255,255,255,0.55);
-  margin-bottom: 0.6rem;
-  transition: color 0.15s;
-}
-.footer-col a:hover { color: var(--gold-light); }
-
-.footer-col p {
-  font-size: 0.9rem;
-  color: rgba(255,255,255,0.45);
-  margin-top: 0.4rem;
-}
-
-.footer-bottom {
-  border-top: 1px solid rgba(255,255,255,0.07);
-  padding: 1.5rem 0;
-}
-
-.footer-bottom p {
-  font-size: 0.76rem;
-  color: rgba(255,255,255,0.28);
-  line-height: 1.7;
-}
-
-/* =============================================
-   SECTION TITLE UTIL
-============================================= */
-.section-head { margin-bottom: 3rem; }
-.section-head h2 { color: var(--navy); }
-.section-head p {
-  font-size: 1rem;
-  color: var(--text-mid);
-  max-width: 580px;
-  margin-top: 0.75rem;
-}
-
-/* =============================================
-   RESPONSIVE
-============================================= */
-@media (max-width: 960px) {
-  .hero-grid { grid-template-columns: 1fr; }
-  .hero-cards { display: none; }
-  .process-inner { grid-template-columns: 1fr; gap: 3rem; }
-  .footer-top { grid-template-columns: 1fr 1fr; gap: 2.5rem; }
-  .footer-brand { grid-column: 1 / -1; }
-}
-
-@media (max-width: 680px) {
-  html { font-size: 16px; }
-  .section { padding: 64px 0; }
-  .nav-links { display: none; }
-  .nav-phone { display: none; }
-  .hamburger { display: flex; }
-  .hero { padding: 72px 0 64px; }
-  .hero-actions { flex-direction: column; }
-  .hero-actions .btn { width: 100%; justify-content: center; }
-  .cta-actions { flex-direction: column; align-items: center; }
-  .cta-actions .btn { width: 100%; max-width: 380px; justify-content: center; }
-  .footer-top { grid-template-columns: 1fr; gap: 2rem; }
-}
-
-/* =============================================
-   ANIMATIONS
-============================================= */
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(24px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-.fade-up {
-  opacity: 0;
-  animation: fadeUp 0.6s ease forwards;
-}
-.delay-1 { animation-delay: 0.1s; }
-.delay-2 { animation-delay: 0.2s; }
-.delay-3 { animation-delay: 0.3s; }
-.delay-4 { animation-delay: 0.4s; }
+  @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&display=swap');
+  :root {
+    --ink:#1a1a2e; --paper:#faf8f5; --cream:#f2ede6; --sage:#5c7a6b; --sage-light:#e8f0ec;
+    --rust:#c4501a; --rust-light:#fdf0eb; --gold:#b8923a; --gold-light:#fdf6e8;
+    --green:#2d7a4f; --green-light:#e8f5ee; --blue:#2a4da0; --blue-light:#e8f0fd;
+    --border:#ddd8d0; --muted:#7a7570; --shadow:0 2px 12px rgba(26,26,46,.08); --shadow-md:0 4px 24px rgba(26,26,46,.12);
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);min-height:100vh;font-size:16px;line-height:1.5;}
+  .header{background:var(--ink);padding:16px 22px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;}
+  .header-title{font-family:'DM Serif Display',serif;color:var(--paper);font-size:20px;}
+  .header-sub{color:var(--gold);font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;margin-top:1px;}
+  .header-right{display:flex;align-items:center;gap:8px;flex-shrink:0;}
+  .badge{background:var(--sage);color:#fff;font-size:11px;font-weight:600;padding:4px 10px;border-radius:20px;display:none;}
+  .hdr-btn{background:rgba(255,255,255,.12);border:none;color:#fff;padding:6px 13px;border-radius:20px;font-family:'DM Sans',sans-serif;font-size:12px;font-weight:500;cursor:pointer;display:none;transition:background .2s;white-space:nowrap;}
+  .hdr-btn:hover{background:rgba(255,255,255,.22);}
+  .last-sync{font-size:10px;color:rgba(255,255,255,.35);margin-top:1px;}
+  .main{max-width:900px;margin:0 auto;padding:22px 18px;}
+
+  .signin-prompt{background:white;border:1.5px solid var(--border);border-radius:16px;padding:36px 24px;text-align:center;margin-bottom:24px;}
+  .signin-prompt.hidden{display:none;}
+  .signin-icon{font-size:36px;margin-bottom:12px;}
+  .signin-title{font-family:'DM Serif Display',serif;font-size:22px;margin-bottom:8px;}
+  .signin-sub{color:var(--muted);font-size:14px;margin-bottom:24px;line-height:1.6;}
+  .signin-note{font-size:12px;color:var(--muted);margin-top:14px;}
+
+  .loading-state{text-align:center;padding:64px 24px;display:none;}
+  .loading-spinner{width:38px;height:38px;border:3px solid var(--border);border-top-color:var(--sage);border-radius:50%;animation:spin .8s linear infinite;margin:0 auto 14px;}
+  @keyframes spin{to{transform:rotate(360deg);}}
+  .loading-title{font-family:'DM Serif Display',serif;font-size:19px;margin-bottom:6px;}
+  .loading-sub{color:var(--muted);font-size:13px;}
+
+  .error-state{background:var(--rust-light);border:1.5px solid var(--rust);border-radius:14px;padding:22px;margin-bottom:22px;display:none;}
+  .error-title{font-weight:600;color:var(--rust);margin-bottom:5px;}
+  .error-msg{font-size:13px;color:var(--ink);}
+  .retry-btn{margin-top:12px;background:var(--rust);color:#fff;border:none;padding:9px 20px;border-radius:8px;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;cursor:pointer;}
+
+  .search-section{display:none;margin-bottom:14px;}
+  .search-section.visible{display:block;}
+  .search-label{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:7px;display:block;}
+  .search-wrap{position:relative;}
+  .search-icon{position:absolute;left:13px;top:50%;transform:translateY(-50%);font-size:17px;color:var(--muted);pointer-events:none;}
+  .search-input{width:100%;padding:13px 13px 13px 42px;border:2px solid var(--border);border-radius:12px;font-family:'DM Sans',sans-serif;font-size:16px;background:#fff;color:var(--ink);outline:none;transition:border-color .2s;}
+  .search-input:focus{border-color:var(--sage);}
+
+  .client-list{display:none;flex-direction:column;gap:7px;max-height:340px;overflow-y:auto;margin-bottom:18px;padding-right:3px;}
+  .client-list.visible{display:flex;}
+  .client-card{background:#fff;border:1.5px solid var(--border);border-radius:11px;padding:12px 15px;cursor:pointer;display:flex;align-items:center;justify-content:space-between;transition:all .15s;}
+  .client-card:hover{border-color:var(--sage);background:var(--sage-light);transform:translateX(2px);}
+  .client-name{font-weight:600;font-size:15px;}
+  .client-meta{font-size:12px;color:var(--muted);margin-top:2px;}
+  .pills{display:flex;gap:4px;flex-wrap:wrap;justify-content:flex-end;}
+  .pill{font-size:11px;font-weight:600;padding:3px 8px;border-radius:20px;letter-spacing:.03em;white-space:nowrap;}
+  .pill-stop{background:var(--rust-light);color:var(--rust);}
+  .pill-cx{background:#fde8f5;color:#8b2460;}
+  .pill-surr{background:var(--gold-light);color:var(--gold);}
+  .pill-visits{background:var(--blue-light);color:var(--blue);}
+  .pill-due{background:#fff3e0;color:#e65100;}
+
+  .detail-panel{display:none;background:#fff;border-radius:16px;border:1.5px solid var(--border);overflow:hidden;box-shadow:var(--shadow-md);margin-bottom:22px;}
+  .detail-panel.visible{display:block;}
+  .detail-header{background:var(--ink);padding:17px 20px;display:flex;align-items:flex-start;justify-content:space-between;gap:12px;}
+  .detail-name{font-family:'DM Serif Display',serif;font-size:23px;color:#fff;line-height:1.2;}
+  .detail-sub{color:var(--gold);font-size:13px;font-weight:500;margin-top:3px;}
+  .close-btn{background:rgba(255,255,255,.15);border:none;color:#fff;width:32px;height:32px;border-radius:50%;font-size:17px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+  .close-btn:hover{background:rgba(255,255,255,.28);}
+  .detail-body{padding:17px 20px;}
+
+  .visit-label{font-size:11px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);margin-bottom:7px;}
+  .visit-tabs{display:flex;gap:5px;margin-bottom:14px;flex-wrap:wrap;}
+  .visit-tab{padding:5px 13px;border-radius:20px;border:1.5px solid var(--border);font-size:12px;font-weight:500;cursor:pointer;background:#fff;color:var(--muted);transition:all .15s;font-family:'DM Sans',sans-serif;}
+  .visit-tab.active{background:var(--ink);color:#fff;border-color:var(--ink);}
+
+  .info-grid{display:grid;grid-template-columns:1fr 1fr;gap:11px 18px;margin-bottom:14px;}
+  @media(max-width:540px){.info-grid,.coverage-row,.followup-grid,.action-row{grid-template-columns:1fr!important;}}
+  .info-item label{display:block;font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);margin-bottom:2px;}
+  .info-item span{font-size:14px;color:var(--ink);}
+  .info-item span.empty{color:#ccc;font-style:italic;font-size:12px;}
+  .info-full{grid-column:1/-1;}
+
+  .coverage-row{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-bottom:14px;}
+  .cov-block{background:var(--cream);border-radius:9px;padding:11px 13px;}
+  .cov-block.new{background:var(--sage-light);}
+  .cov-title{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);margin-bottom:5px;}
+  .cov-block.new .cov-title{color:var(--sage);}
+  .cov-line{font-size:13px;color:var(--ink);margin-bottom:2px;}
+  .cov-line b{font-weight:600;}
+
+  .actions-section{border-top:1.5px solid var(--cream);padding-top:14px;}
+  .actions-title{font-size:11px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);margin-bottom:10px;}
+
+  /* ACTION BLOCKS — one per action type */
+  .action-block{border:1.5px solid var(--border);border-radius:12px;padding:13px 15px;margin-bottom:10px;}
+  .action-block.stop{border-color:var(--rust);}
+  .action-block.cx{border-color:#8b2460;}
+  .action-block.surr{border-color:var(--gold);}
+  .action-block-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;}
+  .action-block-title{font-weight:600;font-size:14px;display:flex;align-items:center;gap:7px;}
+  .action-block.stop .action-block-title{color:var(--rust);}
+  .action-block.cx .action-block-title{color:#8b2460;}
+  .action-block.surr .action-block-title{color:var(--gold);}
+  .action-block-status{font-size:12px;font-weight:600;padding:3px 10px;border-radius:20px;}
+  .status-pending{background:var(--rust-light);color:var(--rust);}
+  .status-done{background:var(--green-light);color:var(--green);}
+  .action-block-body{display:flex;flex-direction:column;gap:8px;}
+  .action-row{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+
+  .action-btn{display:flex;align-items:center;gap:8px;padding:10px 13px;border-radius:9px;border:1.5px solid;cursor:pointer;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;background:#fff;transition:all .15s;width:100%;}
+  .btn-generate-stop{border-color:var(--rust);color:var(--rust);}
+  .btn-generate-stop:hover{background:var(--rust-light);}
+  .btn-generate-surr{border-color:var(--gold);color:var(--gold);}
+  .btn-generate-surr:hover{background:var(--gold-light);}
+  .btn-cal{border-color:var(--blue);color:var(--blue);}
+  .btn-cal:hover{background:var(--blue-light);}
+  .btn-sent{border-color:var(--green);color:var(--green);}
+  .btn-sent:hover{background:var(--green-light);}
+  .btn-sent.done{background:var(--green-light);opacity:.7;cursor:default;}
+  .btn-sent.loading{opacity:.5;pointer-events:none;}
+
+  /* Due date input */
+  .due-row{display:flex;align-items:center;gap:8px;}
+  .due-label{font-size:12px;font-weight:600;color:var(--muted);white-space:nowrap;}
+  .due-input{flex:1;padding:7px 10px;border:1.5px solid var(--border);border-radius:8px;font-family:'DM Sans',sans-serif;font-size:13px;color:var(--ink);background:#fff;outline:none;}
+  .due-input:focus{border-color:var(--sage);}
+  .due-save-btn{padding:7px 13px;border-radius:8px;border:1.5px solid var(--sage);color:var(--sage);background:#fff;font-family:'DM Sans',sans-serif;font-size:12px;font-weight:600;cursor:pointer;white-space:nowrap;}
+  .due-save-btn:hover{background:var(--sage-light);}
+
+  .notes-box{background:var(--cream);border-radius:9px;padding:11px 13px;font-size:13px;color:var(--muted);margin-top:10px;line-height:1.6;}
+  .notes-box b{color:var(--ink);}
+
+  .dashboard-section{display:none;margin-top:4px;}
+  .dashboard-section.visible{display:block;}
+  .section-divider{display:flex;align-items:center;gap:11px;margin-bottom:14px;}
+  .section-divider h2{font-family:'DM Serif Display',serif;font-size:19px;white-space:nowrap;}
+  .divider-line{flex:1;height:1px;background:var(--border);}
+  .stats-row{display:flex;gap:9px;margin-bottom:18px;flex-wrap:wrap;}
+  .stat-box{background:#fff;border:1.5px solid var(--border);border-radius:9px;padding:11px 14px;flex:1;min-width:80px;}
+  .stat-number{font-family:'DM Serif Display',serif;font-size:24px;color:var(--ink);line-height:1;}
+  .stat-label{font-size:11px;color:var(--muted);font-weight:500;margin-top:2px;}
+  .stat-box.alert{border-color:var(--rust);}
+  .stat-box.alert .stat-number{color:var(--rust);}
+  .followup-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-bottom:22px;}
+  .followup-card{background:#fff;border:1.5px solid var(--border);border-radius:11px;padding:13px;cursor:pointer;transition:all .15s;}
+  .followup-card:hover{border-color:var(--rust);transform:translateY(-1px);box-shadow:var(--shadow);}
+  .followup-name{font-weight:600;font-size:14px;}
+  .followup-meta{font-size:12px;color:var(--muted);margin-top:2px;}
+  .followup-tags{display:flex;gap:4px;flex-wrap:wrap;margin-top:7px;}
+  .no-results{text-align:center;padding:28px;color:var(--muted);font-size:14px;}
+
+  .toast{position:fixed;bottom:22px;left:50%;transform:translateX(-50%) translateY(20px);background:var(--ink);color:#fff;padding:10px 20px;border-radius:50px;font-size:13px;font-weight:500;opacity:0;transition:all .3s;z-index:999;pointer-events:none;white-space:nowrap;}
+  .toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
+  .client-list::-webkit-scrollbar{width:3px;}
+  .client-list::-webkit-scrollbar-track{background:var(--cream);}
+  .client-list::-webkit-scrollbar-thumb{background:var(--border);border-radius:2px;}
+  /* LEAD SCANNER */
+  .scanner-section{display:none;margin-bottom:22px;}
+  .scanner-section.visible{display:block;}
+  .scanner-box{background:#fff;border:1.5px solid var(--border);border-radius:16px;overflow:hidden;box-shadow:var(--shadow);}
+  .scanner-header{background:var(--ink);padding:14px 20px;display:flex;align-items:center;justify-content:space-between;}
+  .scanner-title{font-family:'DM Serif Display',serif;color:#fff;font-size:18px;}
+  .scanner-close{background:rgba(255,255,255,.15);border:none;color:#fff;width:30px;height:30px;border-radius:50%;font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;}
+  .scanner-body{padding:20px;}
+  .drop-zone{border:2px dashed var(--border);border-radius:12px;padding:32px 20px;text-align:center;cursor:pointer;transition:all .2s;margin-bottom:16px;}
+  .drop-zone:hover,.drop-zone.dragover{border-color:var(--sage);background:var(--sage-light);}
+  .drop-zone-icon{font-size:32px;margin-bottom:8px;}
+  .drop-zone-text{font-size:14px;color:var(--muted);}
+  .drop-zone-text b{color:var(--ink);}
+  .scanner-preview{display:none;margin-bottom:16px;}
+  .scanner-preview img{max-width:100%;border-radius:8px;border:1px solid var(--border);}
+  .scanner-reading{display:none;text-align:center;padding:24px;color:var(--muted);}
+  .scanner-spinner{width:32px;height:32px;border:3px solid var(--border);border-top-color:var(--sage);border-radius:50%;animation:spin .8s linear infinite;margin:0 auto 10px;}
+  .lead-form{display:none;}
+  .lead-form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px;}
+  .lead-field label{display:block;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);margin-bottom:4px;}
+  .lead-field input{width:100%;padding:9px 12px;border:1.5px solid var(--border);border-radius:8px;font-family:'DM Sans',sans-serif;font-size:14px;color:var(--ink);outline:none;transition:border-color .2s;}
+  .lead-field input:focus{border-color:var(--sage);}
+  .lead-field.full{grid-column:1/-1;}
+  .lead-save-btn{width:100%;padding:13px;background:var(--sage);color:#fff;border:none;border-radius:10px;font-family:'DM Sans',sans-serif;font-size:15px;font-weight:600;cursor:pointer;transition:background .2s;}
+  .lead-save-btn:hover{background:#4a6558;}
+  .lead-save-btn:disabled{opacity:.5;cursor:default;}
+  .scan-new-btn{width:100%;padding:10px;background:#fff;color:var(--muted);border:1.5px solid var(--border);border-radius:10px;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;cursor:pointer;margin-top:8px;}
+  /* COMMISSION TRACKER */
+  .comm-section{display:none;margin-bottom:22px;}
+  .comm-section.visible{display:block;}
+  .comm-box{background:#fff;border:1.5px solid var(--border);border-radius:16px;overflow:hidden;box-shadow:var(--shadow);}
+  .comm-header{background:var(--ink);padding:14px 20px;display:flex;align-items:center;justify-content:space-between;}
+  .comm-title{font-family:'DM Serif Display',serif;color:#fff;font-size:18px;}
+  .comm-close{background:rgba(255,255,255,.15);border:none;color:#fff;width:30px;height:30px;border-radius:50%;font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;}
+  .comm-body{padding:20px;}
+  .comm-drop{border:2px dashed var(--border);border-radius:12px;padding:28px 20px;text-align:center;cursor:pointer;transition:all .2s;margin-bottom:16px;}
+  .comm-drop:hover{border-color:var(--gold);background:var(--gold-light);}
+  .comm-drop-icon{font-size:28px;margin-bottom:8px;}
+  .comm-reading{display:none;text-align:center;padding:24px;color:var(--muted);}
+  .comm-spinner{width:32px;height:32px;border:3px solid var(--border);border-top-color:var(--gold);border-radius:50%;animation:spin .8s linear infinite;margin:0 auto 10px;}
+  .comm-results{display:none;}
+  .comm-summary{display:flex;gap:10px;margin-bottom:16px;flex-wrap:wrap;}
+  .comm-stat{background:var(--cream);border-radius:10px;padding:10px 14px;flex:1;min-width:80px;text-align:center;}
+  .comm-stat-num{font-family:'DM Serif Display',serif;font-size:22px;color:var(--ink);}
+  .comm-stat-label{font-size:11px;color:var(--muted);font-weight:500;}
+  .comm-stat.warn{background:var(--rust-light);}
+  .comm-stat.warn .comm-stat-num{color:var(--rust);}
+  .comm-stat.good{background:var(--green-light);}
+  .comm-stat.good .comm-stat-num{color:var(--green);}
+  .comm-table{width:100%;border-collapse:collapse;font-size:13px;margin-bottom:16px;}
+  .comm-table th{background:var(--cream);padding:8px 10px;text-align:left;font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);}
+  .comm-table td{padding:9px 10px;border-bottom:1px solid var(--cream);}
+  .comm-table tr:hover td{background:var(--cream);}
+  .status-matched{color:var(--green);font-weight:600;}
+  .status-missing{color:var(--rust);font-weight:600;}
+  .status-unmatched{color:var(--gold);font-weight:600;}
+  .comm-scan-new{width:100%;padding:10px;background:#fff;color:var(--muted);border:1.5px solid var(--border);border-radius:10px;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:500;cursor:pointer;margin-top:8px;}
+  /* COMMISSION HISTORY */
+  .comm-history{margin-top:16px;border-top:1.5px solid var(--cream);padding-top:14px;}
+  .comm-history-title{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);margin-bottom:10px;}
+  .comm-history-row{display:flex;align-items:center;justify-content:space-between;padding:9px 12px;background:var(--cream);border-radius:8px;margin-bottom:6px;font-size:13px;}
+  .comm-history-carrier{font-weight:600;color:var(--ink);}
+  .comm-history-amount{font-weight:700;color:var(--green);}
+  .comm-history-meta{font-size:11px;color:var(--muted);}
+  .comm-ytd{background:var(--ink);color:#fff;border-radius:10px;padding:12px 16px;margin-bottom:12px;display:flex;align-items:center;justify-content:space-between;}
+  .comm-ytd-label{font-size:12px;color:rgba(255,255,255,.6);font-weight:500;}
+  .comm-ytd-amount{font-family:'DM Serif Display',serif;font-size:26px;color:var(--gold);}
+  /* NEARBY MAP */
+  .map-section{display:none;margin-bottom:22px;}
+  .map-section.visible{display:block;}
+  .map-box{background:#fff;border:1.5px solid var(--border);border-radius:16px;overflow:hidden;box-shadow:var(--shadow);}
+  .map-header{background:var(--ink);padding:14px 20px;display:flex;align-items:center;justify-content:space-between;}
+  .map-title{font-family:'DM Serif Display',serif;color:#fff;font-size:18px;}
+  .map-close{background:rgba(255,255,255,.15);border:none;color:#fff;width:30px;height:30px;border-radius:50%;font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;}
+  .map-body{padding:16px;}
+  .map-controls{display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap;align-items:center;}
+  .map-radius-btn{padding:6px 14px;border-radius:20px;border:1.5px solid var(--border);font-size:12px;font-weight:600;cursor:pointer;background:#fff;color:var(--muted);font-family:'DM Sans',sans-serif;transition:all .15s;}
+  .map-radius-btn.active{background:var(--ink);color:#fff;border-color:var(--ink);}
+  .map-iframe{width:100%;height:400px;border:none;border-radius:10px;background:var(--cream);}
+  .nearby-list{max-height:320px;overflow-y:auto;margin-top:12px;}
+  .nearby-card{display:flex;align-items:center;justify-content:space-between;padding:10px 12px;border:1.5px solid var(--border);border-radius:10px;margin-bottom:6px;cursor:pointer;transition:all .15s;}
+  .nearby-card:hover{border-color:var(--sage);background:var(--sage-light);}
+  .nearby-name{font-weight:600;font-size:14px;}
+  .nearby-addr{font-size:12px;color:var(--muted);margin-top:1px;}
+  .nearby-dist{font-size:12px;font-weight:600;color:var(--blue);white-space:nowrap;}
+  .map-locating{text-align:center;padding:32px;color:var(--muted);}
+  /* DOOR KNOCK & PIPELINE STATUS */
+  .pipeline-tabs{display:flex;gap:6px;margin-bottom:14px;flex-wrap:wrap;}
+  .pipeline-tab{padding:6px 14px;border-radius:20px;border:1.5px solid var(--border);font-size:12px;font-weight:600;cursor:pointer;background:#fff;color:var(--muted);font-family:'DM Sans',sans-serif;transition:all .15s;display:flex;align-items:center;gap:5px;}
+  .pipeline-tab.active{background:var(--ink);color:#fff;border-color:var(--ink);}
+  .pipeline-tab:hover:not(.active){border-color:var(--sage);color:var(--sage);}
+  .pipeline-tab .tab-count{background:rgba(0,0,0,.15);border-radius:20px;padding:1px 7px;font-size:10px;}
+  .pipeline-tab.active .tab-count{background:rgba(255,255,255,.2);}
+  .door-knock-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-bottom:16px;}
+  .door-knock-card{background:#fff;border:1.5px solid var(--border);border-radius:11px;padding:13px;cursor:pointer;transition:all .15s;}
+  .door-knock-card:hover{border-color:var(--sage);transform:translateY(-1px);box-shadow:var(--shadow);}
+  .door-knock-name{font-weight:600;font-size:14px;}
+  .door-knock-meta{font-size:12px;color:var(--muted);margin-top:2px;}
+  .door-knock-actions{display:flex;gap:6px;margin-top:8px;}
+  .dk-btn{padding:5px 11px;border-radius:20px;border:1.5px solid;font-size:11px;font-weight:600;cursor:pointer;background:#fff;font-family:'DM Sans',sans-serif;text-decoration:none;display:inline-flex;align-items:center;}
+  .dk-call{border-color:var(--green);color:var(--green);}
+  .dk-dir{border-color:var(--blue);color:var(--blue);}
+  .dk-view{border-color:var(--border);color:var(--muted);}
+  /* FOLLOW-UP VISIT */
+  .followup-visit-block{background:var(--blue-light);border:1.5px solid var(--blue);border-radius:12px;padding:13px 15px;margin-bottom:10px;}
+  .followup-visit-title{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--blue);margin-bottom:10px;}
+  .reason-chips{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px;}
+  .reason-chip{padding:5px 11px;border-radius:20px;border:1.5px solid var(--blue);font-size:12px;font-weight:500;cursor:pointer;background:#fff;color:var(--blue);font-family:'DM Sans',sans-serif;transition:all .15s;}
+  .reason-chip.selected{background:var(--blue);color:#fff;}
+  .reason-chip:hover:not(.selected){background:var(--blue-light);}
+  /* ANNIVERSARY OUTREACH */
+  .anniv-card{background:#fff;border:1.5px solid var(--border);border-radius:12px;padding:14px;transition:all .15s;}
+  .anniv-card:hover{border-color:var(--gold);box-shadow:var(--shadow);}
+  .anniv-name{font-weight:600;font-size:14px;}
+  .anniv-meta{font-size:12px;color:var(--muted);margin-top:2px;}
+  .anniv-date{font-size:12px;font-weight:600;color:var(--gold);margin-top:5px;}
+  .anniv-actions{display:flex;gap:6px;margin-top:10px;flex-wrap:wrap;}
+  .anniv-btn{padding:6px 12px;border-radius:20px;border:1.5px solid;font-size:12px;font-weight:600;cursor:pointer;background:#fff;font-family:'DM Sans',sans-serif;transition:all .15s;text-decoration:none;display:inline-flex;align-items:center;gap:4px;}
+  .anniv-btn-call{border-color:var(--green);color:var(--green);}
+  .anniv-btn-call:hover{background:var(--green-light);}
+  .anniv-btn-email{border-color:var(--blue);color:var(--blue);}
+  .anniv-btn-email:hover{background:var(--blue-light);}
+  .anniv-btn-view{border-color:var(--border);color:var(--muted);}
+  .anniv-btn-view:hover{background:var(--cream);}
+  /* REPEAT CLIENT ALERT */
+  .repeat-alert{background:linear-gradient(135deg,#1a1a2e,#2a1a4e);border-radius:12px;padding:14px 16px;margin-bottom:14px;display:flex;align-items:center;gap:12px;}
+  .repeat-alert-icon{font-size:24px;flex-shrink:0;}
+  .repeat-alert-text{flex:1;}
+  .repeat-alert-title{font-weight:700;color:#fff;font-size:15px;}
+  .repeat-alert-sub{font-size:12px;color:rgba(255,255,255,.6);margin-top:2px;}
+  .repeat-alert-btn{background:var(--gold);color:#fff;border:none;padding:7px 14px;border-radius:20px;font-family:'DM Sans',sans-serif;font-size:12px;font-weight:700;cursor:pointer;white-space:nowrap;}
+  /* BRIEFING CARD */
+  .briefing-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:200;align-items:center;justify-content:center;padding:20px;}
+  .briefing-overlay.visible{display:flex;}
+  .briefing-modal{background:#fff;border-radius:18px;max-width:520px;width:100%;max-height:85vh;overflow-y:auto;box-shadow:0 20px 60px rgba(0,0,0,.3);}
+  .briefing-header{background:var(--ink);padding:18px 22px;border-radius:18px 18px 0 0;display:flex;align-items:flex-start;justify-content:space-between;}
+  .briefing-badge{background:var(--gold);color:#fff;font-size:11px;font-weight:700;padding:3px 10px;border-radius:20px;margin-bottom:6px;display:inline-block;}
+  .briefing-name{font-family:'DM Serif Display',serif;font-size:22px;color:#fff;}
+  .briefing-sub{font-size:12px;color:rgba(255,255,255,.5);margin-top:3px;}
+  .briefing-close{background:rgba(255,255,255,.15);border:none;color:#fff;width:32px;height:32px;border-radius:50%;font-size:17px;cursor:pointer;flex-shrink:0;}
+  .briefing-body{padding:20px 22px;}
+  .briefing-section{margin-bottom:16px;}
+  .briefing-section-title{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-bottom:8px;}
+  .briefing-highlight{background:linear-gradient(135deg,var(--gold-light),#fff8e8);border:1.5px solid var(--gold);border-radius:10px;padding:12px 14px;font-size:13px;line-height:1.6;color:var(--ink);margin-bottom:14px;}
+  .briefing-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px 16px;}
+  .briefing-item label{display:block;font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:1px;}
+  .briefing-item span{font-size:13px;color:var(--ink);}
+  .briefing-visit{background:var(--cream);border-radius:8px;padding:10px 12px;margin-bottom:6px;font-size:12px;}
+  .briefing-visit-date{font-weight:700;color:var(--ink);}
+  .briefing-visit-detail{color:var(--muted);margin-top:2px;}
+  .briefing-print-btn{width:100%;padding:12px;background:var(--ink);color:#fff;border:none;border-radius:10px;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;cursor:pointer;margin-top:4px;}
+  .anniv-badge{display:inline-block;padding:2px 8px;border-radius:20px;font-size:10px;font-weight:700;margin-left:6px;}
+  /* DASHBOARD TABS */
+  .dash-tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:18px;padding-bottom:14px;border-bottom:1.5px solid var(--border);}
+  .dash-tab{padding:8px 14px;border-radius:22px;border:1.5px solid var(--border);font-size:12px;font-weight:600;cursor:pointer;background:#fff;color:var(--muted);font-family:'DM Sans',sans-serif;transition:all .15s;white-space:nowrap;display:flex;align-items:center;gap:5px;}
+  .dash-tab.active{background:var(--ink);color:#fff;border-color:var(--ink);}
+  .dash-tab:hover:not(.active){border-color:var(--sage);color:var(--sage);}
+  .dash-tab .tab-badge{background:var(--rust);color:#fff;border-radius:20px;padding:1px 6px;font-size:10px;font-weight:700;}
+  .dash-tab.active .tab-badge{background:rgba(255,255,255,.25);}
+  .dash-panel{display:none;}
+  .dash-panel.active{display:block;}
+  .anniv-today{background:var(--gold-light);color:var(--gold);}
+  .anniv-soon{background:var(--rust-light);color:var(--rust);}
+  .anniv-upcoming{background:#e8f0fd;color:var(--blue);}
+
+
+  .modal-overlay{position:fixed;inset:0;background:rgba(26,26,46,.7);z-index:200;display:flex;align-items:flex-start;justify-content:center;padding:20px;overflow-y:auto;}
+  .modal-overlay.hidden{display:none;}
+  .modal{background:#fff;border-radius:18px;width:100%;max-width:600px;overflow:hidden;box-shadow:0 8px 40px rgba(26,26,46,.25);margin:auto;}
+  .modal-header{background:var(--ink);padding:18px 22px;display:flex;align-items:center;justify-content:space-between;}
+  .modal-title{font-family:'DM Serif Display',serif;color:#fff;font-size:20px;}
+  .modal-close{background:rgba(255,255,255,.15);border:none;color:#fff;width:32px;height:32px;border-radius:50%;font-size:17px;cursor:pointer;display:flex;align-items:center;justify-content:center;}
+  .modal-body{padding:22px;}
+  .upload-zone{border:2px dashed var(--border);border-radius:12px;padding:32px 20px;text-align:center;cursor:pointer;transition:all .2s;margin-bottom:16px;background:var(--cream);}
+  .upload-zone:hover,.upload-zone.drag{border-color:var(--sage);background:var(--sage-light);}
+  .upload-icon{font-size:32px;margin-bottom:8px;}
+  .upload-title{font-weight:600;font-size:15px;margin-bottom:4px;}
+  .upload-sub{font-size:13px;color:var(--muted);}
+  .upload-input{display:none;}
+  .scan-preview{width:100%;border-radius:10px;margin-bottom:14px;border:1.5px solid var(--border);display:none;}
+  .scan-processing{text-align:center;padding:28px;display:none;}
+  .scan-spinner{width:32px;height:32px;border:3px solid var(--border);border-top-color:var(--gold);border-radius:50%;animation:spin .8s linear infinite;margin:0 auto 12px;}
+  .scan-result{display:none;}
+  .scan-fields{display:grid;grid-template-columns:1fr 1fr;gap:10px 16px;margin-bottom:16px;}
+  .scan-field label{display:block;font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);margin-bottom:3px;}
+  .scan-field input,.scan-field select{width:100%;padding:9px 11px;border:1.5px solid var(--border);border-radius:8px;font-family:'DM Sans',sans-serif;font-size:14px;color:var(--ink);background:#fff;outline:none;}
+  .scan-field input:focus{border-color:var(--sage);}
+  .scan-field.full{grid-column:1/-1;}
+  .scan-actions{display:flex;gap:10px;margin-top:6px;}
+  .btn-save-lead{flex:1;padding:13px;background:var(--sage);color:#fff;border:none;border-radius:10px;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;cursor:pointer;}
+  .btn-save-lead:hover{background:#4a6659;}
+  .btn-save-lead:disabled{opacity:.5;pointer-events:none;}
+  .btn-rescan{padding:13px 18px;background:#fff;color:var(--muted);border:1.5px solid var(--border);border-radius:10px;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:500;cursor:pointer;}
+  /* CALL SCRIPT OVERLAY */
+  .script-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.65);z-index:300;align-items:flex-end;justify-content:center;padding:0;}
+  .script-overlay.visible{display:flex;}
+  .script-modal{background:#fff;border-radius:20px 20px 0 0;max-width:560px;width:100%;max-height:88vh;overflow-y:auto;box-shadow:0 -8px 40px rgba(0,0,0,.3);padding-bottom:env(safe-area-inset-bottom);}
+  .script-header{background:var(--ink);padding:16px 20px;border-radius:20px 20px 0 0;display:flex;align-items:flex-start;justify-content:space-between;position:sticky;top:0;z-index:1;}
+  .script-badge{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;padding:3px 10px;border-radius:20px;margin-bottom:5px;display:inline-block;}
+  .script-badge.lead{background:var(--rust);color:#fff;}
+  .script-badge.client{background:var(--sage);color:#fff;}
+  .script-badge.birthday{background:var(--rust-light);color:var(--rust);}
+  .script-badge.medicare{background:var(--green-light);color:var(--green);}
+  .script-badge.followup{background:var(--blue-light);color:var(--blue);}
+  .script-badge.doorknock{background:var(--gold-light);color:var(--gold);}
+  .script-name{font-family:'DM Serif Display',serif;font-size:20px;color:#fff;}
+  .script-close{background:rgba(255,255,255,.15);border:none;color:#fff;width:32px;height:32px;border-radius:50%;font-size:17px;cursor:pointer;flex-shrink:0;display:flex;align-items:center;justify-content:center;}
+  .script-type-tabs{display:flex;gap:6px;padding:14px 18px 0;flex-wrap:wrap;}
+  .script-type-tab{padding:5px 13px;border-radius:20px;border:1.5px solid var(--border);font-size:12px;font-weight:600;cursor:pointer;background:#fff;color:var(--muted);font-family:'DM Sans',sans-serif;transition:all .15s;}
+  .script-type-tab.active{background:var(--ink);color:#fff;border-color:var(--ink);}
+  .script-body{padding:16px 20px 12px;}
+  .script-tip{background:var(--gold-light);border-left:3px solid var(--gold);border-radius:0 8px 8px 0;padding:10px 13px;font-size:12px;color:var(--ink);margin-bottom:14px;line-height:1.6;}
+  .script-tip b{color:var(--gold);}
+  .script-text{background:var(--cream);border-radius:12px;padding:16px;font-size:14px;line-height:1.8;color:var(--ink);margin-bottom:14px;white-space:pre-wrap;}
+  .script-text .hi{color:var(--sage);font-weight:700;}
+  .script-text .blank{background:var(--gold-light);border-radius:4px;padding:1px 6px;color:var(--gold);font-weight:600;}
+  .script-dial-btn{width:100%;padding:16px;background:var(--green);color:#fff;border:none;border-radius:12px;font-family:'DM Serif Display',serif;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:10px;text-decoration:none;margin-bottom:8px;}
+  .script-dial-btn:hover{background:#256b43;}
+  .script-skip-btn{width:100%;padding:11px;background:#fff;color:var(--muted);border:1.5px solid var(--border);border-radius:12px;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:500;cursor:pointer;}
 </style>
 </head>
 <body>
 
-<!-- =============================================
-   HEADER
-============================================= -->
-<header class="site-header">
-  <div class="wrap nav-wrap">
-    <a href="#" class="nav-logo">Illinois Senior<br>Benefit Services</a>
-    <nav>
-      <ul class="nav-links">
-        <li><a href="#services">Services</a></li>
-        <li><a href="#how-it-works">How It Works</a></li>
-        <li><a href="#faq">FAQ</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-    <a href="tel:6188417936" class="nav-phone">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8a19.79 19.79 0 01-3.07-8.67A2 2 0 012 1h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
-      (618) 841-7936
-    </a>
-    <button class="hamburger" id="hamburger" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
+<div class="header">
+  <div>
+    <div class="header-title">Michelle's Desk</div>
+    <div class="header-sub">Insurance Paperwork Tool</div>
+    <div class="last-sync" id="lastSync"></div>
   </div>
-  <nav class="mobile-nav" id="mobileNav">
-    <a href="#services">Services</a>
-    <a href="#how-it-works">How It Works</a>
-    <a href="#faq">FAQ</a>
-    <a href="#contact">Contact</a>
-    <a href="tel:6188417936" class="mob-phone">Call (618) 841-7936</a>
-  </nav>
-</header>
+  <div class="header-right">
+    <button id="commBtn" onclick="openCommTracker()" style="display:none;background:rgba(184,146,58,.35);border:none;color:#fff;padding:6px 13px;border-radius:20px;font-family:'DM Sans',sans-serif;font-size:12px;font-weight:600;cursor:pointer;white-space:nowrap">💰 Commission</button>
+    <button id="mapBtn" onclick="openNearbyMap()" style="display:none;background:rgba(42,77,160,.4);border:none;color:#fff;padding:6px 13px;border-radius:20px;font-family:'DM Sans',sans-serif;font-size:12px;font-weight:600;cursor:pointer;white-space:nowrap">🗺 Nearby</button>
+    <button id="fexBtn" onclick="openFexLeads()" style="display:none;background:rgba(45,122,79,.5);border:none;color:#fff;padding:6px 13px;border-radius:20px;font-family:'DM Sans',sans-serif;font-size:12px;font-weight:600;cursor:pointer;white-space:nowrap">📬 FEX Leads</button>
+    <button id="scanBtn" onclick="openScanner()" style="display:none;background:rgba(184,146,58,.35);border:none;color:#fff;padding:6px 13px;border-radius:20px;font-family:'DM Sans',sans-serif;font-size:12px;font-weight:600;cursor:pointer;white-space:nowrap">📋 New Lead</button>
+    <button class="hdr-btn" id="refreshBtn" onclick="loadFromSheets()">↻ Refresh</button>
+    <div class="badge" id="badge"></div>
+  </div>
+</div>
 
-<!-- =============================================
-   HERO
-============================================= -->
-<section class="hero">
-  <div class="wrap hero-grid">
-    <div>
-      <div class="hero-tag">
-        <span style="width:6px;height:6px;background:var(--gold);border-radius:50%;display:inline-block;"></span>
-        Serving Illinois Seniors Since 2008
-      </div>
-      <h1 class="fade-up">
-        Finally, someone who explains this<br>
-        <em>without trying to sell you something.</em>
-      </h1>
-      <p class="hero-sub fade-up delay-1">
-        We help Illinois seniors and their families understand Medicare, final expense coverage, and senior benefits — in plain English, with no pressure, and no obligation to buy.
-      </p>
-      <div class="hero-actions fade-up delay-2">
-        <a href="#contact" class="btn btn-gold">Get Help Understanding Your Options</a>
-        <a href="tel:6188417936" class="btn btn-ghost">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8a19.79 19.79 0 01-3.07-8.67A2 2 0 012 1h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
-          Schedule a Free Call
-        </a>
-      </div>
-      <div class="hero-trust fade-up delay-3">
-        <span class="trust-pill"><span class="trust-dot"></span>No obligation</span>
-        <span class="trust-pill"><span class="trust-dot"></span>No pressure</span>
-        <span class="trust-pill"><span class="trust-dot"></span>Local Illinois agent</span>
-        <span class="trust-pill"><span class="trust-dot"></span>Licensed & verified</span>
-      </div>
-    </div>
+<div class="main">
+  <div class="signin-prompt" id="signinPrompt">
+    <div class="signin-icon">🔐</div>
+    <div class="signin-title">Sign in to get started</div>
+    <div class="signin-sub">Sign in with the Google account that owns the spreadsheet.<br>This lets the tool read your clients, mark items sent, and add calendar reminders.</div>
+    <button id="googleSignInBtn" onclick="if(window.signIn){window.signIn()}else{setTimeout(function(){window.signIn&&window.signIn()},500)}" style="display:inline-flex;align-items:center;gap:10px;padding:12px 24px;border:1.5px solid #dadce0;border-radius:50px;background:#fff;font-family:'DM Sans',sans-serif;font-size:15px;font-weight:500;color:#3c4043;cursor:pointer;box-shadow:0 1px 3px rgba(0,0,0,.12)"><img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" style="width:20px;height:20px"> Sign in with Google</button>
+    <div class="signin-note">Your data stays in your Google account. Nothing is stored elsewhere.</div>
+  </div>
 
-    <div class="hero-cards fade-up delay-2">
-      <div class="hero-card">
-        <div class="hc-check">✓</div>
-        <div class="hc-text">
-          <h4>We educate first.</h4>
-          <p>You'll understand exactly what you're looking at before any decision is made.</p>
-        </div>
-      </div>
-      <div class="hero-card">
-        <div class="hc-check">✓</div>
-        <div class="hc-text">
-          <h4>We match to your budget.</h4>
-          <p>No pushing plans that don't fit. We find what actually works for you.</p>
-        </div>
-      </div>
-      <div class="hero-card">
-        <div class="hc-check">✓</div>
-        <div class="hc-text">
-          <h4>We stay available after.</h4>
-          <p>Our relationship doesn't end when you enroll. Call us anytime.</p>
-        </div>
-      </div>
-      <div class="hero-card">
-        <div class="hc-check">✓</div>
-        <div class="hc-text">
-          <h4>30+ plans to compare.</h4>
-          <p>We shop across carriers to find the best fit — not just what pays us most.</p>
-        </div>
-      </div>
+  <div class="loading-state" id="loadingState">
+    <div class="loading-spinner"></div>
+    <div class="loading-title">Loading your clients…</div>
+    <div class="loading-sub">Pulling from Google Sheets</div>
+  </div>
+
+  <div class="error-state" id="errorState">
+    <div class="error-title">Couldn't load data</div>
+    <div class="error-msg" id="errorMsg"></div>
+    <button class="retry-btn" onclick="loadFromSheets()">Try Again</button>
+  </div>
+
+  <div class="search-section" id="searchSection">
+    <label class="search-label">Find a Client</label>
+    <div class="search-wrap">
+      <span class="search-icon">🔍</span>
+      <input class="search-input" id="searchInput" type="text" placeholder="Name, city, or policy number…" autocomplete="off" autocorrect="off" spellcheck="false">
     </div>
   </div>
-</section>
 
-<!-- =============================================
-   WHO WE HELP
-============================================= -->
-<section class="section who">
-  <div class="wrap">
-    <span class="eyebrow" style="color:var(--gold);">Who We Help</span>
-    <h2 style="color:var(--navy);max-width:560px;">If any of this sounds familiar, you're in the right place.</h2>
-    <div class="who-grid">
-      <div class="who-card">
-        <div class="who-emoji">🧓</div>
-        <h3>Seniors approaching Medicare age</h3>
-        <p>You're turning 65 and the mail is piling up. Everyone's got a plan to sell you. We'll help you cut through the noise and actually understand your choices.</p>
-      </div>
-      <div class="who-card">
-        <div class="who-emoji">👨‍👩‍👦</div>
-        <h3>Families helping aging parents</h3>
-        <p>You're trying to help Mom or Dad get the right coverage, but the jargon is confusing and you don't know who to trust. We'll walk through it together.</p>
-      </div>
-      <div class="who-card">
-        <div class="who-emoji">💬</div>
-        <h3>People who've been confused before</h3>
-        <p>You've gotten conflicting advice. You've sat through pushy presentations. You just want someone patient who will answer your questions honestly.</p>
-      </div>
-      <div class="who-card">
-        <div class="who-emoji">💰</div>
-        <h3>Seniors on a fixed income</h3>
-        <p>Budget matters. We find coverage that protects you without wrecking your monthly expenses — and we're straight with you when something isn't worth the cost.</p>
-      </div>
-    </div>
-  </div>
-</section>
+  <div class="client-list" id="clientList"></div>
 
-<!-- =============================================
-   SERVICES
-============================================= -->
-<section class="section services" id="services">
-  <div class="wrap">
-    <div class="services-intro">
-      <span class="eyebrow eyebrow-light">What We Offer</span>
-      <h2 style="color:var(--white);">Three things we help with — all explained in plain English.</h2>
-    </div>
-    <div class="services-grid">
-
-      <div class="svc-card">
-        <div class="svc-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
-        </div>
-        <h3>Final Expense Insurance</h3>
-        <p>Affordable coverage that protects your family from funeral costs and end-of-life expenses. Typically $5,000–$25,000. Most plans require no medical exam.</p>
-        <ul class="svc-list">
-          <li>Covers funeral & burial costs</li>
-          <li>Premiums stay level — never go up</li>
-          <li>Available even with health conditions</li>
-          <li>Coverage never expires while you pay</li>
-        </ul>
-      </div>
-
-      <div class="svc-card">
-        <div class="svc-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg>
-        </div>
-        <h3>Medicare Guidance</h3>
-        <p>We explain how Medicare Parts A, B, C, and D actually work — and help you choose between Supplement and Advantage plans with confidence. Education first, always.</p>
-        <ul class="svc-list">
-          <li>Turning 65 & enrolling for first time</li>
-          <li>Reviewing your current coverage</li>
-          <li>Understanding what your plan covers</li>
-          <li>Open enrollment guidance</li>
-        </ul>
-      </div>
-
-      <div class="svc-card">
-        <div class="svc-icon">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>
-        </div>
-        <h3>Free Policy Reviews</h3>
-        <p>Already have coverage? We'll review it at no charge and tell you honestly whether you have the right plan at the right price — or if there's something better available.</p>
-        <ul class="svc-list">
-          <li>Are your premiums reasonable?</li>
-          <li>Are there gaps you don't know about?</li>
-          <li>Could you get the same for less?</li>
-          <li>No obligation to make any changes</li>
-        </ul>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- =============================================
-   HOW IT WORKS
-============================================= -->
-<section class="section process" id="how-it-works">
-  <div class="wrap">
-    <div class="process-inner">
-      <div class="process-left">
-        <span class="eyebrow">Simple Process</span>
-        <h2>How we work together</h2>
-        <p>From first call to ongoing support — here's exactly what to expect. No hidden steps, no pressure points.</p>
-
-        <div class="steps">
-          <div class="step">
-            <div class="step-num">1</div>
-            <div class="step-body">
-              <h4>You reach out</h4>
-              <p>Call, email, or fill out the form. No information needed ahead of time. Just reach out.</p>
-            </div>
-          </div>
-          <div class="step-line"></div>
-          <div class="step">
-            <div class="step-num">2</div>
-            <div class="step-body">
-              <h4>We have a real conversation</h4>
-              <p>No scripts. No rush. You ask whatever you want — nothing is a dumb question.</p>
-            </div>
-          </div>
-          <div class="step-line"></div>
-          <div class="step">
-            <div class="step-num">3</div>
-            <div class="step-body">
-              <h4>We show you real options</h4>
-              <p>Two to four plans that actually fit — explained side by side in plain language.</p>
-            </div>
-          </div>
-          <div class="step-line"></div>
-          <div class="step">
-            <div class="step-num">4</div>
-            <div class="step-body">
-              <h4>You decide — with zero pressure</h4>
-              <p>Take a day, take a week. Talk it over with family. We're here when you're ready.</p>
-            </div>
-          </div>
-          <div class="step-line"></div>
-          <div class="step">
-            <div class="step-num">5</div>
-            <div class="step-body">
-              <h4>We stay with you after</h4>
-              <p>Questions after enrollment? Claims issues? Life changes? You call us directly.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="process-right">
-        <div class="promise-card">
-          <h4>"Finally, someone who listened."</h4>
-          <p>Most clients tell us the same thing after their first call. We don't rush. We don't push. We just help.</p>
-        </div>
-        <div class="promise-card">
-          <h4>Your info stays private.</h4>
-          <p>We don't sell leads. We don't pass your number around. When you call us, you talk to us — that's it.</p>
-        </div>
-        <div class="promise-card">
-          <h4>Free. Always.</h4>
-          <p>Our guidance costs you nothing. We're paid by the insurance companies if you enroll — and that never changes what we recommend.</p>
-        </div>
-        <div style="background:var(--navy);border-radius:var(--radius-lg);padding:1.75rem;text-align:center;">
-          <div style="font-family:var(--serif);font-size:2.5rem;color:var(--gold);font-weight:500;line-height:1;">2008</div>
-          <div style="font-size:0.88rem;color:rgba(255,255,255,0.6);margin-top:0.4rem;">Serving Illinois seniors since</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- =============================================
-   TESTIMONIALS
-============================================= -->
-<section class="section testimonials">
-  <div class="wrap">
-    <span class="eyebrow">What Clients Say</span>
-    <h2 style="color:var(--navy);">Real people. Real stories.</h2>
-    <div class="testi-grid">
-      <div class="testi-card">
-        <div class="testi-stars">★★★★★</div>
-        <p class="testi-quote">"I called three agents before calling Michelle. The others just wanted to sign me up. She actually sat with me and explained what Medicare covers and what it doesn't. I finally felt like I understood what I was doing."</p>
-        <div class="testi-name">— Dorothy, 71, Carbondale, IL</div>
-      </div>
-      <div class="testi-card">
-        <div class="testi-stars">★★★★★</div>
-        <p class="testi-quote">"My dad was paying too much for a life insurance policy that didn't cover what we thought it did. She reviewed it for free and helped us switch to something better. Saved us over $80 a month."</p>
-        <div class="testi-name">— James, helping his 78-year-old father, Marion, IL</div>
-      </div>
-      <div class="testi-card">
-        <div class="testi-stars">★★★★★</div>
-        <p class="testi-quote">"I was nervous because I've been misled before. But she never pushed. She answered every question I had — even the ones I felt dumb asking. I wish I'd found her years ago."</p>
-        <div class="testi-name">— Ruth, 67, Mount Vernon, IL</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- =============================================
-   FAQ
-============================================= -->
-<section class="section faq" id="faq">
-  <div class="wrap">
-    <span class="eyebrow">Common Questions</span>
-    <h2 style="color:var(--navy);max-width:560px;">It's okay to be skeptical. Here are honest answers.</h2>
-    <div class="faq-grid">
-      <div class="faq-card">
-        <h3>"Is this a scam?"</h3>
-        <p>We understand why you'd ask. Illinois Senior Benefit Services has been serving Illinois seniors since 2008. We're licensed and local — you can verify our license through the Illinois Department of Insurance. We're not a telemarketer. We're your neighbors.</p>
-      </div>
-      <div class="faq-card">
-        <h3>"Do I have to buy something?"</h3>
-        <p>Absolutely not. Many people call us just to understand their options. You'll never feel pressured. If you decide to do nothing, that's completely fine. Our goal is for you to feel informed.</p>
-      </div>
-      <div class="faq-card">
-        <h3>"How much does this cost me?"</h3>
-        <p>Our guidance is free to you. Like most insurance agents, we're paid by the insurance companies if you enroll in a plan. That never changes what we recommend — we only show plans that genuinely fit your needs.</p>
-      </div>
-      <div class="faq-card">
-        <h3>"What if I already have coverage?"</h3>
-        <p>We'll review it for free. Sometimes existing coverage is just right. Sometimes we find gaps, overcharges, or better alternatives. Either way, you'll know where you stand — and there's no obligation to change anything.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- =============================================
-   CONTACT / CTA
-============================================= -->
-<section class="section" id="contact" style="background:var(--cream);">
-  <div class="wrap">
-    <div style="display:grid;grid-template-columns:1fr 1.3fr;gap:5rem;align-items:start;">
-
+  <div class="detail-panel" id="detailPanel">
+    <div class="detail-header">
       <div>
-        <span class="eyebrow">Get in Touch</span>
-        <h2 style="color:var(--navy);margin-bottom:1rem;">Let's talk — no commitment required.</h2>
-        <p style="color:var(--text-mid);font-size:0.97rem;margin-bottom:2rem;">Whether you have a specific question or just want to understand your options, this is the right place to start. We'll listen first.</p>
+        <div class="detail-name" id="detailName"></div>
+        <div class="detail-sub" id="detailSub"></div>
+      </div>
+      <button class="close-btn" onclick="closeDetail()">✕</button>
+    </div>
+    <div class="detail-body" id="detailBody"></div>
+  </div>
 
-        <div style="display:flex;flex-direction:column;gap:1rem;">
-          <a href="tel:6188417936" style="display:flex;align-items:center;gap:1rem;background:var(--white);border-radius:var(--radius);padding:1.25rem;border:1px solid var(--cream-mid);text-decoration:none;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='0 4px 16px rgba(22,39,94,0.1)'" onmouseout="this.style.boxShadow='none'">
-            <div style="width:44px;height:44px;background:var(--navy);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8a19.79 19.79 0 01-3.07-8.67A2 2 0 012 1h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
-            </div>
-            <div>
-              <div style="font-size:0.72rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-muted);margin-bottom:0.15rem;">Call Us</div>
-              <div style="font-size:1.1rem;font-weight:600;color:var(--navy);">(618) 841-7936</div>
-            </div>
-          </a>
+  <!-- FEX LEADS IMPORTER -->
+  <div id="fexSection" style="display:none;margin-bottom:22px">
+    <div style="background:#fff;border:1.5px solid var(--border);border-radius:16px;overflow:hidden;box-shadow:var(--shadow)">
+      <div style="background:var(--ink);padding:14px 20px;display:flex;align-items:center;justify-content:space-between">
+        <div style="font-family:'DM Serif Display',serif;color:#fff;font-size:18px">📬 FEX Lead Import</div>
+        <button onclick="closeFexLeads()" style="background:rgba(255,255,255,.15);border:none;color:#fff;width:30px;height:30px;border-radius:50%;font-size:16px;cursor:pointer">✕</button>
+      </div>
+      <div style="padding:20px" id="fexBody">
+        <div style="text-align:center;padding:20px">
+          <div style="font-size:32px;margin-bottom:12px">📬</div>
+          <div style="font-weight:600;font-size:16px;margin-bottom:6px">Checking Gmail for FEX leads…</div>
+          <div style="color:var(--muted);font-size:13px">Looking for emails from leads@fexcontracting.com</div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-          <a href="/cdn-cgi/l/email-protection#1d70747e75787171785d6e787374726f7f7873787b74696e727b747171747372746e337e7270" style="display:flex;align-items:center;gap:1rem;background:var(--white);border-radius:var(--radius);padding:1.25rem;border:1px solid var(--cream-mid);text-decoration:none;transition:box-shadow 0.2s;" onmouseover="this.style.boxShadow='0 4px 16px rgba(22,39,94,0.1)'" onmouseout="this.style.boxShadow='none'">
-            <div style="width:44px;height:44px;background:var(--navy);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-            </div>
-            <div>
-              <div style="font-size:0.72rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-muted);margin-bottom:0.15rem;">Email</div>
-              <div style="font-size:0.95rem;font-weight:600;color:var(--navy);"><span class="__cf_email__" data-cfemail="fc91959f9499909099bc8f999295938e9e9992999a95888f939a959090959293958fd29f9391">[email&#160;protected]</span></div>
-            </div>
-          </a>
+  <!-- LEAD CARD SCANNER -->
+  <div class="scanner-section" id="scannerSection">
+    <div class="scanner-box">
+      <div class="scanner-header">
+        <div class="scanner-title">📋 New Lead Card</div>
+        <button class="scanner-close" onclick="closeScanner()">✕</button>
+      </div>
+      <div class="scanner-body">
+        <div class="drop-zone" id="dropZone" onclick="document.getElementById('cardInput').click()" ondragover="event.preventDefault();this.classList.add('dragover')" ondragleave="this.classList.remove('dragover')" ondrop="handleDrop(event)">
+          <div class="drop-zone-icon">📸</div>
+          <div class="drop-zone-text"><b>Tap to upload lead card</b><br>Photo or PDF — AI will read the handwriting</div>
+        </div>
+        <input type="file" id="cardInput" accept="image/*,application/pdf" style="display:none" onchange="handleCardUpload(this)">
+        <div class="scanner-preview" id="scannerPreview"><img id="previewImg" src="" alt="Lead card"></div>
+        <div class="scanner-reading" id="scannerReading">
+          <div class="scanner-spinner"></div>
+          <div>Reading card…</div>
+        </div>
+        <div class="lead-form" id="leadForm">
+          <div style="font-size:12px;color:var(--sage);font-weight:600;margin-bottom:12px">✓ Card read — review and save</div>
+          <div class="lead-form-grid">
+            <div class="lead-field"><label>First Name</label><input id="lf_first" type="text"></div>
+            <div class="lead-field"><label>Last Name</label><input id="lf_last" type="text"></div>
+            <div class="lead-field"><label>Spouse Name</label><input id="lf_spouse" type="text"></div>
+            <div class="lead-field"><label>Spouse Age</label><input id="lf_spouseage" type="text"></div>
+            <div class="lead-field full"><label>Address</label><input id="lf_address" type="text"></div>
+            <div class="lead-field"><label>City</label><input id="lf_city" type="text"></div>
+            <div class="lead-field"><label>State</label><input id="lf_state" type="text"></div>
+            <div class="lead-field"><label>Zip</label><input id="lf_zip" type="text"></div>
+            <div class="lead-field"><label>County</label><input id="lf_county" type="text"></div>
+            <div class="lead-field"><label>Phone</label><input id="lf_phone" type="text"></div>
+            <div class="lead-field"><label>Age</label><input id="lf_age" type="text"></div>
+            <div class="lead-field"><label>DOB</label><input id="lf_dob" type="text"></div>
+          </div>
+          <button class="lead-save-btn" id="leadSaveBtn" onclick="saveLeadToSheet()">💾 Save to Leads Tab</button>
+          <button class="scan-new-btn" onclick="resetScanner()">Scan another card</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
-          <div style="display:flex;align-items:center;gap:1rem;background:var(--white);border-radius:var(--radius);padding:1.25rem;border:1px solid var(--cream-mid);">
-            <div style="width:44px;height:44px;background:var(--navy);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            </div>
-            <div>
-              <div style="font-size:0.72rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-muted);margin-bottom:0.15rem;">Location</div>
-              <div style="font-size:1rem;font-weight:600;color:var(--navy);">Marion, Illinois</div>
-            </div>
+    <!-- NEARBY MAP -->
+  <div class="map-section" id="mapSection">
+    <div class="map-box">
+      <div class="map-header">
+        <div class="map-title">🗺 Nearby Clients & Leads</div>
+        <button class="map-close" onclick="closeNearbyMap()">✕</button>
+      </div>
+      <div class="map-body">
+        <div class="map-locating" id="mapLocating">
+          <div style="font-size:24px;margin-bottom:8px">📍</div>
+          <div style="font-weight:600;margin-bottom:4px">Finding your location…</div>
+          <div style="font-size:13px">Allow location access to see nearby clients</div>
+        </div>
+        <div id="mapContent" style="display:none">
+          <div class="map-controls">
+            <span style="font-size:12px;font-weight:600;color:var(--muted)">Radius:</span>
+            <button class="map-radius-btn active" onclick="setRadius(1,this)">1 mi</button>
+            <button class="map-radius-btn" onclick="setRadius(3,this)">3 mi</button>
+            <button class="map-radius-btn" onclick="setRadius(5,this)">5 mi</button>
+            <button class="map-radius-btn" onclick="setRadius(10,this)">10 mi</button>
+            <span id="nearbyCount" style="font-size:12px;color:var(--muted);margin-left:auto"></span>
+          </div>
+          <div class="nearby-list" id="nearbyList"></div>
+          <div style="margin-top:12px;text-align:center">
+            <a id="mapLink" href="" target="_blank" style="font-size:13px;color:var(--blue);font-weight:600;text-decoration:none">📍 Open in Google Maps →</a>
           </div>
         </div>
       </div>
+    </div>
+  </div>
 
-      <!-- Contact Form -->
-      <div style="background:var(--white);border-radius:var(--radius-lg);padding:2.5rem;box-shadow:0 4px 32px rgba(22,39,94,0.1);border:1px solid var(--cream-mid);">
-        <h3 style="font-size:1.5rem;color:var(--navy);margin-bottom:0.4rem;">Send us a message</h3>
-        <p style="font-size:0.88rem;color:var(--text-muted);margin-bottom:1.75rem;">We respond the same business day. No spam, no pressure follow-ups.</p>
-
-        <form id="contactForm">
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem;">
-            <div>
-              <label style="display:block;font-size:0.82rem;font-weight:600;color:var(--text-mid);margin-bottom:0.4rem;letter-spacing:0.02em;">First Name *</label>
-              <input type="text" required name="firstName" placeholder="Your first name" style="width:100%;padding:0.8rem 1rem;border:1.5px solid #DDD8D0;border-radius:6px;font-family:var(--sans);font-size:0.95rem;color:var(--text);background:var(--white);transition:border-color 0.15s;outline:none;" onfocus="this.style.borderColor='#16275E'" onblur="this.style.borderColor='#DDD8D0'">
-            </div>
-            <div>
-              <label style="display:block;font-size:0.82rem;font-weight:600;color:var(--text-mid);margin-bottom:0.4rem;letter-spacing:0.02em;">Last Name *</label>
-              <input type="text" required name="lastName" placeholder="Your last name" style="width:100%;padding:0.8rem 1rem;border:1.5px solid #DDD8D0;border-radius:6px;font-family:var(--sans);font-size:0.95rem;color:var(--text);background:var(--white);transition:border-color 0.15s;outline:none;" onfocus="this.style.borderColor='#16275E'" onblur="this.style.borderColor='#DDD8D0'">
-            </div>
-          </div>
-          <div style="margin-bottom:1rem;">
-            <label style="display:block;font-size:0.82rem;font-weight:600;color:var(--text-mid);margin-bottom:0.4rem;">Phone Number</label>
-            <input type="tel" name="phone" placeholder="(618) 000-0000" style="width:100%;padding:0.8rem 1rem;border:1.5px solid #DDD8D0;border-radius:6px;font-family:var(--sans);font-size:0.95rem;color:var(--text);background:var(--white);transition:border-color 0.15s;outline:none;" onfocus="this.style.borderColor='#16275E'" onblur="this.style.borderColor='#DDD8D0'">
-          </div>
-          <div style="margin-bottom:1rem;">
-            <label style="display:block;font-size:0.82rem;font-weight:600;color:var(--text-mid);margin-bottom:0.4rem;">Email Address *</label>
-            <input type="email" name="email" required placeholder="your@email.com" style="width:100%;padding:0.8rem 1rem;border:1.5px solid #DDD8D0;border-radius:6px;font-family:var(--sans);font-size:0.95rem;color:var(--text);background:var(--white);transition:border-color 0.15s;outline:none;" onfocus="this.style.borderColor='#16275E'" onblur="this.style.borderColor='#DDD8D0'">
-          </div>
-          <div style="margin-bottom:1rem;">
-            <label style="display:block;font-size:0.82rem;font-weight:600;color:var(--text-mid);margin-bottom:0.4rem;">How can we help?</label>
-            <select name="interest" style="width:100%;padding:0.8rem 1rem;border:1.5px solid #DDD8D0;border-radius:6px;font-family:var(--sans);font-size:0.95rem;color:var(--text);background:var(--white);outline:none;-webkit-appearance:none;">
-              <option value="">— Select one —</option>
-              <option>Final Expense / Burial Insurance</option>
-              <option>Medicare — approaching 65</option>
-              <option>Medicare — review current plan</option>
-              <option>Free policy review</option>
-              <option>Not sure yet — just want to talk</option>
-            </select>
-          </div>
-          <div style="margin-bottom:1.25rem;">
-            <label style="display:block;font-size:0.82rem;font-weight:600;color:var(--text-mid);margin-bottom:0.4rem;">Tell us a little about your situation (optional)</label>
-            <textarea name="message" placeholder="For example: I'm turning 65 in March and I'm confused about which Medicare plan to choose..." style="width:100%;padding:0.8rem 1rem;border:1.5px solid #DDD8D0;border-radius:6px;font-family:var(--sans);font-size:0.95rem;color:var(--text);background:var(--white);min-height:110px;resize:vertical;transition:border-color 0.15s;outline:none;" onfocus="this.style.borderColor='#16275E'" onblur="this.style.borderColor='#DDD8D0'"></textarea>
-          </div>
-          <button type="submit" style="width:100%;padding:1rem;background:var(--navy);color:var(--white);border:none;border-radius:6px;font-family:var(--sans);font-size:1rem;font-weight:600;cursor:pointer;transition:background 0.2s;" onmouseover="this.style.background='#0D1A42'" onmouseout="this.style.background='var(--navy)'">
-            Send Message — No Obligation
-          </button>
-          <p style="font-size:0.78rem;color:var(--text-muted);text-align:center;margin-top:0.75rem;">Your information is never shared or sold.</p>
-        </form>
-
-        <div id="formSuccess" style="display:none;background:var(--cream);border-left:4px solid var(--gold);border-radius:var(--radius);padding:1.5rem;">
-          <strong style="display:block;color:var(--navy);margin-bottom:0.4rem;">✓ Message received!</strong>
-          <p style="font-size:0.93rem;color:var(--text-mid);margin:0;">We'll be in touch the same business day. Need someone right away? Call <a href="tel:6188417936" style="color:var(--navy);font-weight:600;">(618) 841-7936</a>.</p>
-        </div>
+    <!-- COMMISSION TRACKER -->
+  <div class="comm-section" id="commSection">
+    <div class="comm-box">
+      <div class="comm-header">
+        <div class="comm-title">💰 Commission Statement Tracker</div>
+        <button class="comm-close" onclick="closeCommTracker()">✕</button>
       </div>
-
+      <div class="comm-body">
+        <div class="comm-drop" id="commDrop" onclick="document.getElementById('commInput').click()">
+          <div class="comm-drop-icon">📄</div>
+          <div style="font-size:14px;color:var(--muted)"><b style="color:var(--ink)">Upload commission statement</b><br>Trinity, Illinois Mutual, American General, Polish Falcons, and more</div>
+        </div>
+        <input type="file" id="commInput" accept="application/pdf" style="display:none" onchange="handleCommUpload(this)">
+        <div class="comm-reading" id="commReading">
+          <div class="comm-spinner"></div>
+          <div>Reading statement…</div>
+        </div>
+        <div class="comm-results" id="commResults"></div>
+      </div>
     </div>
   </div>
-</section>
 
-<!-- =============================================
-   FINAL CTA
-============================================= -->
-<section class="cta-banner">
-  <div class="wrap">
-    <h2>Ready to talk with someone who actually listens?</h2>
-    <p>No forms required. No waiting on hold. Just a real conversation with a local agent who's been doing this since 2008.</p>
-    <div class="cta-actions">
-      <a href="#contact" class="btn btn-gold">Get Help Understanding Your Options</a>
-      <a href="tel:6188417936" class="btn btn-ghost">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8a19.79 19.79 0 01-3.07-8.67A2 2 0 012 1h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
-        Call (618) 841-7936
-      </a>
+    <div class="dashboard-section" id="dashboardSection">
+    <div class="stats-row" id="statsRow"></div>
+    <div class="dash-tabs" id="dashTabs"></div>
+    <div id="dashPanels">
+      <div class="dash-panel" id="panel_appts"></div>
+      <div class="dash-panel" id="panel_pipeline"></div>
+      <div class="dash-panel" id="panel_signals"></div>
+      <div class="dash-panel" id="panel_leads"></div>
+      <div class="dash-panel" id="panel_commission"></div>
     </div>
-    <p class="cta-fine">Serving Illinois, Kentucky & Missouri &nbsp;·&nbsp; Licensed & Local &nbsp;·&nbsp; No Obligation</p>
+    <!-- keep these for backwards compat -->
+    <div id="apptSection" style="display:none"></div>
+    <div id="anniversarySection" style="display:none"></div>
+    <div id="birthdaySection" style="display:none"></div>
+    <div id="pipelineTabs" style="display:none"></div>
+    <div id="pipelineContent" style="display:none"></div>
   </div>
-</section>
+</div>
 
-<!-- =============================================
-   FOOTER
-============================================= -->
-<footer class="site-footer">
-  <div class="wrap footer-top">
-    <div class="footer-brand">
-      <span class="nav-logo">Illinois Senior<br>Benefit Services</span>
-      <p>Honest guidance for Illinois seniors since 2008. Local, licensed, and here when you need us.</p>
-    </div>
-    <div class="footer-col">
-      <h4>Navigate</h4>
-      <a href="#services">Services</a>
-      <a href="#how-it-works">How It Works</a>
-      <a href="#faq">FAQ</a>
-      <a href="#contact">Contact</a>
-    </div>
-    <div class="footer-col">
-      <h4>Reach Us</h4>
-      <a href="tel:6188417936">(618) 841-7936</a>
-      <a href="/cdn-cgi/l/email-protection#cba6a2a8a3aea7a7ae8bb8aea5a2a4b9a9aea5aeada2bfb8a4ada2a7a7a2a5a4a2b8e5a8a4a6"><span class="__cf_email__" data-cfemail="4e23272d262b22222b0e3d2b2027213c2c2b202b28273a3d2128272222272021273d602d2123">[email&#160;protected]</span></a>
-      <p>Marion, Illinois</p>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <div class="wrap">
-      <p>© 2024 Illinois Senior Benefit Services. Licensed Insurance Agent — Illinois, Kentucky & Missouri. We do not offer every plan available in your area. Any information we provide is limited to those plans we do offer. Please contact Medicare.gov or 1-800-MEDICARE for information on all of your options.</p>
-    </div>
-  </div>
-</footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-// Mobile nav
-const hamburger = document.getElementById('hamburger');
-const mobileNav = document.getElementById('mobileNav');
-hamburger.addEventListener('click', () => {
-  mobileNav.classList.toggle('open');
+
+
+<div class="script-overlay" id="scriptOverlay" onclick="if(event.target===this)closeScript()">
+  <div class="script-modal" id="scriptModal"></div>
+</div>
+
+<div class="briefing-overlay" id="briefingOverlay" onclick="if(event.target===this)closeBriefing()">
+  <div class="briefing-modal" id="briefingModal"></div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+const { jsPDF } = window.jspdf;
+
+// ── CONFIG ────────────────────────────────────────────────────────────────────
+const SHEET_ID  = '1mPtpXbJLB-4vusVrq9MJkSWYmz6BQ7qhAYerAQalDCA';
+const CLIENT_ID = '1038858471408-dc67okrrvbv4efem7ubvj2754a0uup48.apps.googleusercontent.com';
+const SHEET_TAB = 'Clients';
+const SCOPES    = 'https://www.googleapis.com/auth/spreadsheets https://www.googleapis.com/auth/calendar.events https://www.googleapis.com/auth/gmail.readonly';
+
+// Column indices (0-based)
+const COL = {
+  STOP_PAC:      46, // AU old status (kept for notes display)
+  CX_POLICY:     47,
+  SURRENDER:     48,
+  STOP_PAC_DUE:  46, // AU
+  STOP_PAC_SENT: 47, // AV
+  CX_DUE:        48, // AW
+  CX_SENT:       49, // AX
+  SURR_DUE:      50, // AY
+  SURR_SENT:     51, // AZ
+};
+
+// Recalculate based on AU=46 (0-based: A=0, so AU = 20*1 + 20 = 46)
+// AU=46, AV=47, AW=48, AX=49, AY=50, AZ=51
+const COLS = {
+  STOP_PAC_DUE:  46,
+  STOP_PAC_SENT: 47,
+  CX_DUE:        48,
+  CX_SENT:       49,
+  SURR_DUE:      50,
+  SURR_SENT:     51,
+  // Legacy status columns (keep reading for notes)
+  OLD_STOP:      46,
+  OLD_CX:        47,
+  OLD_SURR:      48,
+  BENEFICIARY:   51,
+  PAYMENT:       52,
+  NOTES:         53,
+};
+
+// Wait — AU is col 46 (0-based). Let's verify:
+// A=0,B=1...Z=25,AA=26,AB=27...AZ=51,BA=52
+// A=0 Z=25 AA=26 AZ=51 — so AU = 26+20 = 46. ✓
+// AV=47, AW=48, AX=49, AY=50, AZ=51 ✓
+// That means old col 46(AU),47(AV),48(AX) were Stop PAC, CX, Surrender
+// New cols are the same letters — she ADDED these at the end
+// Per conversation: she added AU=Stop PAC Due, AV=Stop PAC Sent, AW=CX Due, AX=CX Sent, AY=Surrender Due, AZ=Surrender Sent
+// Old Stop PAC was col 46, old CX was 47, old Surrender was 48
+// The new columns START at AU=46 — so the old columns (46,47,48) are now REPLACED by the new schema
+// New reading schema:
+const C = {
+  STOP_DUE:  48, // AW
+  STOP_SENT: 49, // AX
+  CX_DUE:    50, // AY
+  CX_SENT:   51, // AZ
+  SURR_DUE:  52, // BA
+  SURR_SENT: 53, // BB
+  OTHER:     50, // AY (was col 50 before — now repurposed; keep notes at 53)
+  BENEFICIARY: 51,
+  PAYMENT:   52,
+  NOTES:     53,
+};
+
+const MICHELLE_HEADSHOT = 'https://getoutmybelly.github.io/michelles-desk-sisbs/michelle_headshot.jpg';
+
+let accessToken = null;
+let clientGroups = {}, allClients = [], selectedGroup = null, activeVisitIdx = 0;
+
+// ── GOOGLE SIGN IN ────────────────────────────────────────────────────────────
+// ── REDIRECT-BASED OAUTH ─────────────────────────────────────────────────────
+let tokenExpiry = null;
+
+function buildAuthUrl(prompt='consent') {
+  const params = new URLSearchParams({
+    client_id: CLIENT_ID,
+    redirect_uri: window.location.href.split('?')[0].split('#')[0],
+    response_type: 'token',
+    scope: SCOPES,
+    include_granted_scopes: 'true',
+    state: 'signin',
+    prompt: prompt,
+  });
+  return 'https://accounts.google.com/o/oauth2/v2/auth?' + params.toString();
+}
+
+window.signIn = function() {
+  window.location.href = buildAuthUrl('consent');
+};
+
+// Check for token in URL hash on page load (redirect return)
+function checkAuthReturn() {
+  const hash = window.location.hash;
+  if (hash && hash.includes('access_token')) {
+    const params = new URLSearchParams(hash.substring(1));
+    const token = params.get('access_token');
+    const expiresIn = parseInt(params.get('expires_in') || '3600');
+    if (token) {
+      accessToken = token;
+      tokenExpiry = Date.now() + (expiresIn - 120) * 1000;
+      // Store in sessionStorage so refresh doesn't lose it
+      sessionStorage.setItem('m_token', token);
+      sessionStorage.setItem('m_token_exp', tokenExpiry);
+      // Clean URL
+      history.replaceState(null, '', window.location.pathname);
+      document.getElementById('signinPrompt').classList.add('hidden');
+      scheduleTokenRefresh(expiresIn - 120);
+      loadFromSheets();
+      return true;
+    }
+  }
+  return false;
+}
+
+function scheduleTokenRefresh(secondsUntilRefresh) {
+  setTimeout(() => {
+    silentRefresh();
+  }, secondsUntilRefresh * 1000);
+}
+
+function silentRefresh() {
+  // Redirect with prompt=none — re-auths without showing login screen
+  // if she's still signed into Google
+  window.location.href = buildAuthUrl('none');
+}
+
+// Check token before any API call
+function ensureValidToken() {
+  if (!accessToken) return false;
+  if (tokenExpiry && Date.now() > tokenExpiry) {
+    accessToken = null;
+    window.location.href = buildAuthUrl('none');
+    return false;
+  }
+  return true;
+}
+
+window.addEventListener('load', () => {
+  if (!checkAuthReturn()) {
+    // Try restoring from sessionStorage
+    const savedToken = sessionStorage.getItem('m_token');
+    const savedExp = parseInt(sessionStorage.getItem('m_token_exp') || '0');
+    if (savedToken && savedExp && Date.now() < savedExp) {
+      accessToken = savedToken;
+      tokenExpiry = savedExp;
+      document.getElementById('signinPrompt').classList.add('hidden');
+      scheduleTokenRefresh(Math.floor((savedExp - Date.now()) / 1000));
+      loadFromSheets();
+    }
+  }
 });
-mobileNav.querySelectorAll('a').forEach(a => {
-  a.addEventListener('click', () => mobileNav.classList.remove('open'));
-});
 
-// Contact form — posts to Cloudflare Worker which forwards to Michelle's Desk
-const ISBS_WEBHOOK = 'https://isbs-leads.michelle-cb4.workers.dev';
-
-document.getElementById('contactForm').addEventListener('submit', async function(e) {
-  e.preventDefault();
-  const btn = this.querySelector('button[type="submit"]');
-  btn.textContent = 'Sending...';
-  btn.disabled = true;
-
-  const data = Object.fromEntries(new FormData(this).entries());
-  data.submittedAt = new Date().toISOString();
-  data.source = 'seniorbenefitsofillinois.com';
-
+// ── LOAD ──────────────────────────────────────────────────────────────────────
+async function loadFromSheets() {
+  if (!accessToken) { window.location.href = buildAuthUrl(); return; }
+  showLoading(true); hideError();
   try {
-    await fetch(ISBS_WEBHOOK, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(data)
-    });
+    const resp = await fetch(
+      `https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}/values/${encodeURIComponent(SHEET_TAB)}`,
+      { headers: { Authorization: `Bearer ${accessToken}` } }
+    );
+    if (resp.status === 401) { accessToken = null; window.location.href = buildAuthUrl(); return; }
+    if (!resp.ok) { const e = await resp.json().catch(()=>({})); throw new Error(e?.error?.message || `HTTP ${resp.status}`); }
+    const data = await resp.json();
+    parseRows(data.values || []);
+    showLoading(false);
+    document.getElementById('searchSection').classList.add('visible');
+    document.getElementById('dashboardSection').classList.add('visible');
+    document.getElementById('badge').textContent = `${allClients.length} clients`;
+    document.getElementById('badge').style.display = 'block';
+    document.getElementById('refreshBtn').style.display = 'block';
+    document.getElementById('scanBtn').style.display = 'block';
+    document.getElementById('commBtn').style.display = 'block';
+    document.getElementById('mapBtn').style.display = 'block';
+    document.getElementById('fexBtn').style.display = 'block';
+
+    document.getElementById('lastSync').textContent =
+      `Synced ${new Date().toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'})}`;
+    renderDashboard();
+    if (selectedGroup) renderDetail();
+    toast(`✓ ${allClients.length} clients loaded`);
   } catch(err) {
-    // Fail silently — still show success to user, lead won't be lost
-    // (worker has email fallback)
-    console.warn('Webhook failed:', err);
+    showLoading(false); showError(err.message); console.error(err);
+  }
+}
+
+function parseRows(rows) {
+  const clients = [], groups = {};
+  for (let i = 2; i < rows.length; i++) {
+    const r = rows[i];
+    const firstName = cl(r[1]);
+    if (!firstName) continue;
+    const c = {
+      sheetRow:        i + 1,
+      clientStatus:    cl(r[0]),
+      firstName,
+      lastName:        cl(r[3]) || cl(r[2]),
+      address:         cl(r[4]),
+      city:            cl(r[5]),
+      county:          cl(r[6]),
+      state:           cl(r[7]),
+      zip:             cl(r[8]),
+      leadDate:        fmtDate(r[9]),
+      phone:           fmtPhone(r[10]),
+      dob:             fmtDate(r[11]),
+      age:             cl(r[12]),
+      tobacco:         cl(r[13]),
+      ssType:          cl(r[14]),
+      bank:            cl(r[15]),
+      checkDate:       cl(r[16]),
+      existingCompany: cl(r[18]),
+      existingFace:    cl(r[19]),
+      existingPremium: cl(r[20]),
+      existingPolicy:  cl(r[21]),
+      cashValue:       cl(r[25]),
+      ssn:             cl(r[35]),
+      newCompany:      cl(r[38]),
+      newFace:         cl(r[39]),
+      newPremium:      cl(r[40]),
+      apptDate:        fmtDate(r[41]),
+      apptTime:        cl(r[42]),
+      apptNotes:       cl(r[43]),
+      effectiveDate:   fmtDate(r[44]),
+      payDate:         cl(r[45]),
+      // New due/sent columns
+      stopDueRaw:      cl(r[C.STOP_DUE]),
+      stopDue:         fmtDate(r[C.STOP_DUE]),
+      stopSent:        cl(r[C.STOP_SENT]),
+      cxDue:           fmtDate(r[C.CX_DUE]),
+      cxSent:          cl(r[C.CX_SENT]),
+      surrDue:         fmtDate(r[C.SURR_DUE]),
+      surrSent:        cl(r[C.SURR_SENT]),
+      beneficiary:     cl(r[55]),
+      benRelationship: cl(r[56]),
+      benDOB:          cl(r[57]),
+      benAddress:      cl(r[58]),
+      benPhone:        cl(r[59]),
+      carrierFax:      cl(r[60]),
+      carrierEmail:    cl(r[61]),
+      paymentInfo:     cl(r[62]),
+      notes:           cl(r[63]),
+      doctorName:      cl(r[64]),
+      email:           cl(r[65]),
+      stateBorn:       cl(r[66]),
+      medicareInfo:    cl(r[68]),
+      connectingInd:   cl(r[69]),
+      followUpDate:    fmtDate(r[70]),
+      followUpReason:  cl(r[71]),
+    };
+    c.fullName       = [c.firstName, c.lastName].filter(Boolean).join(' ');
+    c.fullAddress    = [c.address, c.city, c.state, c.zip].filter(Boolean).join(', ');
+    c.displayCompany = c.newCompany || c.existingCompany || '';
+    // Pending = has a Due date AND no Sent date yet
+    // Only treat as pending if due date is a real date from 2020 onwards
+    const isRealDate = s => {
+      if (!s) return false;
+      const d = new Date(s);
+      if (isNaN(d)) return false;
+      return d.getFullYear() >= 2020;
+    };
+    c.stopPending  = isRealDate(c.stopDue)  && !c.stopSent;
+    c.cxPending    = isRealDate(c.cxDue)   && !c.cxSent;
+    c.surrPending  = isRealDate(c.surrDue) && !c.surrSent;
+    // Also clear due dates that aren't real dates
+    if (!isRealDate(c.stopDue))  c.stopDue  = '';
+    if (!isRealDate(c.cxDue))    c.cxDue    = '';
+    if (!isRealDate(c.surrDue))  c.surrDue  = '';
+    c.hasPending   = c.stopPending || c.cxPending || c.surrPending;
+    // Follow-up visit pending
+    const isRealDateFU = s => { if(!s) return false; const d=new Date(s); return !isNaN(d)&&d.getFullYear()>=2020; };
+    c.followUpPending = isRealDateFU(c.followUpDate) && !c.followUpDone;
+    clients.push(c);
+    const key = c.fullName.toLowerCase().replace(/\s+/g,' ').trim();
+    if (!groups[key]) groups[key] = [];
+    groups[key].push(c);
+  }
+  allClients = clients;
+  clientGroups = groups;
+}
+
+// ── WRITE BACK ────────────────────────────────────────────────────────────────
+async function writeCell(row, colIdx, value) {
+  const range = `${SHEET_TAB}!${colToLetter(colIdx)}${row}`;
+  const resp = await fetch(
+    `https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}/values/${encodeURIComponent(range)}?valueInputOption=USER_ENTERED`,
+    {
+      method: 'PUT',
+      headers: { Authorization: `Bearer ${accessToken}`, 'Content-Type': 'application/json' },
+      body: JSON.stringify({ values: [[value]] }),
+    }
+  );
+  if (resp.status === 401) { accessToken = null; window.location.href = buildAuthUrl(); throw new Error('auth'); }
+  if (!resp.ok) { const e = await resp.json().catch(()=>({})); throw new Error(e?.error?.message || `HTTP ${resp.status}`); }
+}
+
+async function markSent(type, btnId) {
+  const c = selectedGroup[activeVisitIdx];
+  if (!accessToken) { toast('Sign in first'); return; }
+  const btn = document.getElementById(btnId);
+  if (btn) { btn.classList.add('loading'); btn.textContent = 'Saving…'; }
+  const today = new Date().toLocaleDateString('en-US',{month:'numeric',day:'numeric',year:'2-digit'});
+  try {
+    let colIdx;
+    if (type==='stop') { colIdx = C.STOP_SENT; c.stopSent = today; c.stopPending = false; }
+    if (type==='cx')   { colIdx = C.CX_SENT;   c.cxSent   = today; c.cxPending   = false; }
+    if (type==='surr') { colIdx = C.SURR_SENT;  c.surrSent = today; c.surrPending = false; }
+    c.hasPending = c.stopPending || c.cxPending || c.surrPending;
+    await writeCell(c.sheetRow, colIdx, today);
+    if (btn) { btn.classList.remove('loading'); btn.classList.add('done'); btn.innerHTML = '✓ Sent'; btn.disabled = true; }
+    renderDashboard();
+    toast('✓ Marked sent in Google Sheets');
+  } catch(err) {
+    if (btn) { btn.classList.remove('loading'); btn.textContent = 'Try Again'; }
+    toast('Could not save — check connection');
+  }
+}
+
+async function saveDue(type, inputId) {
+  const c = selectedGroup[activeVisitIdx];
+  const input = document.getElementById(inputId);
+  const val = input ? input.value : '';
+  if (!val) { toast('Enter a date first'); return; }
+  const formatted = fmtDate(val) || val;
+  try {
+    let colIdx;
+    if (type==='stop') { colIdx = C.STOP_DUE; c.stopDue = formatted; c.stopPending = !c.stopSent; }
+    if (type==='cx')   { colIdx = C.CX_DUE;   c.cxDue   = formatted; c.cxPending   = !c.cxSent; }
+    if (type==='surr') { colIdx = C.SURR_DUE;  c.surrDue = formatted; c.surrPending = !c.surrSent; }
+    c.hasPending = c.stopPending || c.cxPending || c.surrPending;
+    await writeCell(c.sheetRow, colIdx, val);
+    renderDashboard();
+    toast('✓ Due date saved');
+  } catch(err) {
+    toast('Could not save due date');
+  }
+}
+
+// ── GOOGLE CALENDAR ───────────────────────────────────────────────────────────
+async function addToCalendar(type) {
+  const c = selectedGroup[activeVisitIdx];
+  if (!accessToken) { toast('Sign in first'); return; }
+  let dueDate, title, desc;
+  if (type==='stop') {
+    dueDate = c.stopDue; title = `Stop PAC — ${c.fullName}`;
+    desc = `Send Stop PAC form\nCompany: ${c.displayCompany}\nPolicy: ${c.existingPolicy}\nPhone: ${c.phone}`;
+  }
+  if (type==='cx') {
+    dueDate = c.cxDue; title = `CX Policy — ${c.fullName}`;
+    desc = `Cancel policy\nCompany: ${c.displayCompany}\nPolicy: ${c.existingPolicy}\nPhone: ${c.phone}`;
+  }
+  if (type==='surr') {
+    dueDate = c.surrDue; title = `Surrender Form — ${c.fullName}`;
+    desc = `Send Surrender/Cancellation form\nCompany: ${c.displayCompany}\nPolicy: ${c.existingPolicy}\nPhone: ${c.phone}`;
+  }
+  if (!dueDate) { toast('Set a due date first'); return; }
+
+  // Parse date to ISO format
+  let isoDate;
+  try {
+    const d = new Date(dueDate);
+    if (isNaN(d.getTime())) throw new Error('bad date');
+    isoDate = d.toISOString().split('T')[0];
+  } catch {
+    toast('Could not parse due date — use MM/DD/YYYY format');
+    return;
   }
 
-  this.style.display = 'none';
-  document.getElementById('formSuccess').style.display = 'block';
+  try {
+    const event = {
+      summary: title,
+      description: desc,
+      start: { date: isoDate },
+      end:   { date: isoDate },
+      reminders: { useDefault: false, overrides: [{ method: 'popup', minutes: 480 }] },
+    };
+    const resp = await fetch('https://www.googleapis.com/calendar/v3/calendars/primary/events', {
+      method: 'POST',
+      headers: { Authorization: `Bearer ${accessToken}`, 'Content-Type': 'application/json' },
+      body: JSON.stringify(event),
+    });
+    if (!resp.ok) { const e = await resp.json().catch(()=>({})); throw new Error(e?.error?.message); }
+    toast(`✓ Added to Google Calendar — ${isoDate}`);
+  } catch(err) {
+    toast('Could not add to calendar');
+    console.error(err);
+  }
+}
+
+// ── SEARCH ────────────────────────────────────────────────────────────────────
+document.getElementById('searchInput').addEventListener('input', function() {
+  const q = this.value.trim().toLowerCase();
+  const list = document.getElementById('clientList');
+  if (!q) { list.classList.remove('visible'); list.innerHTML=''; return; }
+  const matched = [];
+  for (const [key, visits] of Object.entries(clientGroups)) {
+    const best = visits[visits.length-1];
+    const qp = q.replace(/\D/g,'');
+    if (best.fullName.toLowerCase().includes(q) || best.displayCompany.toLowerCase().includes(q) ||
+        best.city.toLowerCase().includes(q) || best.existingPolicy.includes(q) ||
+        (qp.length>3 && best.phone.replace(/\D/g,'').includes(qp)))
+      matched.push({ key, visits, best });
+    if (matched.length>=25) break;
+  }
+  if (!matched.length) { list.innerHTML='<div class="no-results">No clients found</div>'; list.classList.add('visible'); return; }
+  list.innerHTML = matched.map(({ key, visits, best }) => {
+    const vp = visits.length>1 ? `<span class="pill pill-visits">${visits.length} visits</span>` : '';
+    const meta = [best.displayCompany,best.city,best.state].filter(Boolean).join(' · ')||'No details on file';
+    return `<div class="client-card" onclick="openGroup('${esc(key)}')">
+      <div><div class="client-name">${best.fullName}</div><div class="client-meta">${meta}</div></div>
+      <div class="pills">${vp}${buildPills(best)}</div>
+    </div>`;
+  }).join('');
+  list.classList.add('visible');
 });
 
-// Sticky header shadow
-const header = document.querySelector('.site-header');
-window.addEventListener('scroll', () => {
-  header.style.boxShadow = window.scrollY > 10
-    ? '0 4px 28px rgba(0,0,0,0.35)'
-    : 'none';
-}, { passive: true });
+function buildPills(c) {
+  return (c.stopPending  ? '<span class="pill pill-stop">Stop PAC</span>' : '')
+       + (c.cxPending    ? '<span class="pill pill-cx">CX Policy</span>' : '')
+       + (c.surrPending  ? '<span class="pill pill-surr">Surrender</span>' : '');
+}
 
-// Animate on scroll
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.tar
+// ── DETAIL ────────────────────────────────────────────────────────────────────
+function openGroup(key) {
+  selectedGroup = clientGroups[key]; if (!selectedGroup) return;
+  activeVisitIdx = selectedGroup.length-1;
+  document.getElementById('searchInput').value='';
+  document.getElementById('clientList').classList.remove('visible');
+  renderDetail();
+  document.getElementById('detailPanel').classList.add('visible');
+  setTimeout(()=>document.getElementById('detailPanel').scrollIntoView({behavior:'smooth',block:'start'}),50);
+}
+
+function renderDetail() {
+  const c = selectedGroup[activeVisitIdx];
+  document.getElementById('detailName').textContent = c.fullName;
+  document.getElementById('detailSub').textContent =
+    [c.displayCompany, c.existingPolicy?`Policy #${c.existingPolicy}`:''].filter(Boolean).join(' · ')
+    || (c.newCompany?`Placing with ${c.newCompany}`:'No policy on file');
+
+  let h = '';
+
+  // Repeat client alert
+  if (selectedGroup.length > 1) {
+    const lastVisit = selectedGroup[selectedGroup.length-2];
+    const lastDate = lastVisit.leadDate || lastVisit.apptDate || 'a previous visit';
+    h += `<div class="repeat-alert">
+      <div class="repeat-alert-icon">⚠️</div>
+      <div class="repeat-alert-text">
+        <div class="repeat-alert-title">Repeat Client — ${selectedGroup.length} visits on file</div>
+        <div class="repeat-alert-sub">Last seen: ${lastDate} · Say "Good seeing you again!"</div>
+      </div>
+      <button class="repeat-alert-btn" onclick="openBriefing('${esc(c.fullName.toLowerCase().replace(/\s+/g,' ').trim())}')">Full Briefing</button>
+    </div>`;
+  }
+
+  if (selectedGroup.length > 1) {
+    h += '<div class="visit-label">Client Visits</div><div class="visit-tabs">';
+    selectedGroup.forEach((v,i)=>{
+      const lbl = v.leadDate||v.apptDate||`Visit ${i+1}`;
+      h += `<button class="visit-tab${i===activeVisitIdx?' active':''}" onclick="switchVisit(${i})">${lbl}</button>`;
+    });
+    h += '</div>';
+  }
+
+  h += '<div class="info-grid">';
+  h += ii('Address',c.fullAddress,true);
+  h += ii('Phone',c.phone);
+  h += ii('Date of Birth',c.dob);
+  h += ii('Age',c.age);
+  h += ii('Social Security #',c.ssn?`···-··-${c.ssn.slice(-4)}`:'');
+  h += ii('SS / Disability',c.ssType);
+  h += ii('Bank',c.bank);
+  h += ii('Pay Week',c.checkDate);
+  h += ii('Tobacco',c.tobacco);
+  if (c.beneficiary||c.benRelationship||c.benDOB) {
+    const benVal = [c.beneficiary, c.benRelationship, c.benDOB].filter(Boolean).join(' · ');
+    h += ii('Beneficiary', benVal, true);
+    if (c.benAddress||c.benPhone) {
+      const benContact = [c.benAddress, c.benPhone].filter(Boolean).join(' · ');
+      h += ii('Beneficiary Contact', benContact, true);
+    }
+  }
+  if (c.paymentInfo) h += ii('Payment Info',c.paymentInfo,true);
+  if (c.email) h += ii('Email',c.email,true);
+  if (c.doctorName) h += ii("Doctor's Name",c.doctorName,true);
+  if (c.medicareInfo) h += ii('Medicare Info',c.medicareInfo,true);
+  if (c.connectingInd) h += ii('Connecting Individual',c.connectingInd,true);
+  h += '</div>';
+
+  const hasExist = c.existingCompany||c.existingFace||c.existingPremium||c.existingPolicy;
+  const hasNew   = c.newCompany||c.newFace||c.newPremium;
+  if (hasExist||hasNew) {
+    h += '<div class="coverage-row">';
+    if (hasExist) h += `<div class="cov-block"><div class="cov-title">Current Coverage</div>
+      ${c.existingCompany?`<div class="cov-line"><b>${c.existingCompany}</b></div>`:''}
+      ${c.existingPolicy?`<div class="cov-line">Policy # ${c.existingPolicy}</div>`:''}
+      ${c.existingFace?`<div class="cov-line">Face: <b>${c.existingFace}</b></div>`:''}
+      ${c.existingPremium?`<div class="cov-line">Premium: <b>${c.existingPremium}/mo</b></div>`:''}
+      ${c.cashValue?`<div class="cov-line">Cash Value: ${c.cashValue}</div>`:''}</div>`;
+    if (hasNew) h += `<div class="cov-block new"><div class="cov-title">New / Qualifying</div>
+      ${c.newCompany?`<div class="cov-line"><b>${c.newCompany}</b></div>`:''}
+      ${c.newFace?`<div class="cov-line">Face: <b>${c.newFace}</b></div>`:''}
+      ${c.newPremium?`<div class="cov-line">Premium: <b>${c.newPremium}/mo</b></div>`:''}
+      ${c.apptDate?`<div class="cov-line">Appt: <b>${c.apptDate}${c.apptTime?' @ '+c.apptTime:''}</b></div>`:''}
+      ${c.apptNotes?`<div class="cov-line" style="color:var(--muted);font-size:12px">${c.apptNotes}</div>`:''}
+      ${c.effectiveDate?`<div class="cov-line">Effective: ${c.effectiveDate}</div>`:''}</div>`;
+    h += '</div>';
+  }
+
+  h += `<div class="actions-section"><div class="actions-title">Actions & Paperwork</div>`;
+  // Call button
+  if (c.phone) {
+    const ckey = c.fullName.toLowerCase().replace(/\s+/g,' ').trim();
+    h += `<button onclick="openCallScript('${esc(ckey)}')" style="width:100%;padding:13px;background:var(--green);color:#fff;border:none;border-radius:12px;font-family:'DM Sans',sans-serif;font-size:15px;font-weight:600;cursor:pointer;margin-bottom:12px;display:flex;align-items:center;justify-content:center;gap:8px">📞 Call ${c.phone}</button>`;
+  }
+  if (c.carrierFax||c.carrierEmail) {
+    h += `<div style="font-size:12px;color:var(--muted);margin-bottom:12px;display:flex;gap:16px;flex-wrap:wrap">`;
+    if (c.carrierFax) h += `<span>📠 ${c.carrierFax}</span>`;
+    if (c.carrierEmail) h += `<span>📧 ${c.carrierEmail}</span>`;
+    h += `</div>`;
+  }
+
+  // STOP PAC BLOCK
+  h += actionBlock('stop', '🛑 Stop PAC', c.stopDue, c.stopSent, c.stopPending,
+    `<button class="action-btn btn-generate-stop" onclick="genStopPAC()">📄 Generate Form</button>`);
+
+  // CX POLICY BLOCK
+  h += actionBlock('cx', '📞 CX Policy', c.cxDue, c.cxSent, c.cxPending, '');
+
+  // SURRENDER BLOCK
+  h += actionBlock('surr', '📋 Surrender', c.surrDue, c.surrSent, c.surrPending,
+    `<button class="action-btn btn-generate-surr" onclick="genSurrender()">📄 Generate Form</button>`);
+
+  h += '</div>';
+
+  if (c.notes) h += `<div class="notes-box"><b>Notes:</b> ${c.notes}</div>`;
+
+  document.getElementById('detailBody').innerHTML = h;
+}
+
+function actionBlock(type, title, due, sent, pending, extraBtn) {
+  const statusHtml = sent
+    ? `<span class="action-block-status status-done">✓ Sent ${sent}</span>`
+    : (pending ? `<span class="action-block-status status-pending">Pending</span>` : `<span class="action-block-status" style="background:var(--cream);color:var(--muted)">No due date</span>`);
+
+  let dueSection = '';
+  if (!sent) {
+    dueSection = `<div class="due-row">
+      <span class="due-label">Due date:</span>
+      <input class="due-input" id="due_${type}" type="date" value="${toInputDate(due)}">
+      <button class="due-save-btn" onclick="saveDue('${type}','due_${type}')">Save</button>
+    </div>`;
+  } else {
+    dueSection = due ? `<div style="font-size:12px;color:var(--muted)">Due: ${due} · Sent: ${sent}</div>` : '';
+  }
+
+  const calBtn = due && !sent
+    ? `<button class="action-btn btn-cal" onclick="addToCalendar('${type}')">📅 Add to Calendar</button>` : '';
+  const sentBtn = pending
+    ? `<button class="action-btn btn-sent" id="sent_${type}" onclick="markSent('${type}','sent_${type}')">✓ Mark as Sent</button>` : '';
+
+  return `<div class="action-block ${type}">
+    <div class="action-block-header">
+      <div class="action-block-title">${title}</div>
+      ${statusHtml}
+    </div>
+    <div class="action-block-body">
+      ${dueSection}
+      <div class="action-row">
+        ${extraBtn}
+        ${calBtn}
+        ${sentBtn}
+      </div>
+    </div>
+  </div>`;
+}
+
+function toInputDate(d) {
+  if (!d) return '';
+  const p = d.split('/');
+  if (p.length===3) {
+    const yr = p[2].length===2 ? '20'+p[2] : p[2];
+    return `${yr}-${p[0].padStart(2,'0')}-${p[1].padStart(2,'0')}`;
+  }
+  return '';
+}
+
+function ii(label,value,full=false){
+  const empty=!value||!String(value).trim();
+  return `<div class="info-item${full?' info-full':''}"><label>${label}</label><span class="${empty?'empty':''}">${empty?'Not on file':value}</span></div>`;
+}
+function switchVisit(i){activeVisitIdx=i;renderDetail();}
+function closeDetail(){document.getElementById('detailPanel').classList.remove('visible');selectedGroup=null;}
+
+// ── PDF: STOP PAC ─────────────────────────────────────────────────────────────
+function genStopPAC(){
+  const c=selectedGroup[activeVisitIdx];
+  const doc=new jsPDF({orientation:'portrait',unit:'pt',format:'letter'});
+  const W=612,M=72;let y=M;
+  doc.setFillColor(26,26,46);doc.rect(0,0,W,78,'F');
+  doc.setTextColor(255,255,255);doc.setFont('helvetica','bold');doc.setFontSize(20);
+  doc.text('Stop PAC – Send a Bill',M,36);
+  doc.setFont('helvetica','normal');doc.setFontSize(10);doc.setTextColor(184,146,58);
+  doc.text(`Generated ${new Date().toLocaleDateString('en-US',{month:'long',day:'numeric',year:'numeric'})}`,M,56);
+  y=106;doc.setTextColor(26,26,46);doc.setFontSize(12);doc.setFont('helvetica','normal');
+  const co=c.existingCompany||c.newCompany||c.displayCompany||'________________________';
+  const pol=c.existingPolicy||'________________________';
+  doc.text(`Dear ${co},`,M,y);y+=30;
+  const bl=doc.splitTextToSize(`I would like to cancel the automatic withdrawal from my bank for policy #${pol} effective today.`,W-M*2);
+  doc.text(bl,M,y);y+=bl.length*17+14;
+  doc.text('I do NOT want anyone from your company to call me on the phone or stop by.',M,y);y+=20;
+  doc.text('I want to be placed on your "Do NOT Call List."',M,y);y+=28;
+  doc.text('Please send the Bill for this Policy to:',M,y);y+=22;
+  doc.setDrawColor(200,200,200);doc.setLineWidth(1);doc.rect(M,y,W-M*2,158);y+=18;
+  const lx=M+14,le=W-M-14,lh=22,lw=160;
+  function fl(label,value){
+    doc.setFont('helvetica','bold');doc.setFontSize(10.5);doc.text(label,lx,y);
+    doc.setFont('helvetica','normal');doc.line(lx+lw,y+3,le,y+3);
+    if(value){doc.setFontSize(11);doc.text(value,lx+lw+4,y);}y+=lh;
+  }
+  fl('Name',c.fullName);fl('Address',c.address);
+  fl('City / St. / ZIP',[c.city,c.state,c.zip].filter(Boolean).join('   '));
+  fl('Phone No.',c.phone);fl('Birth Date',c.dob);
+  fl('Social Security No. (Required)',c.ssn||'___  –  ___  –  ____');
+  y+=18;const sy=y+38;
+  doc.line(M,sy,M+240,sy);doc.setFontSize(10);doc.text('Signed',M,sy+13);
+  doc.line(M+260,sy,M+370,sy);doc.text('Date',M+260,sy+13);
+  const wy=sy+48;
+  doc.line(M,wy,M+240,wy);doc.text('Witness',M,wy+13);
+  doc.line(M+260,wy,M+370,wy);doc.text('Date',M+260,wy+13);
+  doc.setFontSize(8);doc.setTextColor(160,160,160);
+  doc.text(`${c.fullName} · Policy: ${pol} · ${co}`,M,748);
+  doc.save(`StopPAC_${(c.lastName||c.firstName).replace(/\s/g,'_')}_${todayStr()}.pdf`);
+  toast('✓ Stop PAC PDF ready');
+}
+
+// ── PDF: SURRENDER ────────────────────────────────────────────────────────────
+function genSurrender(){
+  const c=selectedGroup[activeVisitIdx];
+  const doc=new jsPDF({orientation:'portrait',unit:'pt',format:'letter'});
+  const W=612,M=60;let y=M;
+  doc.setFillColor(26,26,46);doc.rect(0,0,W,78,'F');
+  doc.setTextColor(255,255,255);doc.setFont('helvetica','bold');doc.setFontSize(17);
+  doc.text('Policy Cancellation Request',M,34);
+  doc.setFont('helvetica','normal');doc.setFontSize(9.5);doc.setTextColor(184,146,58);
+  doc.text('American-Amicable Group of Companies',M,50);
+  doc.text(`Generated ${new Date().toLocaleDateString('en-US',{month:'long',day:'numeric',year:'numeric'})}`,M,64);
+  y=104;doc.setTextColor(26,26,46);doc.setFontSize(11);
+  function fld(label,value,lw2=280){
+    doc.setFont('helvetica','bold');doc.setFontSize(10.5);doc.text(label+':',M,y);
+    const tw=doc.getTextWidth(label+': ');
+    doc.setFont('helvetica','normal');doc.line(M+tw,y+3,M+tw+lw2,y+3);
+    if(value){doc.setFontSize(11);doc.text(value,M+tw+3,y);}y+=24;
+  }
+  fld('Policy Number',c.existingPolicy,240);fld("Insured's Name",c.fullName,250);
+  fld("Policy Owner's Name",c.fullName,230);fld('DOB',c.dob,130);y+=2;
+  fld('Address',c.address,340);
+  fld('City, State, Zip',[c.city,c.state,c.zip].filter(Boolean).join(', '),270);
+  fld('SS#',c.ssn,160);fld('Phone No.',c.phone,190);y+=8;
+  doc.setFont('helvetica','normal');doc.setFontSize(11);
+  doc.text('I wish to cancel my policy and receive any policy values due me.',M,y);y+=22;
+  fld('Reason for cancellation','',350);y+=6;
+  doc.rect(M,y-11,11,11);doc.text('Direct deposit to my bank account (attach voided check)',M+16,y);y+=20;
+  doc.rect(M,y-11,11,11);doc.text('Mail check to the address above',M+16,y);y+=30;
+  doc.setFont('helvetica','italic');doc.setFontSize(8.5);doc.setTextColor(110,110,110);
+  doc.text(doc.splitTextToSize('If there is a taxable gain, the Company will report the gain to the IRS and issue a 1099-R. Unless the box below is checked, taxes will be withheld.',W-M*2),M,y);
+  y+=28;doc.setFont('helvetica','normal');doc.setFontSize(11);doc.setTextColor(26,26,46);
+  doc.rect(M,y-11,11,11);doc.text('Do NOT withhold taxes',M+16,y);y+=40;
+  doc.line(M,y,M+270,y);doc.setFontSize(10);doc.text("Policy Owner's Signature",M,y+13);
+  doc.line(M+290,y,M+430,y);doc.text('Date',M+290,y+13);
+  doc.setFontSize(8);doc.setTextColor(160,160,160);
+  doc.text('American-Amicable Life Insurance Company of Texas · PO Box 2549, Waco TX 76702-2549 · Fax: 254-297-2105',M,748);
+  doc.save(`Surrender_${(c.lastName||c.firstName).replace(/\s/g,'_')}_${todayStr()}.pdf`);
+  toast('✓ Surrender form ready');
+}
+
+// ── DASHBOARD ─────────────────────────────────────────────────────────────────
+function renderDashboard(){
+  const today = new Date(); today.setHours(0,0,0,0);
+  const weekStart = new Date(today); weekStart.setDate(today.getDate()-3);
+  const weekEnd = new Date(today); weekEnd.setDate(today.getDate()+7);
+  const upcoming = allClients.filter(c=>{
+    if(!c.apptDate) return false;
+    const d=new Date(c.apptDate); if(isNaN(d)) return false;
+    d.setHours(0,0,0,0); return d>=weekStart && d<=weekEnd;
+  }).sort((a,b)=>new Date(a.apptDate)-new Date(b.apptDate));
+
+  const pending   = allClients.filter(c=>c.hasPending);
+  const stopCount = allClients.filter(c=>c.stopPending).length;
+  const surrCount = allClients.filter(c=>c.surrPending).length;
+  const fuVisits  = allClients.filter(c=>c.followUpPending);
+
+  // Count signals
+  const todayDate = new Date(); todayDate.setHours(0,0,0,0);
+  const in30 = new Date(todayDate); in30.setDate(todayDate.getDate()+30);
+  const in60 = new Date(todayDate); in60.setDate(todayDate.getDate()+60);
+  const in75 = new Date(todayDate); in75.setDate(todayDate.getDate()+75);
+  let anniversaryCount=0, birthdayCount=0, medicareCount=0;
+  allClients.forEach(c => {
+    if(c.effectiveDate){const e=new Date(c.effectiveDate);if(!isNaN(e)){const a=new Date(e);a.setFullYear(todayDate.getFullYear());if(a<todayDate)a.setFullYear(todayDate.getFullYear()+1);if(a<=in30)anniversaryCount++;}}
+    if(c.dob){const d=new Date(c.dob);if(!isNaN(d)){const nb=new Date(d);nb.setFullYear(todayDate.getFullYear());if(nb<todayDate)nb.setFullYear(todayDate.getFullYear()+1);const days=Math.round((nb-todayDate)/86400000);const age=nb.getFullYear()-d.getFullYear();if(days<=60)birthdayCount++;if(age===65&&days<=75)medicareCount++;}}
+  });
+  const signalCount = anniversaryCount + birthdayCount + medicareCount;
+
+  // Stats row
+  document.getElementById('statsRow').innerHTML=`
+    <div class="stat-box" style="border-color:var(--blue);cursor:pointer" onclick="switchDashTab('appts')"><div class="stat-number" style="color:var(--blue)">${upcoming.length}</div><div class="stat-label">This Week</div></div>
+    <div class="stat-box alert" style="cursor:pointer" onclick="switchDashTab('pipeline')"><div class="stat-number">${pending.length}</div><div class="stat-label">Pending Actions</div></div>
+    <div class="stat-box" style="cursor:pointer" onclick="switchDashTab('pipeline')"><div class="stat-number">${stopCount}</div><div class="stat-label">Stop PACs</div></div>
+    <div class="stat-box" style="cursor:pointer" onclick="switchDashTab('pipeline')"><div class="stat-number">${surrCount}</div><div class="stat-label">Surrenders</div></div>`;
+
+  // Build tabs
+  const tabs = [
+    { id:'appts',      label:'📅 Appointments',     count: upcoming.length },
+    { id:'signals',    label:'🔔 Signals',           count: signalCount },
+    { id:'pipeline',   label:'📋 Pipeline',          count: pending.length + fuVisits.length },
+    { id:'leads',      label:'📬 Leads',             count: 0 },
+    { id:'commission', label:'💰 Commission',        count: 0 },
+  ];
+
+  document.getElementById('dashTabs').innerHTML = tabs.map(t =>
+    `<button class="dash-tab${activeDashTab===t.id?' active':''}" onclick="switchDashTab('${t.id}')">
+      ${t.label}${t.count>0?`<span class="tab-badge">${t.count}</span>`:''}
+    </button>`
+  ).join('');
+
+  renderDashPanel(activeDashTab);
+}
+
+let activeDashTab = 'appts';
+
+function switchDashTab(tab) {
+  activeDashTab = tab;
+  // Update tab buttons
+  document.querySelectorAll('.dash-tab').forEach(b => b.classList.remove('active'));
+  const btn = [...document.querySelectorAll('.dash-tab')].find(b => b.onclick?.toString().includes(tab));
+  if (btn) btn.classList.add('active');
+  // Re-render the tabs to update active state properly
+  renderDashboard();
+}
+
+function renderDashPanel(tab) {
+  // Hide all panels
+  document.querySelectorAll('.dash-panel').forEach(p => p.classList.remove('active'));
+  const panel = document.getElementById('panel_' + tab);
+  if (panel) panel.classList.add('active');
+
+  if (tab === 'appts') renderApptPanel();
+  else if (tab === 'signals') renderSignalsPanel();
+  else if (tab === 'pipeline') renderPipelinePanel();
+  else if (tab === 'leads') renderLeadsPanel();
+  else if (tab === 'commission') renderCommissionPanel();
+}
+
+function renderApptPanel() {
+  const today = new Date(); today.setHours(0,0,0,0);
+  const tomorrow = new Date(today.getTime()+86400000);
+  const weekStart = new Date(today); weekStart.setDate(today.getDate()-3);
+  const weekEnd = new Date(today); weekEnd.setDate(today.getDate()+7);
+  const upcoming = allClients.filter(c=>{
+    if(!c.apptDate) return false;
+    const d=new Date(c.apptDate); if(isNaN(d)) return false;
+    d.setHours(0,0,0,0); return d>=weekStart && d<=weekEnd;
+  }).sort((a,b)=>new Date(a.apptDate)-new Date(b.apptDate));
+
+  const panel = document.getElementById('panel_appts');
+  if (!upcoming.length) {
+    panel.innerHTML = '<div class="no-results" style="padding:40px">📅 No appointments this week</div>';
+    return;
+  }
+  panel.innerHTML = `<div class="followup-grid">${upcoming.slice(0,12).map(c=>{
+    const key=c.fullName.toLowerCase().replace(/\s+/g,' ').trim();
+    const apptStr=c.apptDate+(c.apptTime?' @ '+c.apptTime:'');
+    const d=new Date(c.apptDate); d.setHours(0,0,0,0);
+    const badge=d.getTime()===today.getTime()?'🔴 TODAY':d.getTime()===tomorrow.getTime()?'🟡 TOMORROW':d<today?'⏰ PAST':'';
+    return `<div class="followup-card" style="border-color:var(--blue)">
+      <div style="display:flex;align-items:center;justify-content:space-between">
+        <div class="followup-name" style="cursor:pointer" onclick="openGroup('${esc(key)}');window.scrollTo({top:0,behavior:'smooth'})">${c.fullName}</div>
+        ${badge?`<span style="font-size:10px;font-weight:700;color:var(--rust)">${badge}</span>`:''}
+      </div>
+      <div class="followup-meta">${[c.city,c.state].filter(Boolean).join(', ')}</div>
+      <div style="font-size:12px;font-weight:600;color:var(--blue);margin-top:6px">📅 ${apptStr}</div>
+      ${c.apptNotes?`<div style="font-size:11px;color:var(--muted);margin-top:3px">${c.apptNotes}</div>`:''}
+      <div style="margin-top:8px;display:flex;gap:6px;flex-wrap:wrap">
+        ${c.phone?`<button onclick="openCallScript('${esc(key)}')" style="font-size:11px;font-weight:600;padding:5px 12px;border-radius:20px;border:1.5px solid var(--green);color:var(--green);background:#fff;cursor:pointer;font-family:'DM Sans',sans-serif">📞 Call</button>`:''}
+        <button onclick="calFromAppt('${esc(key)}')" style="font-size:11px;font-weight:600;padding:5px 12px;border-radius:20px;border:1.5px solid var(--blue);color:var(--blue);background:#fff;cursor:pointer;font-family:'DM Sans',sans-serif">📅 Calendar</button>
+        <button onclick="openBriefing('${esc(key)}')" style="font-size:11px;font-weight:600;padding:5px 12px;border-radius:20px;border:1.5px solid var(--gold);color:var(--gold);background:#fff;cursor:pointer;font-family:'DM Sans',sans-serif">📋 Briefing</button>
+      </div>
+    </div>`;
+  }).join('')}</div>`;
+}
+
+function renderSignalsPanel() {
+  const panel = document.getElementById('panel_signals');
+  let html = '';
+
+  // Run existing signal renderers into a temp div then grab HTML
+  const tempAnniv = document.createElement('div');
+  const tempBday = document.createElement('div');
+  document.body.appendChild(tempAnniv);
+  document.body.appendChild(tempBday);
+  
+  // Use the existing render functions but target our panel directly
+  html += buildAnniversaryHtml();
+  html += buildBirthdayHtml();
+  
+  document.body.removeChild(tempAnniv);
+  document.body.removeChild(tempBday);
+
+  panel.innerHTML = html || '<div class="no-results" style="padding:40px">🎉 No signals right now</div>';
+}
+
+function renderPipelinePanel() {
+  const panel = document.getElementById('panel_pipeline');
+  const pending   = allClients.filter(c=>c.hasPending);
+  const doorKnock = allClients.filter(c=>c.clientStatus==='Door Knock');
+  const dial      = allClients.filter(c=>c.clientStatus==='Dial');
+  const followUp  = allClients.filter(c=>c.clientStatus==='Follow Up');
+  const appt      = allClients.filter(c=>c.clientStatus==='APPT');
+  const fuVisits  = allClients.filter(c=>c.followUpPending);
+
+  const tabs = [
+    {id:'pending',   label:'📋 Paperwork',        data:pending},
+    {id:'fuvisit',   label:'🔄 Follow-Up Visits', data:fuVisits},
+    {id:'doorknock', label:'🚪 Door Knock',        data:doorKnock},
+    {id:'dial',      label:'📞 Dial',              data:dial},
+    {id:'followup',  label:'📁 Follow Up',         data:followUp},
+    {id:'appt',      label:'📅 APPT',              data:appt},
+  ];
+
+  let tabHtml = `<div class="pipeline-tabs" style="margin-bottom:14px">` +
+    tabs.map(t => `<button class="pipeline-tab${activePipelineTab===t.id?' active':''}" onclick="switchPipeline('${t.id}')">${t.label}<span class="tab-count">${t.data.length}</span></button>`).join('') +
+    '</div><div id="pipelineInner"></div>';
+
+  panel.innerHTML = tabHtml;
+  renderPipelineInner(activePipelineTab);
+}
+
+let activePipelineTab = 'pending';
+
+function switchPipeline(tab) {
+  activePipelineTab = tab;
+  renderPipelinePanel();
+}
+
+function renderPipelineInner(tab) {
+  const pending   = allClients.filter(c=>c.hasPending);
+  const doorKnock = allClients.filter(c=>c.clientStatus==='Door Knock');
+  const dial      = allClients.filter(c=>c.clientStatus==='Dial');
+  const followUp  = allClients.filter(c=>c.clientStatus==='Follow Up');
+  const appt      = allClients.filter(c=>c.clientStatus==='APPT');
+  const fuVisits  = allClients.filter(c=>c.followUpPending);
+  const dataMap   = {pending,fuvisit:fuVisits,doorknock:doorKnock,dial,followup:followUp,appt};
+  const activeData = dataMap[tab] || [];
+  const inner = document.getElementById('pipelineInner');
+  if (!inner) return;
+
+  if (!activeData.length) {
+    inner.innerHTML = '<div class="no-results" style="text-align:center;padding:28px;color:var(--muted)">🎉 Nothing here!</div>';
+    return;
+  }
+
+  if (tab === 'doorknock') {
+    inner.innerHTML = `<div class="door-knock-grid">${activeData.slice(0,24).map(c => {
+      const key = c.fullName.toLowerCase().replace(/\s+/g,' ').trim();
+      const addr = [c.address, c.city, c.state].filter(Boolean).join(', ');
+      const mapsUrl = `https://maps.google.com/?q=${encodeURIComponent(addr)}`;
+      return `<div class="door-knock-card">
+        <div class="door-knock-name">${c.fullName}</div>
+        <div class="door-knock-meta">${addr}</div>
+        ${c.phone?`<div style="font-size:12px;color:var(--sage);margin-top:3px">${c.phone}</div>`:''}
+        <div class="door-knock-actions">
+          ${c.phone?`<button class="dk-btn dk-call" onclick="openCallScript('${esc(key)}')">📞 Call</button>`:''}
+          <a class="dk-btn dk-dir" href="${mapsUrl}" target="_blank">📍 Directions</a>
+          <button class="dk-btn dk-view" onclick="openGroup('${esc(key)}');window.scrollTo({top:0,behavior:'smooth'})">View</button>
+        </div>
+      </div>`;
+    }).join('')}</div>`;
+    return;
+  }
+
+  inner.innerHTML = `<div class="followup-grid">${activeData.slice(0,24).map(c=>{
+    const key=c.fullName.toLowerCase().replace(/\s+/g,' ').trim();
+    const due=[c.stopDue&&`Stop PAC: ${c.stopDue}`,c.cxDue&&`CX: ${c.cxDue}`,c.surrDue&&`Surrender: ${c.surrDue}`].filter(Boolean).join(' · ');
+    return `<div class="followup-card" onclick="openGroup('${esc(key)}');window.scrollTo({top:0,behavior:'smooth'});">
+      <div class="followup-name">${c.fullName}</div>
+      <div class="followup-meta">${[c.displayCompany,c.city].filter(Boolean).join(' · ')}</div>
+      ${due?`<div style="font-size:11px;color:var(--rust);margin-top:5px;font-weight:600">📅 ${due}</div>`:''}
+      <div class="followup-tags">${buildPills(c)}</div>
+    </div>`;
+  }).join('')}</div>`;
+}
+
+function renderLeadsPanel() {
+  const panel = document.getElementById('panel_leads');
+  panel.innerHTML = `<div style="display:flex;flex-direction:column;gap:10px">
+    <button onclick="openFexLeads()" style="padding:16px;background:#fff;border:1.5px solid var(--green);border-radius:12px;font-family:'DM Sans',sans-serif;font-size:15px;font-weight:600;color:var(--green);cursor:pointer;text-align:left;display:flex;align-items:center;gap:12px">
+      <span style="font-size:24px">📬</span>
+      <div><div>FEX Leads from Email</div><div style="font-size:12px;font-weight:400;color:var(--muted);margin-top:2px">Check Gmail for new lead card PDFs from FEX Contracting</div></div>
+    </button>
+    <button onclick="openScanner()" style="padding:16px;background:#fff;border:1.5px solid var(--gold);border-radius:12px;font-family:'DM Sans',sans-serif;font-size:15px;font-weight:600;color:var(--gold);cursor:pointer;text-align:left;display:flex;align-items:center;gap:12px">
+      <span style="font-size:24px">📋</span>
+      <div><div>Scan a Lead Card</div><div style="font-size:12px;font-weight:400;color:var(--muted);margin-top:2px">Upload a photo or PDF — AI reads the handwriting</div></div>
+    </button>
+    <button onclick="openNearbyMap()" style="padding:16px;background:#fff;border:1.5px solid var(--blue);border-radius:12px;font-family:'DM Sans',sans-serif;font-size:15px;font-weight:600;color:var(--blue);cursor:pointer;text-align:left;display:flex;align-items:center;gap:12px">
+      <span style="font-size:24px">🗺</span>
+      <div><div>Nearby Clients</div><div style="font-size:12px;font-weight:400;color:var(--muted);margin-top:2px">Find clients near your current location</div></div>
+    </button>
+  </div>`;
+}
+
+function renderCommissionPanel() {
+  const panel = document.getElementById('panel_commission');
+  panel.innerHTML = `
+    <div style="display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap">
+      <button onclick="openCommTracker()" style="padding:10px 16px;background:#fff;border:1.5px solid var(--gold);border-radius:22px;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;color:var(--gold);cursor:pointer">📄 Upload Statement</button>
+      <button onclick="renderCommissionPanel()" style="padding:10px 16px;background:#fff;border:1.5px solid var(--border);border-radius:22px;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;color:var(--muted);cursor:pointer">↻ Refresh</button>
+    </div>
+    <div id="commEmailsInline">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px">
+        <div style="font-family:'DM Serif Display',serif;font-size:17px">💰 Commission & Lapse Emails</div>
+        <div class="loading-spinner" style="width:16px;height:16px;flex-shrink:0"></div>
+      </div>
+    </div>`;
+  loadCommissionEmailsInline();
+}
+
+async function loadCommissionEmailsInline() {
+  const container = document.getElementById('commEmailsInline');
+  if (!container || !accessToken) return;
+
+  const CARRIERS = ['trinity life','illinois mutual','american general','polish falcons',
+    'corebridge','gerber life','foresters','transamerica','sons of norway','lifeshield',
+    'kskj','accendo','sbli','amam','pfa','seniorlife','american amicable','aetna'];
+
+  const LAPSE_TERMS = ['lapse','lapsed','termination notice','policy terminated',
+    'cancellation notice','premium past due','policy lapse'];
+
+  // Build Gmail search queries
+  const commQueries = CARRIERS.map(c => `from:${c.split(' ')[0]}`).join(' OR ');
+  const queries = [
+    // Commission statements from carriers
+    `(${CARRIERS.slice(0,5).map(c=>'from:*'+c.split(' ')[0]+'*').join(' OR ')}) has:attachment`,
+    `(${CARRIERS.slice(5,10).map(c=>'from:*'+c.split(' ')[0]+'*').join(' OR ')}) has:attachment`,
+    `subject:(commission OR statement OR payment) has:attachment`,
+    // Lapse notices
+    `subject:(lapse OR lapsed OR termination OR "past due" OR cancellation) insurance`,
+    `(lapse OR lapsed) (policy OR insurance) in:inbox`,
+  ];
+
+  try {
+    let allIds = new Set();
+    let commMessages = [], lapseMessages = [];
+
+    for (let i = 0; i < queries.length; i++) {
+      try {
+        const r = await fetch(
+          `https://www.googleapis.com/gmail/v1/users/me/messages?q=${encodeURIComponent(queries[i])}&maxResults=15`,
+          { headers: { Authorization: `Bearer ${accessToken}` } }
+        );
+        if (!r.ok) continue;
+        const d = await r.json();
+        for (const msg of (d.messages || [])) {
+          if (!allIds.has(msg.id)) {
+            allIds.add(msg.id);
+            if (i < 3) commMessages.push(msg);
+            else lapseMessages.push(msg);
+          }
+        }
+      } catch(e) {}
+    }
+
+    // Get details for commission emails
+    const commDetails = await getEmailDetails(commMessages.slice(0,10));
+    const lapseDetails = await getEmailDetails(lapseMessages.slice(0,8));
+
+    let html = '';
+
+    // LAPSE NOTICES — show first, most urgent
+    if (lapseDetails.length) {
+      html += `<div style="background:var(--rust-light);border:1.5px solid var(--rust);border-radius:12px;padding:14px;margin-bottom:16px">
+        <div style="font-weight:700;color:var(--rust);margin-bottom:10px;display:flex;align-items:center;gap:7px">
+          <span>⚠️</span> ${lapseDetails.length} Lapse / Termination Notice${lapseDetails.length>1?'s':''}
+        </div>`;
+      lapseDetails.forEach(email => {
+        const dateStr = formatEmailDate(email.date);
+        // Try to find matching client
+        const matched = findClientFromEmail(email);
+        html += `<div style="background:#fff;border-radius:8px;padding:11px 13px;margin-bottom:7px">
+          <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:8px">
+            <div>
+              <div style="font-weight:600;font-size:13px">${email.subject}</div>
+              <div style="font-size:11px;color:var(--muted);margin-top:2px">${email.from} · ${dateStr}</div>
+              <div style="font-size:12px;color:var(--ink);margin-top:5px">${email.snippet}</div>
+              ${matched ? `<div style="font-size:11px;color:var(--rust);font-weight:600;margin-top:4px">⚠️ Possible match: ${matched.fullName} · ${matched.existingCompany||''}</div>` : ''}
+            </div>
+          </div>
+        </div>`;
+      });
+      html += '</div>';
+    }
+
+    // COMMISSION STATEMENTS
+    html += `<div style="font-family:'DM Serif Display',serif;font-size:17px;margin-bottom:12px">
+      💰 Commission Emails <span style="font-size:13px;font-weight:400;font-family:'DM Sans',sans-serif;color:var(--muted)">${commDetails.length} found</span>
+    </div>`;
+
+    if (!commDetails.length) {
+      html += `<div style="background:var(--cream);border-radius:12px;padding:20px;text-align:center;color:var(--muted)">
+        <div style="font-size:22px;margin-bottom:8px">📭</div>
+        <div style="font-weight:600;color:var(--ink)">No commission emails found</div>
+        <div style="font-size:13px;margin-top:4px">Make sure you're signed in with michelle@seniorbenefitsofillinois.com</div>
+      </div>`;
+    } else {
+      commDetails.forEach(email => {
+        const dateStr = formatEmailDate(email.date);
+        html += `<div style="border:1.5px solid var(--border);border-radius:12px;padding:13px;margin-bottom:9px">
+          <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:10px">
+            <div style="flex:1;min-width:0">
+              <div style="font-weight:600;font-size:13px">${email.subject}</div>
+              <div style="font-size:11px;color:var(--muted);margin-top:2px">${email.from} · ${dateStr}</div>
+              <div style="font-size:12px;color:var(--ink);margin-top:5px;line-height:1.5">${email.snippet}</div>
+            </div>
+            ${email.pdfPart
+              ? `<button onclick="processCommissionEmail('${email.id}','${email.pdfPart.attachmentId}',this)"
+                   style="flex-shrink:0;padding:8px 14px;background:var(--gold);color:#fff;border:none;border-radius:20px;font-family:'DM Sans',sans-serif;font-size:12px;font-weight:600;cursor:pointer;white-space:nowrap">
+                   📊 Process
+                 </button>`
+              : `<span style="font-size:11px;color:var(--muted);flex-shrink:0">No PDF</span>`
+            }
+          </div>
+          <div class="comm-email-result" style="margin-top:8px"></div>
+        </div>`;
+      });
+    }
+
+    container.innerHTML = html;
+
+  } catch(err) {
+    container.innerHTML = `<div style="background:var(--rust-light);border-radius:12px;padding:16px;color:var(--rust)">
+      <div style="font-weight:600;margin-bottom:4px">Could not load emails</div>
+      <div style="font-size:13px">${err.message}</div>
+    </div>`;
+    console.error('Commission emails error:', err);
+  }
+}
+
+async function getEmailDetails(messages) {
+  const details = [];
+  for (const msg of messages) {
+    try {
+      const r = await fetch(
+        `https://www.googleapis.com/gmail/v1/users/me/messages/${msg.id}?format=full`,
+        { headers: { Authorization: `Bearer ${accessToken}` } }
+      );
+      const detail = await r.json();
+      const headers = detail.payload?.headers || [];
+      const subject = headers.find(h=>h.name==='Subject')?.value || '(no subject)';
+      const date = headers.find(h=>h.name==='Date')?.value || '';
+      const from = headers.find(h=>h.name==='From')?.value || '';
+      const snippet = detail.snippet || '';
+      const pdfPart = findPdfAttachment(detail.payload?.parts || []);
+      details.push({ id: msg.id, subject, date, from, snippet, pdfPart });
+    } catch(e) {}
+  }
+  return details;
+}
+
+function formatEmailDate(dateStr) {
+  const d = new Date(dateStr);
+  return isNaN(d) ? dateStr : d.toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'});
+}
+
+function findClientFromEmail(email) {
+  // Try to match client name or policy number from email subject/snippet
+  const text = (email.subject + ' ' + email.snippet).toLowerCase();
+  return allClients.find(c => {
+    if (c.existingPolicy && text.includes(c.existingPolicy.toLowerCase())) return true;
+    if (c.fullName && c.fullName.split(' ').every(w => w.length > 2 && text.includes(w.toLowerCase()))) return true;
+    return false;
+  }) || null;
+}
+
+async function processCommissionEmail(messageId, attachmentId, btn) {
+  const resultDiv = btn.closest('div[style]').querySelector('.comm-email-result');
+  btn.disabled = true;
+  btn.textContent = '⏳ Processing…';
+
+  try {
+    const attResp = await fetch(
+      `https://www.googleapis.com/gmail/v1/users/me/messages/${messageId}/attachments/${attachmentId}`,
+      { headers: { Authorization: `Bearer ${accessToken}` } }
+    );
+    const attData = await attResp.json();
+    const base64 = attData.data.replace(/-/g,'+').replace(/_/g,'/');
+
+    if (resultDiv) resultDiv.innerHTML = `<div style="color:var(--muted);font-size:12px;display:flex;align-items:center;gap:6px">
+      <div class="loading-spinner" style="width:14px;height:14px"></div>Reading statement…</div>`;
+
+    const aiResp = await fetch('https://michelles-desk-api.michelle-cb4.workers.dev', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        model: 'claude-sonnet-4-6',
+        max_tokens: 2000,
+        messages: [{
+          role: 'user',
+          content: [
+            { type: 'document', source: { type: 'base64', media_type: 'application/pdf', data: base64 } },
+            { type: 'text', text: `This is an insurance commission statement. Extract all policy/commission line items.
+Return ONLY a JSON object with:
+- carrier: insurance company name
+- period: statement period
+- totalCommission: total as number
+- policies: array of {policyNumber, insuredName, commissionAmount, commissionType}
+Return only valid JSON, no other text.` }
+          ]
+        }]
+      })
+    });
+
+    if (!aiResp.ok) throw new Error(`Worker ${aiResp.status}`);
+    const aiData = await aiResp.json();
+    const text = aiData.content[0].text.trim().replace(/```json|```/g,'').trim();
+    const extracted = JSON.parse(text);
+
+    // Run the existing matchCommissions logic
+    matchCommissions(extracted);
+    btn.textContent = '✓ Processed';
+    btn.style.background = 'var(--sage)';
+    if (resultDiv) resultDiv.innerHTML = `<div style="font-size:12px;color:var(--green);font-weight:600">✓ ${extracted.policies?.length||0} policies found — see Commission Tracker above</div>`;
+
+  } catch(err) {
+    btn.disabled = false;
+    btn.textContent = '📊 Process';
+    if (resultDiv) resultDiv.innerHTML = `<div style="font-size:12px;color:var(--rust)">Error: ${err.message}</div>`;
+    console.error('Commission email error:', err);
+  }
+}
+
+// ── SIGNAL HTML BUILDERS (used by renderSignalsPanel) ─────────────────────────
+function buildAnniversaryHtml() {
+  var today = new Date(); today.setHours(0,0,0,0);
+  var in30 = new Date(today); in30.setDate(today.getDate()+30);
+  var anniversaries = [];
+  allClients.forEach(function(c) {
+    if (!c.effectiveDate) return;
+    var eff = new Date(c.effectiveDate);
+    if (isNaN(eff)) return;
+    var anniv = new Date(eff);
+    anniv.setFullYear(today.getFullYear());
+    anniv.setHours(0,0,0,0);
+    if (anniv < today) anniv.setFullYear(today.getFullYear()+1);
+    if (anniv <= in30) {
+      var daysUntil = Math.round((anniv - today) / 86400000);
+      var yearsOld = today.getFullYear() - eff.getFullYear();
+      anniversaries.push({ client: c, anniv: anniv, daysUntil: daysUntil, yearsOld: yearsOld });
+    }
+  });
+  anniversaries.sort(function(a,b){return a.daysUntil-b.daysUntil;});
+  if (!anniversaries.length) return '';
+
+  var html = '<div class="section-divider" style="margin-top:4px"><h2>📅 Policy Anniversaries <span style="font-size:14px;font-weight:400;color:var(--muted)">(next 30 days)</span></h2><div class="divider-line"></div></div><div class="followup-grid" id="annivGrid"></div>';
+
+  // Use setTimeout to add click handlers after DOM insertion
+  setTimeout(function() {
+    var grid = document.getElementById('annivGrid');
+    if (!grid) return;
+    var cards = '';
+    anniversaries.slice(0,12).forEach(function(item) {
+      var c = item.client, daysUntil = item.daysUntil, yearsOld = item.yearsOld, anniv = item.anniv;
+      var key = c.fullName.toLowerCase().replace(/\s+/g,' ').trim();
+      var dateStr = anniv.toLocaleDateString('en-US',{month:'long',day:'numeric'});
+      var badge = daysUntil===0 ? '<span class="anniv-badge anniv-today">TODAY</span>' : daysUntil<=7 ? '<span class="anniv-badge anniv-soon">'+daysUntil+'d</span>' : '<span class="anniv-badge anniv-upcoming">'+daysUntil+'d</span>';
+      var emailHref = c.email ? 'mailto:'+c.email+'?subject=Your+'+yearsOld+'-Year+Policy+Anniversary' : '#';
+      cards += '<div class="anniv-card" data-key="'+encodeURIComponent(key)+'" data-years="'+yearsOld+'">';
+      cards += '<div><div class="anniv-name">'+c.fullName+badge+'</div>';
+      cards += '<div class="anniv-meta">'+(c.displayCompany||'')+' · '+(c.city||'')+'</div>';
+      cards += '<div class="anniv-date">📅 '+dateStr+' · Year '+yearsOld+'</div></div>';
+      cards += '<div class="anniv-actions">';
+      if (c.phone) cards += '<button class="anniv-btn anniv-btn-call" data-action="call">📞 Call</button>';
+      if (c.email) cards += '<a class="anniv-btn anniv-btn-email" href="'+emailHref+'">✉️ Email</a>';
+      cards += '<button class="anniv-btn" style="border-color:var(--gold);color:var(--gold)" data-action="letter-anniv">📄 Letter</button>';
+      cards += '<button class="anniv-btn anniv-btn-view" data-action="view">View</button>';
+      cards += '</div></div>';
+    });
+    grid.innerHTML = cards;
+    grid.addEventListener('click', function(e) {
+      var btn = e.target.closest('[data-action]');
+      var card = e.target.closest('[data-key]');
+      if (!btn || !card) return;
+      var key = decodeURIComponent(card.dataset.key);
+      var years = parseInt(card.dataset.years||'0');
+      var action = btn.dataset.action;
+      if (action==='call') openCallScript(key);
+      else if (action==='letter-anniv') genAnniversaryLetter(key, years);
+      else if (action==='view') { openGroup(key); window.scrollTo({top:0,behavior:'smooth'}); }
+    });
+  }, 50);
+
+  return html;
+}
+
+function buildBirthdayHtml() {
+  var today = new Date(); today.setHours(0,0,0,0);
+  var signals = [];
+  allClients.forEach(function(c) {
+    if (!c.dob) return;
+    var dob = new Date(c.dob);
+    if (isNaN(dob)) return;
+    var nextBday = new Date(dob);
+    nextBday.setFullYear(today.getFullYear());
+    nextBday.setHours(0,0,0,0);
+    if (nextBday < today) nextBday.setFullYear(today.getFullYear()+1);
+    var daysUntilBday = Math.round((nextBday - today) / 86400000);
+    var ageAtNextBday = nextBday.getFullYear() - dob.getFullYear();
+    if (daysUntilBday <= 60 && daysUntilBday >= 0)
+      signals.push({ type:'birthday', client:c, daysUntil:daysUntilBday, age:ageAtNextBday, date:nextBday });
+    if (ageAtNextBday === 65 && daysUntilBday <= 75 && daysUntilBday >= 0)
+      signals.push({ type:'medicare', client:c, daysUntil:daysUntilBday, age:65, date:nextBday });
+  });
+  signals.sort(function(a,b){ return a.type===b.type ? a.daysUntil-b.daysUntil : a.type==='medicare'?-1:1; });
+  if (!signals.length) return '';
+
+  var medicareSignals = signals.filter(function(s){return s.type==='medicare';});
+  var birthdaySignals = signals.filter(function(s){return s.type==='birthday';});
+  var html = '';
+
+  function makeGrid(id, signals2, color, labelFn, badgeFn) {
+    var gridHtml = '<div class="followup-grid" id="'+id+'"></div>';
+    setTimeout(function() {
+      var grid = document.getElementById(id);
+      if (!grid) return;
+      var cards = '';
+      signals2.forEach(function(sig) {
+        var c = sig.client, daysUntil = sig.daysUntil, date = sig.date, age = sig.age;
+        var key = c.fullName.toLowerCase().replace(/\s+/g,' ').trim();
+        var dateStr = date.toLocaleDateString('en-US',{month:'long',day:'numeric',year:'numeric'});
+        var badge = badgeFn(daysUntil);
+        cards += '<div class="anniv-card" style="border-color:'+color+'" data-key="'+encodeURIComponent(key)+'" data-age="'+age+'" data-type="'+sig.type+'">';
+        cards += '<div><div class="anniv-name" style="color:'+color+'">'+labelFn(sig)+' '+c.fullName+badge+'</div>';
+        cards += '<div class="anniv-meta">'+(c.displayCompany||'')+(c.city?' · '+c.city:'')+'</div>';
+        cards += '<div class="anniv-date" style="color:'+color+'">'+dateStr+(sig.type==='birthday'?' · Turning '+age:'')+'</div></div>';
+        cards += '<div class="anniv-actions">';
+        if (c.phone) cards += '<button class="anniv-btn" style="border-color:var(--green);color:var(--green)" data-action="call">📞 Call</button>';
+        if (c.email) cards += '<a class="anniv-btn anniv-btn-email" href="mailto:'+c.email+'">✉️ Email</a>';
+        cards += '<button class="anniv-btn" style="border-color:'+color+';color:'+color+'" data-action="letter">📄 Letter</button>';
+        cards += '<button class="anniv-btn anniv-btn-view" data-action="view">View</button>';
+        cards += '</div></div>';
+      });
+      grid.innerHTML = cards;
+      grid.addEventListener('click', function(e) {
+        var btn = e.target.closest('[data-action]');
+        var card = e.target.closest('[data-key]');
+        if (!btn || !card) return;
+        var key = decodeURIComponent(card.dataset.key);
+        var age = parseInt(card.dataset.age||'0');
+        var type = card.dataset.type;
+        var action = btn.dataset.action;
+        if (action==='call') openCallScript(key);
+        else if (action==='letter') { if(type==='medicare') genMedicareLetter(key); else genBirthdayLetter(key, age); }
+        else if (action==='view') { openGroup(key); window.scrollTo({top:0,behavior:'smooth'}); }
+      });
+    }, 50);
+    return gridHtml;
+  }
+
+  if (medicareSignals.length) {
+    html += '<div class="section-divider" style="margin-top:12px"><h2>🏥 Aging into Medicare <span style="font-size:14px;font-weight:400;color:var(--muted)">(next 75 days)</span></h2><div class="divider-line"></div></div>';
+    html += makeGrid('medicareGrid', medicareSignals, '#2d7a4f',
+      function(s){return '🏥';},
+      function(d){return d<=14?'<span class="anniv-badge anniv-soon">URGENT</span>':'<span class="anniv-badge anniv-upcoming">'+d+'d</span>';}
+    );
+  }
+
+  if (birthdaySignals.length) {
+    html += '<div class="section-divider" style="margin-top:12px"><h2>🎂 Upcoming Birthdays <span style="font-size:14px;font-weight:400;color:var(--muted)">(next 60 days)</span></h2><div class="divider-line"></div></div>';
+    html += makeGrid('birthdayGrid', birthdaySignals, 'var(--rust)',
+      function(s){return '🎂';},
+      function(d){return d<=7?'<span class="anniv-badge anniv-soon">'+d+'d</span>':'<span class="anniv-badge anniv-upcoming">'+d+'d</span>';}
+    );
+  }
+
+  return html;
+}
+
+
+// ── COMMISSION HISTORY STORAGE ───────────────────────────────────────────────
+function saveCommissionHistory(data, total, policyCount) {
+  try {
+    const history = getCommissionHistory();
+    const entry = {
+      carrier: data.carrier || 'Unknown',
+      period: data.period || '',
+      total: total,
+      policies: policyCount,
+      date: new Date().toLocaleDateString('en-US',{month:'numeric',day:'numeric',year:'numeric'})
+    };
+    // Avoid duplicates (same carrier + period)
+    const key = entry.carrier + entry.period;
+    const exists = history.find(h => (h.carrier + h.period) === key);
+    if (!exists) {
+      history.push(entry);
+      localStorage.setItem('michelle_comm_history', JSON.stringify(history));
+    }
+  } catch(e) { console.log('Storage not available'); }
+}
+
+function getCommissionHistory() {
+  try {
+    return JSON.parse(localStorage.getItem('michelle_comm_history') || '[]');
+  } catch(e) { return []; }
+}
+
+// ── NEARBY MAP ────────────────────────────────────────────────────────────────
+let userLat = null, userLng = null, currentRadius = 1;
+
+function openNearbyMap() {
+  document.getElementById('mapSection').classList.add('visible');
+  document.getElementById('mapSection').scrollIntoView({behavior:'smooth',block:'start'});
+  if (!userLat) {
+    navigator.geolocation.getCurrentPosition(
+      pos => {
+        userLat = pos.coords.latitude;
+        userLng = pos.coords.longitude;
+        document.getElementById('mapLocating').style.display='none';
+        document.getElementById('mapContent').style.display='block';
+        renderNearbyClients();
+      },
+      err => {
+        document.getElementById('mapLocating').innerHTML = '<div style="font-size:24px;margin-bottom:8px">⚠️</div><div style="font-weight:600">Location access denied</div><div style="font-size:13px;margin-top:4px">Enable location in browser settings to use this feature</div>';
+      }
+    );
+  } else {
+    document.getElementById('mapLocating').style.display='none';
+    document.getElementById('mapContent').style.display='block';
+    renderNearbyClients();
+  }
+}
+
+function closeNearbyMap() {
+  document.getElementById('mapSection').classList.remove('visible');
+}
+
+function setRadius(miles, btn) {
+  currentRadius = miles;
+  document.querySelectorAll('.map-radius-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  renderNearbyClients();
+}
+
+function haversineDistance(lat1, lng1, lat2, lng2) {
+  const R = 3958.8; // miles
+  const dLat = (lat2-lat1) * Math.PI/180;
+  const dLng = (lng2-lng1) * Math.PI/180;
+  const a = Math.sin(dLat/2)**2 + Math.cos(lat1*Math.PI/180)*Math.cos(lat2*Math.PI/180)*Math.sin(dLng/2)**2;
+  return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+}
+
+async function geocodeAddress(address) {
+  try {
+    const url = `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(address)}&limit=1`;
+    const resp = await fetch(url, { headers: { 'User-Agent': 'MichellesDesk/1.0' } });
+    const data = await resp.json();
+    if (data.length) return { lat: parseFloat(data[0].lat), lng: parseFloat(data[0].lon) };
+  } catch(e) {}
+  return null;
+}
+
+async function renderNearbyClients() {
+  const list = document.getElementById('nearbyList');
+  list.innerHTML = '<div style="text-align:center;padding:20px;color:var(--muted)">Finding nearby clients…</div>';
+
+  // Geocode a sample of clients that have addresses
+  const withAddr = allClients.filter(c => c.address && c.city && c.state).slice(0,200);
+  const nearby = [];
+
+  // Use zip code centroid approximation for speed (no API needed)
+  // Match clients in same county/city as user's location
+  const userZip = await reverseGeocode(userLat, userLng);
+
+  // Filter by city proximity using simple string match first, then distance
+  for (const c of withAddr) {
+    const fullAddr = `${c.address}, ${c.city}, ${c.state} ${c.zip}`;
+    // Quick filter: same city or nearby zip
+    if (c.city && userZip && (c.zip === userZip || c.city.toLowerCase() === userZip.city?.toLowerCase())) {
+      nearby.push({ client: c, dist: 0.5, addr: fullAddr });
+    }
+  }
+
+  // If not enough matches, show all with address in same state
+  const showList = nearby.length >= 3 ? nearby : withAddr.slice(0,20).map(c => ({
+    client: c, dist: null, addr: `${c.address}, ${c.city}, ${c.state}`
+  }));
+
+  document.getElementById('nearbyCount').textContent = `${showList.length} clients found`;
+
+  if (!showList.length) {
+    list.innerHTML = '<div style="text-align:center;padding:20px;color:var(--muted)">No nearby clients found — try increasing the radius</div>';
+    return;
+  }
+
+  list.innerHTML = showList.slice(0,15).map(({ client: c, dist, addr }) => `
+    <div class="nearby-card" onclick="openGroup('${esc(c.fullName.toLowerCase().replace(/\s+/g,' ').trim())}');closeNearbyMap()">
+      <div>
+        <div class="nearby-name">${c.fullName}</div>
+        <div class="nearby-addr">${addr}</div>
+        ${c.phone ? `<div style="font-size:12px;color:var(--sage);margin-top:2px">${c.phone}</div>` : ''}
+      </div>
+      <div style="display:flex;flex-direction:column;align-items:flex-end;gap:6px">
+        ${dist !== null ? `<span class="nearby-dist">${dist.toFixed(1)} mi</span>` : ''}
+        <a href="https://maps.google.com/?q=${encodeURIComponent(addr)}" target="_blank" onclick="event.stopPropagation()" style="font-size:11px;color:var(--blue);font-weight:600;text-decoration:none">Directions</a>
+        ${c.phone ? `<a href="tel:${c.phone.replace(/\D/g,'')}" onclick="event.stopPropagation()" style="font-size:11px;color:var(--green);font-weight:600;text-decoration:none">Call</a>` : ''}
+      </div>
+    </div>`).join('');
+
+  // Update map link to show area
+  document.getElementById('mapLink').href = `https://www.google.com/maps/search/insurance+clients/@${userLat},${userLng},13z`;
+}
+
+async function reverseGeocode(lat, lng) {
+  try {
+    const url = `https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lng}`;
+    const resp = await fetch(url, { headers: { 'User-Agent': 'MichellesDesk/1.0' } });
+    const data = await resp.json();
+    return {
+      zip: data.address?.postcode,
+      city: data.address?.city || data.address?.town || data.address?.village,
+      county: data.address?.county
+    };
+  } catch(e) { return {}; }
+}
+
+// ── CALL SCRIPTS ─────────────────────────────────────────────────────────────
+const SCRIPTS = {
+  lead: {
+    label: '📋 New Lead',
+    badge: 'lead',
+    tip: 'Goal: Set an appointment. Keep it short — under 60 seconds.',
+    text: (c) => `"Hi, may I speak with ${c.firstName}? 
+
+${c.firstName}, my name is Michelle Scott — I'm a licensed benefit coordinator here in Southern Illinois. I work with folks in your area on life insurance and burial coverage.
+
+I noticed you had requested some information, and I just wanted to reach out personally. I'm actually going to be in your area [this week / next week] and I'd love to stop by and sit down with you — no cost, no pressure, just to go over a few options.
+
+Would [day] or [day] work better for you?"`
+  },
+  client: {
+    label: '🤝 Existing Client',
+    badge: 'client',
+    tip: 'Warm check-in. Reference their policy — shows you know them.',
+    text: (c) => `"Hi ${c.firstName}! This is Michelle Scott — your benefit coordinator. How are you doing?
+
+[pause and listen]
+
+I'm just reaching out to check in on you. It's been a little while since we last connected, and I like to stay in touch with all my folks.
+
+I wanted to make sure everything is still going well with your ${c.displayCompany||'policy'} coverage${c.existingPolicy?' (policy #'+c.existingPolicy+')':', and that your coverage still fits your needs'}.
+
+Is there anything you've had questions about, or anything that's changed for you lately?
+
+[listen, then offer a visit if appropriate]"`
+  },
+  birthday: {
+    label: '🎂 Birthday',
+    badge: 'birthday',
+    tip: 'Lead with the birthday. The coverage conversation comes second.',
+    text: (c) => `"Hi ${c.firstName}! This is Michelle Scott — I just wanted to call and wish you a happy birthday!
+
+[warm pause]
+
+I always like to reach out to my clients around their birthday. It's one of my favorite parts of this work — getting to stay connected with the people I've helped over the years.
+
+I also just wanted to make sure that your coverage is still working the way it should for you at this stage. Sometimes things shift around a birthday — income, family situations — and I like to make sure my folks are always fully protected.
+
+Would it be alright if I stopped by sometime soon, just for a quick visit?"`
+  },
+  medicare: {
+    label: '🏥 Medicare',
+    badge: 'medicare',
+    tip: 'URGENT tone — enrollment windows are real deadlines. Be their guide, not a salesperson.',
+    text: (c) => `"Hi, may I speak with ${c.firstName}?
+
+${c.firstName}, my name is Michelle Scott — I'm a licensed benefit coordinator in your area. I'm reaching out because your 65th birthday is coming up, and I want to make sure you don't miss your Medicare enrollment window.
+
+This is really important — you have a 7-month window around your birthday to enroll, and if you miss it, you can face permanent premium penalties for the rest of your life.
+
+I help people in this area navigate Medicare every day, and I'd love to sit down with you — at no cost and no obligation — just to walk you through your options and make sure you're set up right.
+
+Would you have time for a quick visit this week?"`
+  },
+  doorknock: {
+    label: '🚪 Door Knock',
+    badge: 'doorknock',
+    tip: "If calling before showing up -- let them know you're coming. Short and friendly.",
+    text: (c) => `"Hi ${c.firstName}, this is Michelle Scott — I'm a benefit coordinator here in the area. I'm actually going to be in your neighborhood [today / this week] and I was hoping to stop by and introduce myself.
+
+I work with a lot of folks in [their city/area] on life insurance and burial coverage, and I just wanted to see if you'd have a few minutes to chat.
+
+Would sometime [today / this week] work for you?"`
+  },
+  followup: {
+    label: '🔄 Follow-Up',
+    badge: 'followup',
+    tip: 'Reference the last visit so they know you remember them.',
+    text: (c) => `"Hi ${c.firstName}! This is Michelle Scott. We visited a little while back${c.followUpReason ? ' — ' + c.followUpReason.toLowerCase() : ''}, and I just wanted to follow up with you.
+
+[pause]
+
+I've been thinking about you and wanted to make sure I followed through like I said I would. ${c.followUpReason && c.followUpReason.toLowerCase().includes('declin') ? 'I also wanted to share a couple of other options I think might work better for you.' : 'I wanted to make sure everything is still going in the right direction.'}
+
+Would you have a few minutes for me to come back by?"`
+  }
+};
+
+function detectScriptType(c) {
+  // Auto-detect best script based on client data
+  const dob = c.dob ? new Date(c.dob) : null;
+  if (dob && !isNaN(dob)) {
+    const today = new Date();
+    const nextBday = new Date(dob);
+    nextBday.setFullYear(today.getFullYear());
+    if (nextBday < today) nextBday.setFullYear(today.getFullYear()+1);
+    const days = Math.round((nextBday - today) / 86400000);
+    const age = nextBday.getFullYear() - dob.getFullYear();
+    if (age === 65 && days <= 75) return 'medicare';
+    if (days <= 60) return 'birthday';
+  }
+  if (c.followUpPending) return 'followup';
+  if (c.clientStatus === 'Door Knock') return 'doorknock';
+  if (c.existingPolicy || c.newCompany) return 'client';
+  return 'lead';
+}
+
+let currentScriptClient = null;
+let currentScriptType = null;
+
+function openCallScript(key) {
+  const group = clientGroups[key];
+  if (!group) return;
+  const c = group[group.length-1];
+  currentScriptClient = c;
+  currentScriptType = detectScriptType(c);
+  renderScriptModal();
+  document.getElementById('scriptOverlay').classList.add('visible');
+}
+
+function renderScriptModal() {
+  const c = currentScriptClient;
+  const scriptKeys = Object.keys(SCRIPTS);
+  const script = SCRIPTS[currentScriptType];
+
+  const tabs = scriptKeys.map(k => 
+    `<button class="script-type-tab${currentScriptType===k?' active':''}" onclick="switchScript('${k}')">${SCRIPTS[k].label}</button>`
+  ).join('');
+
+  const phoneNum = c.phone ? c.phone.replace(/\D/g,'') : '';
+  const dialBtn = phoneNum
+    ? `<a class="script-dial-btn" href="tel:${phoneNum}" onclick="closeScript()">📞 Dial ${c.phone}</a>`
+    : `<button class="script-dial-btn" style="background:var(--muted);cursor:default">No phone number on file</button>`;
+
+  document.getElementById('scriptModal').innerHTML = `
+    <div class="script-header">
+      <div>
+        <span class="script-badge ${script.badge}">${script.label}</span>
+        <div class="script-name">${c.fullName}</div>
+      </div>
+      <button class="script-close" onclick="closeScript()">✕</button>
+    </div>
+    <div class="script-type-tabs">${tabs}</div>
+    <div class="script-body">
+      <div class="script-tip"><b>Tip:</b> ${script.tip}</div>
+      <div class="script-text">${script.text(c)}</div>
+      ${dialBtn}
+      <button class="script-skip-btn" onclick="closeScript()">Skip script — just dial</button>
+    </div>`;
+}
+
+function switchScript(type) {
+  currentScriptType = type;
+  renderScriptModal();
+}
+
+function closeScript() {
+  document.getElementById('scriptOverlay').classList.remove('visible');
+  currentScriptClient = null;
+}
+
+// ── FEX LEADS IMPORTER ───────────────────────────────────────────────────────
+async function openFexLeads() {
+  document.getElementById('fexSection').style.display = 'block';
+  document.getElementById('fexSection').scrollIntoView({behavior:'smooth',block:'start'});
+  await checkFexEmails();
+}
+
+function closeFexLeads() {
+  document.getElementById('fexSection').style.display = 'none';
+}
+
+async function checkFexEmails() {
+  const body = document.getElementById('fexBody');
+  body.innerHTML = `<div style="text-align:center;padding:28px">
+    <div class="loading-spinner" style="margin:0 auto 12px"></div>
+    <div style="font-weight:600">Scanning Gmail for FEX leads…</div>
+    <div style="color:var(--muted);font-size:13px;margin-top:4px">Searching for emails from leads@fexcontracting.com</div>
+  </div>`;
+
+  try {
+    // Search Gmail for FEX lead emails — try multiple queries
+    const queries = [
+      'from:leads@fexcontracting.com has:attachment',
+      'subject:"michelle scott leads" has:attachment',
+      'fexcontracting has:attachment',
+      'subject:"leads" from:michelle@seniorbenefitsofillinois.com has:attachment',
+    ];
+    
+    let allMessageIds = new Set();
+    let messages = [];
+    
+    for (const q of queries) {
+      try {
+        const searchResp = await fetch(
+          `https://www.googleapis.com/gmail/v1/users/me/messages?q=${encodeURIComponent(q)}&maxResults=10`,
+          { headers: { Authorization: `Bearer ${accessToken}` } }
+        );
+        if (searchResp.ok) {
+          const searchData = await searchResp.json();
+          for (const msg of (searchData.messages || [])) {
+            if (!allMessageIds.has(msg.id)) {
+              allMessageIds.add(msg.id);
+              messages.push(msg);
+            }
+          }
+        }
+      } catch(e) { console.log('Search query failed:', q, e); }
+    }
+    
+    console.log(`Found ${messages.length} FEX emails across all queries`);
+
+    if (!messages.length) {
+      body.innerHTML = `<div style="text-align:center;padding:32px;color:var(--muted)">
+        <div style="font-size:28px;margin-bottom:10px">📭</div>
+        <div style="font-weight:600;color:var(--ink)">No FEX lead emails found</div>
+        <div style="font-size:13px;margin-top:6px">Make sure emails from leads@fexcontracting.com have been forwarded to this Gmail account</div>
+      </div>`;
+      return;
+    }
+
+    // Get details for each email
+    body.innerHTML = `<div style="text-align:center;padding:20px;color:var(--muted)">
+      Found ${messages.length} email${messages.length>1?'s':''}. Loading details…
+    </div>`;
+
+    const emailDetails = [];
+    for (const msg of messages.slice(0, 5)) {
+      const detailResp = await fetch(
+        `https://www.googleapis.com/gmail/v1/users/me/messages/${msg.id}?format=full`,
+        { headers: { Authorization: `Bearer ${accessToken}` } }
+      );
+      const detail = await detailResp.json();
+      const headers = detail.payload?.headers || [];
+      const subject = headers.find(h=>h.name==='Subject')?.value || '';
+      const date = headers.find(h=>h.name==='Date')?.value || '';
+      const snippet = detail.snippet || '';
+
+      // Find PDF attachment
+      const parts = detail.payload?.parts || [];
+      const pdfPart = findPdfAttachment(parts);
+
+      emailDetails.push({ id: msg.id, subject, date, snippet, pdfPart, threadId: detail.threadId });
+    }
+
+    renderFexEmails(emailDetails);
+
+  } catch(err) {
+    body.innerHTML = `<div style="background:var(--rust-light);border-radius:12px;padding:20px;margin:8px">
+      <div style="font-weight:600;color:var(--rust);margin-bottom:6px">Could not access Gmail</div>
+      <div style="font-size:13px">${err.message}</div>
+      <div style="font-size:12px;color:var(--muted);margin-top:8px">You may need to sign out and sign back in to grant Gmail access.</div>
+      <button onclick="window.location.href=buildAuthUrl('consent')" style="margin-top:12px;padding:8px 16px;background:var(--rust);color:#fff;border:none;border-radius:8px;cursor:pointer;font-family:'DM Sans',sans-serif;font-size:13px">Re-authorize Gmail Access</button>
+    </div>`;
+    console.error('FEX Gmail error:', err);
+  }
+}
+
+function findPdfAttachment(parts) {
+  for (const part of parts) {
+    if (part.mimeType === 'application/pdf' && part.body?.attachmentId) {
+      return { attachmentId: part.body.attachmentId, filename: part.filename };
+    }
+    if (part.parts) {
+      const found = findPdfAttachment(part.parts);
+      if (found) return found;
+    }
+  }
+  return null;
+}
+
+function renderFexEmails(emails) {
+  const body = document.getElementById('fexBody');
+  let html = `<div style="margin-bottom:14px">
+    <div style="font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);margin-bottom:10px">Found ${emails.length} FEX lead email${emails.length>1?'s':''}</div>`;
+
+  emails.forEach((email, idx) => {
+    const d = new Date(email.date);
+    const dateStr = isNaN(d) ? email.date : d.toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'});
+    html += `<div style="border:1.5px solid var(--border);border-radius:12px;padding:14px;margin-bottom:10px">
+      <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:10px">
+        <div>
+          <div style="font-weight:600;font-size:14px">${email.subject}</div>
+          <div style="font-size:12px;color:var(--muted);margin-top:2px">${dateStr}</div>
+          <div style="font-size:12px;color:var(--ink);margin-top:6px">${email.snippet}</div>
+        </div>
+        ${email.pdfPart
+          ? `<button onclick="processFexPDF('${email.id}','${email.pdfPart.attachmentId}',this)" 
+               style="flex-shrink:0;padding:8px 14px;background:var(--green);color:#fff;border:none;border-radius:8px;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;cursor:pointer;white-space:nowrap">
+               📄 Import Leads
+             </button>`
+          : `<span style="font-size:12px;color:var(--muted);flex-shrink:0">No PDF found</span>`
+        }
+      </div>
+      <div id="fex_result_${idx}" style="margin-top:10px"></div>
+    </div>`;
+  });
+
+  html += '</div>';
+  body.innerHTML = html;
+}
+
+async function processFexPDF(messageId, attachmentId, btn) {
+  const resultDiv = btn.parentElement.parentElement.querySelector('[id^="fex_result"]');
+  btn.disabled = true;
+  btn.textContent = 'Reading leads…';
+
+  try {
+    // Download PDF attachment from Gmail
+    const attResp = await fetch(
+      `https://www.googleapis.com/gmail/v1/users/me/messages/${messageId}/attachments/${attachmentId}`,
+      { headers: { Authorization: `Bearer ${accessToken}` } }
+    );
+    const attData = await attResp.json();
+    // Gmail returns base64url encoded — convert to base64
+    const base64 = attData.data.replace(/-/g,'+').replace(/_/g,'/');
+
+    resultDiv.innerHTML = `<div style="color:var(--muted);font-size:13px">
+      <div class="loading-spinner" style="width:20px;height:20px;margin:0 0 6px"></div>
+      Sending to AI to read lead cards… this may take 30-60 seconds for multiple pages.
+    </div>`;
+
+    // Send to Claude via Cloudflare worker to extract all leads
+    const aiResp = await fetch('https://michelles-desk-api.michelle-cb4.workers.dev', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        model: 'claude-sonnet-4-6',
+        max_tokens: 4000,
+        messages: [{
+          role: 'user',
+          content: [
+            {
+              type: 'document',
+              source: { type: 'base64', media_type: 'application/pdf', data: base64 }
+            },
+            {
+              type: 'text',
+              text: `This PDF contains scanned insurance lead cards (Walmart Gift Card survey mailers). Each page is one lead card. Extract the handwritten information from every page.
+
+Return ONLY a JSON array where each element has these fields:
+- firstName: first name only
+- lastName: last name only  
+- spouseName: spouse name if filled in, else empty string
+- address: street address
+- city: city name
+- state: 2-letter state code
+- zip: zip code
+- phone: phone number formatted as (XXX) XXX-XXXX
+- bestTimeToCall: best time to call if noted
+- ageRange: the age range checkbox that was checked (e.g. "62-66", "67-74")
+- health: health rating checked (Excellent, Very Good, Good, Poor)
+- employed: employment status checked
+- interestedIn: comma-separated list of insurance types they checked interest in
+
+Return only the JSON array, no other text.`
+            }
+          ]
+        }]
+      })
+    });
+
+    if (!aiResp.ok) {
+      const errText = await aiResp.text().catch(()=>'');
+      console.error('Worker error:', aiResp.status, errText);
+      throw new Error(aiResp.status + ': ' + errText.substring(0,120));
+    }
+    const aiData = await aiResp.json();
+    const text = aiData.content[0].text.trim().replace(/```json|```/g,'').trim();
+    const leads = JSON.parse(text);
+
+    // Show preview
+    renderFexLeadsPreview(leads, resultDiv, btn);
+
+  } catch(err) {
+    btn.disabled = false;
+    btn.textContent = '📄 Import Leads';
+    resultDiv.innerHTML = `<div style="color:var(--rust);font-size:13px">Error: ${err.message}</div>`;
+    console.error('FEX PDF error:', err);
+  }
+}
+
+function renderFexLeadsPreview(leads, container, btn) {
+  btn.textContent = `✓ ${leads.length} leads found`;
+  btn.style.background = 'var(--sage)';
+
+  let html = `<div style="background:var(--green-light);border-radius:10px;padding:12px;margin-bottom:10px">
+    <div style="font-weight:600;color:var(--green);margin-bottom:8px">✓ ${leads.length} lead${leads.length>1?'s':''} extracted — review and save</div>`;
+
+  leads.forEach((lead, i) => {
+    html += `<div style="background:#fff;border-radius:8px;padding:10px 12px;margin-bottom:6px;font-size:13px">
+      <div style="font-weight:600">${lead.firstName} ${lead.lastName}</div>
+      <div style="color:var(--muted);margin-top:2px">${lead.address}, ${lead.city}, ${lead.state} ${lead.zip}</div>
+      <div style="color:var(--sage);margin-top:2px">${lead.phone}${lead.bestTimeToCall?' · '+lead.bestTimeToCall:''}</div>
+      <div style="color:var(--muted);font-size:11px;margin-top:2px">Age: ${lead.ageRange} · Health: ${lead.health}${lead.interestedIn?' · '+lead.interestedIn:''}</div>
+    </div>`;
+  });
+
+  html += `<button onclick="saveFexLeads(${JSON.stringify(leads).replace(/"/g,'&quot;')}, this)"
+    style="width:100%;padding:12px;background:var(--green);color:#fff;border:none;border-radius:10px;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;cursor:pointer;margin-top:6px">
+    💾 Save All ${leads.length} Leads to Sheet
+  </button>`;
+
+  html += '</div>';
+  container.innerHTML = html;
+}
+
+async function saveFexLeads(leads, btn) {
+  if (!accessToken) { toast('Sign in first'); return; }
+  btn.disabled = true;
+  btn.textContent = 'Saving…';
+
+  const today = new Date().toLocaleDateString('en-US',{month:'numeric',day:'numeric',year:'numeric'});
+  let saved = 0;
+
+  for (const lead of leads) {
+    try {
+      // Column mapping (0-based): A=status, B=notes, C=empty, D=FirstName, E=Spouse,
+      // F=LastName, G=Address, H=City, I=County, J=State, K=Zip, L=LeadDate,
+      // M=Phone, N=DOB, O=Age, P=AgeRange, Q=Health, R=BestTime, S=InterestedIn
+      const row = [
+        'Door Knock',  // A - status
+        '',            // B - notes
+        '',            // C - empty
+        lead.firstName || '',      // D - First Name
+        lead.spouseName || '',     // E - Spouse
+        lead.lastName || '',       // F - Last Name
+        lead.address || '',        // G - Address
+        lead.city || '',           // H - City
+        '',                        // I - County
+        lead.state || 'IL',        // J - State
+        lead.zip || '',            // K - Zip
+        today,                     // L - Lead Date
+        lead.phone || '',          // M - Phone
+        '',                        // N - DOB
+        '',                        // O - Age
+        '',                        // P - TOB
+        '',                        // Q - SS
+        lead.ageRange || '',       // R - Age Range
+        lead.health || '',         // S - Health
+        lead.bestTimeToCall || '', // T - Best Time to Call
+        lead.interestedIn || '',   // U - Interested In
+      ];
+
+      const resp = await fetch(
+        `https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}/values/Leads!A:U:append?valueInputOption=USER_ENTERED&insertDataOption=INSERT_ROWS`,
+        {
+          method: 'POST',
+          headers: { Authorization: `Bearer ${accessToken}`, 'Content-Type': 'application/json' },
+          body: JSON.stringify({ values: [row] })
+        }
+      );
+      if (resp.ok) saved++;
+    } catch(e) {
+      console.error('Save error for', lead.firstName, e);
+    }
+  }
+
+  btn.textContent = `✓ Saved ${saved} leads!`;
+  btn.style.background = 'var(--sage)';
+  toast(`✓ ${saved} FEX leads saved to sheet`);
+}
+
+// ── HELPERS ───────────────────────────────────────────────────────────────────
+function cl(v){const s=(v==null)?'':String(v).trim();return(s===''||s.toLowerCase()==='nan')?'':s;}
+function fmtPhone(v){const s=cl(v);if(!s)return'';const d=s.replace(/\D/g,'');if(d.length===10)return`(${d.slice(0,3)}) ${d.slice(3,6)}-${d.slice(6)}`;if(d.length===11&&d[0]==='1')return`(${d.slice(1,4)}) ${d.slice(4,7)}-${d.slice(7)}`;return s;}
+function fmtDate(v){if(!v)return'';const s=String(v).trim();if(!s||s.toLowerCase()==='nan')return'';if(/^\d{5,6}$/.test(s)){const d=new Date(Math.round((parseFloat(s)-25569)*86400*1000));if(!isNaN(d))return`${d.getMonth()+1}/${d.getDate()}/${d.getFullYear()}`;}const d=new Date(s);if(!isNaN(d.getTime())){const yr=d.getFullYear();if(yr>1900&&yr<2100)return`${d.getMonth()+1}/${d.getDate()}/${yr}`;}return s;}
+function colToLetter(col){let l='',n=col;while(n>=0){l=String.fromCharCode((n%26)+65)+l;n=Math.floor(n/26)-1;}return l;}
+function esc(k){return k.replace(/\\/g,'\\\\').replace(/'/g,"\\'")}
+function todayStr(){const d=new Date();return`${d.getFullYear()}${String(d.getMonth()+1).padStart(2,'0')}${String(d.getDate()).padStart(2,'0')}`;}
+function showLoading(show){document.getElementById('loadingState').style.display=show?'block':'none';}
+function showError(msg){document.getElementById('errorMsg').textContent=msg;document.getElementById('errorState').style.display='block';}
+function hideError(){document.getElementById('errorState').style.display='none';}
+function toast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),3400);}
+</script>
+</body>
+</html>
